@@ -15,8 +15,23 @@ TABLE OF CONTENTS:
 
 /* 0. Reset ================================= */
 @import 'reset';
-@import 'ashley';
-@import 'gel';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');
+
+$tablet-breakpoint: 640px;
+$desktop-breakpoint: 960px;
+
+
+@mixin tablet{
+	@media only screen and (min-width: $tablet-breakpoint){
+		@content;
+	}
+}
+
+@mixin desktop{
+	@media only screen and (min-width: $desktop-breakpoint){
+		@content;
+	}
+}
 
 
 /* 1. Main Layout ================================= */
@@ -26,15 +41,58 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background: #000;
+	background: #4d4d4d;
+	color: white;
+	width: 100vw;
+	overflow: hidden;
 }
+
+
 
 
 
 
 /* 2. Content ================================= */
 
+.content {
+	position: relative;
+	font-family: Montserrat;
+	width: 90%;
+	background: red;
+	margin: 0 auto;
 
+	ul {
+		font-weight: 500;
+		font-size: 4em;
+		text-align: center;
 
+		@include tablet{
+			font-size: 5.5em;
+		}
+		
+		@include desktop{
+			width: 950px;
+		}
 
+		.nav-dash{
+			display: none;
 
+			@include desktop{
+				display: inline;
+			}
+		}
+
+		li{
+			@include desktop{
+				display: inline;
+				margin: 0 10px 10px 0;
+			}
+		}
+
+		a{
+			text-decoration: none;
+			text-transform: lowercase;
+			color: white;
+		}
+	}
+}

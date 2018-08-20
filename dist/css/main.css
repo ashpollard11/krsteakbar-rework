@@ -17,6 +17,7 @@ TABLE OF CONTENTS:
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -73,9 +74,60 @@ table {
 }
 
 body {
-	background: #000;
+	background: #4d4d4d;
+	color: white;
+	width: 100vw;
+	overflow: hidden;
 }
 
 /* 2. Content ================================= */
+.content {
+	position: relative;
+	font-family: Montserrat;
+	width: 90%;
+	background: red;
+	margin: 0 auto;
+}
+
+.content ul {
+	font-weight: 500;
+	font-size: 4em;
+	text-align: center;
+}
+
+@media only screen and (min-width: 640px) {
+	.content ul {
+		font-size: 5.5em;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.content ul {
+		width: 950px;
+	}
+}
+
+.content ul .nav-dash {
+	display: none;
+}
+
+@media only screen and (min-width: 960px) {
+	.content ul .nav-dash {
+		display: inline;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.content ul li {
+		display: inline;
+		margin: 0 10px 10px 0;
+	}
+}
+
+.content ul a {
+	text-decoration: none;
+	text-transform: lowercase;
+	color: white;
+}
 
 /*# sourceMappingURL=main.css.map */
