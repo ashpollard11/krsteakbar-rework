@@ -15,10 +15,14 @@ TABLE OF CONTENTS:
 
 /* 0. Reset ================================= */
 @import 'reset';
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Michroma|Spectral');
+@import url("https://use.typekit.net/cco7rbw.css");
 
 $tablet-breakpoint: 640px;
-$desktop-breakpoint: 960px;
+$desktop-breakpoint: 1027px;
+$edge-breakpoint: 1440px;
+$url-font: "nimbus-sans";
+$copy-font: "Michroma";
 
 
 @mixin tablet{
@@ -29,6 +33,12 @@ $desktop-breakpoint: 960px;
 
 @mixin desktop{
 	@media only screen and (min-width: $desktop-breakpoint){
+		@content;
+	}
+}
+
+@mixin bigger-desktop{
+	@media only screen and (min-width: $edge-breakpoint){
 		@content;
 	}
 }
@@ -56,43 +66,113 @@ body {
 
 .content {
 	position: relative;
-	font-family: Montserrat;
-	width: 90%;
-	background: red;
+	font-family: Michroma;
+	width: 95%;
+	// background: red;
 	margin: 0 auto;
+	padding-top: 50px;
 
-	ul {
-		font-weight: 500;
-		font-size: 4em;
-		text-align: center;
+	.phone-number{
+		font-family: $url-font;
+		font-size: 1.5em;
+		
+		span{
+			padding: 10px;
+		}
+	}
+
+	.middle-group{
+		padding-top: 15%;
+		// display: flex;
 
 		@include tablet{
-			font-size: 5.5em;
+			padding-top: 1%;
 		}
+
+		@include bigger-desktop{
+			padding-top: 15%;
+		}
+
+		.reservations{
+			font-size: 2em;
+			padding: 50px;
+			font-family: $url-font;
+			text-align: center;
 		
+			@include bigger-desktop{
+				transform:rotate(-90deg);  
+				transform-origin: left;
+				position: relative;
+				left: 15px;
+				top: 214px;
+				font-size: 2em;
+				padding: 0px;
+				text-align: left;
+				//    float: left;
+			}
+		}
+
+		ul {
+			clear: both;
+			font-weight: 500;
+			font-size: 2em;
+			text-align: center;
+			margin: 0 auto;
+			line-height: 1.25em;
+			// flex: 0 0 90%;
+
+			@include tablet{
+				font-size: 3em;
+			}
+			
+			@include desktop{
+				font-size: 5em;
+				max-width: 1000px;
+			}
+
+			.nav-dash{
+				display: none;
+
+				@include desktop{
+					display: inline;
+				}
+			}
+
+			li{
+				@include desktop{
+					display: inline;
+					margin: 0 10px 10px 0;
+				}
+			}
+
+			a{
+				text-decoration: none;
+				text-transform: lowercase;
+				color: white;
+			}
+		}
+	}
+
+	.kr-footer{
+		position: relative;
+		right: auto;
+		font-family: $url-font;
+		font-size: 1.5em;
+		text-transform: lowercase;
+		float: right;
+		clear: both;
+		padding-top: 20%;
+
+		@include tablet{
+			padding-top: 8%;
+		}
+
 		@include desktop{
-			width: 950px;
+			padding-top: 5%;
 		}
 
-		.nav-dash{
-			display: none;
-
-			@include desktop{
-				display: inline;
-			}
-		}
-
-		li{
-			@include desktop{
-				display: inline;
-				margin: 0 10px 10px 0;
-			}
-		}
-
-		a{
-			text-decoration: none;
-			text-transform: lowercase;
-			color: white;
+		span{
+			display: block;
 		}
 	}
 }

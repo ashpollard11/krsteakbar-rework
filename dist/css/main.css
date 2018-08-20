@@ -17,7 +17,8 @@ TABLE OF CONTENTS:
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600");
+@import url("https://fonts.googleapis.com/css?family=Michroma|Spectral");
+@import url("https://use.typekit.net/cco7rbw.css");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -83,51 +84,127 @@ body {
 /* 2. Content ================================= */
 .content {
 	position: relative;
-	font-family: Montserrat;
-	width: 90%;
-	background: red;
+	font-family: Michroma;
+	width: 95%;
 	margin: 0 auto;
+	padding-top: 50px;
 }
 
-.content ul {
-	font-weight: 500;
-	font-size: 4em;
-	text-align: center;
+.content .phone-number {
+	font-family: "nimbus-sans";
+	font-size: 1.5em;
+}
+
+.content .phone-number span {
+	padding: 10px;
+}
+
+.content .middle-group {
+	padding-top: 15%;
 }
 
 @media only screen and (min-width: 640px) {
-	.content ul {
-		font-size: 5.5em;
+	.content .middle-group {
+		padding-top: 1%;
 	}
 }
 
-@media only screen and (min-width: 960px) {
-	.content ul {
-		width: 950px;
+@media only screen and (min-width: 1440px) {
+	.content .middle-group {
+		padding-top: 15%;
 	}
 }
 
-.content ul .nav-dash {
+.content .middle-group .reservations {
+	font-size: 2em;
+	padding: 50px;
+	font-family: "nimbus-sans";
+	text-align: center;
+}
+
+@media only screen and (min-width: 1440px) {
+	.content .middle-group .reservations {
+		transform: rotate(-90deg);
+		transform-origin: left;
+		position: relative;
+		left: 15px;
+		top: 214px;
+		font-size: 2em;
+		padding: 0px;
+		text-align: left;
+	}
+}
+
+.content .middle-group ul {
+	clear: both;
+	font-weight: 500;
+	font-size: 2em;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 1.25em;
+}
+
+@media only screen and (min-width: 640px) {
+	.content .middle-group ul {
+		font-size: 3em;
+	}
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .middle-group ul {
+		font-size: 5em;
+		max-width: 1000px;
+	}
+}
+
+.content .middle-group ul .nav-dash {
 	display: none;
 }
 
-@media only screen and (min-width: 960px) {
-	.content ul .nav-dash {
+@media only screen and (min-width: 1027px) {
+	.content .middle-group ul .nav-dash {
 		display: inline;
 	}
 }
 
-@media only screen and (min-width: 960px) {
-	.content ul li {
+@media only screen and (min-width: 1027px) {
+	.content .middle-group ul li {
 		display: inline;
 		margin: 0 10px 10px 0;
 	}
 }
 
-.content ul a {
+.content .middle-group ul a {
 	text-decoration: none;
 	text-transform: lowercase;
 	color: white;
+}
+
+.content .kr-footer {
+	position: relative;
+	right: auto;
+	font-family: "nimbus-sans";
+	font-size: 1.5em;
+	text-transform: lowercase;
+	float: right;
+	clear: both;
+	padding-top: 20%;
+}
+
+@media only screen and (min-width: 640px) {
+	.content .kr-footer {
+		padding-top: 8%;
+	}
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .kr-footer {
+		padding-top: 5%;
+	}
+}
+
+.content .kr-footer span {
+	display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
