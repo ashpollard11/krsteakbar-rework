@@ -100,7 +100,7 @@ body.home-body {
 	padding: 1.8em;
 }
 
-.content .top-section {
+.top-section {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -108,27 +108,27 @@ body.home-body {
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .top-section {
+	.top-section {
 		flex-direction: row;
 		align-items: unset;
 		justify-content: space-between;
 	}
 }
 
-.content .phone-number, .content .reservations {
+.phone-number, .reservations {
 	font-family: "nimbus-sans";
 	font-size: 1.5em;
 }
 
-.content .phone-number {
+.phone-number {
 	margin-bottom: 50px;
 }
 
-.content .phone-number span {
+.phone-number span {
 	padding: 10px;
 }
 
-.content .hamburger-menu {
+.hamburger-menu {
 	background: url(../../dist/img/hamburger.png) no-repeat center;
 	background-size: auto 100%;
 	width: 69px;
@@ -139,47 +139,47 @@ body.home-body {
 	flex-direction: column;
 }
 
-.content .hamburger-menu div {
+.hamburger-menu div {
 	width: 32px;
 	height: 1px;
 	background: white;
 	margin: 5px 0;
 }
 
-.content .hamburger-menu div:nth-child(2) {
+.hamburger-menu div:nth-child(2) {
 	margin-left: 10px;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .hamburger-menu {
+	.hamburger-menu {
 		display: none;
 	}
 }
 
-.content .reservations {
+.reservations {
 	color: #9e8261;
 	display: none;
 	text-decoration: none;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .reservations {
+	.reservations {
 		display: block;
 	}
 }
 
-.content .middle-group {
+.middle-group {
 	margin: 42px 0;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group {
+	.middle-group {
 		padding: 0 1em;
 		text-align: center;
 	}
 }
 
-.content .middle-group nav {
+.middle-group nav {
 	list-style: none;
 	font-weight: 500;
 	font-size: 2em;
@@ -187,35 +187,35 @@ body.home-body {
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group nav {
+	.middle-group nav {
 		font-size: 3em;
 		max-width: 1000px;
 	}
 }
 
-.content .middle-group nav .nav-dash {
+.middle-group nav .nav-dash {
 	display: none;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group nav .nav-dash {
+	.middle-group nav .nav-dash {
 		display: inline;
 	}
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group nav li {
+	.middle-group nav li {
 		display: inline;
 	}
 }
 
-.content .middle-group nav a {
+.middle-group nav a {
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #9e8261;
 }
 
-.content .kr-footer {
+.kr-footer {
 	width: 85%;
 	max-width: 550px;
 	font-family: "nimbus-sans";
@@ -224,7 +224,7 @@ body.home-body {
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .kr-footer {
+	.kr-footer {
 		width: 100%;
 		max-width: unset;
 		display: flex;
@@ -234,48 +234,48 @@ body.home-body {
 	}
 }
 
-.content .kr-footer .social {
+.kr-footer .social {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .kr-footer .social {
+	.kr-footer .social {
 		width: 20%;
 	}
 }
 
-.content .kr-footer .social .icon {
+.kr-footer .social .icon {
 	width: 37px;
 	height: 32px;
 }
 
-.content .kr-footer .social .icon a {
+.kr-footer .social .icon a {
 	color: rgba(0, 0, 0, 0);
 }
 
-.content .kr-footer .social .fb-icon {
+.kr-footer .social .fb-icon {
 	background: url(../../dist/img/fb-icon.png) no-repeat center;
 	background-size: auto 100%;
 }
 
-.content .kr-footer .social .ig-icon {
+.kr-footer .social .ig-icon {
 	background: url(../../dist/img/ig-icon.png) no-repeat center;
 	background-size: auto 100%;
 }
 
-.content .kr-footer .social .tw-icon {
+.kr-footer .social .tw-icon {
 	background: url(../../dist/img/twitter-icon.png) no-repeat center;
 	background-size: auto 100%;
 }
 
-.content .kr-footer p {
+.kr-footer p {
 	display: none;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .kr-footer p {
+	.kr-footer p {
 		display: flex;
 		flex-direction: column;
 		text-align: right;

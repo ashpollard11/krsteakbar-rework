@@ -82,67 +82,68 @@ body {
 	flex-direction: column;
 	align-items: center;
 	padding: 1.8em;
+}
 
-	.top-section {
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+.top-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-		@include desktop {
-			flex-direction: row;
-			align-items: unset;
-			justify-content: space-between;
-		}
+	@include desktop {
+		flex-direction: row;
+		align-items: unset;
+		justify-content: space-between;
 	}
+}
 
-	.phone-number, .reservations {
-		font-family: $url-font;
-		font-size: 1.5em;
-	}
+.phone-number, .reservations {
+	font-family: $url-font;
+	font-size: 1.5em;
+}
 
-	.phone-number {
-		margin-bottom: 50px;
+.phone-number {
+	margin-bottom: 50px;
 		
-		span {
-			padding: 10px;
+	span {
+		padding: 10px;
+	}
+}
+
+.hamburger-menu {
+	background: url(../../dist/img/hamburger.png) no-repeat center;
+	background-size: auto 100%;
+	width: 69px;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	div {
+		width: 32px;
+		height: 1px;
+		background: white;
+		margin: 5px 0;
+
+		&:nth-child(2) {
+			margin-left: 10px;
 		}
 	}
 
-	.hamburger-menu {
-		background: url(../../dist/img/hamburger.png) no-repeat center;
-		background-size: auto 100%;
-		width: 69px;
-		height: 64px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-
-		div {
-			width: 32px;
-			height: 1px;
-			background: white;
-			margin: 5px 0;
-
-			&:nth-child(2) {
-				margin-left: 10px;
-			}
-		}
-
-		@include desktop {
-			display: none;
-		}
-	}
-
-	.reservations {
-		color: $home-copy-color;
+	@include desktop {
 		display: none;
-		text-decoration: none;
+	}
+}
 
-		@include desktop {
-			display: block;
-		}
+.reservations {
+	color: $home-copy-color;
+	display: none;
+	text-decoration: none;
+
+	@include desktop {
+		display: block;
+	}
 		
 		// @include bigger-desktop {
 		// 	transform:rotate(-90deg);  
@@ -154,123 +155,148 @@ body {
 		// 	padding: 0px;
 		// 	text-align: left;
 		// }
+}
+
+.middle-group {
+	margin: 42px 0;
+
+	// @include tablet {
+	// 	padding-top: 1%;
+	// }
+
+	@include desktop {
+		padding: 0 1em;
+		text-align: center;
 	}
 
-	.middle-group {
-		margin: 42px 0;
+	// @include bigger-desktop {
+	// 	padding-top: 15%;
+	// }
+
+	nav {
+		list-style: none;
+		font-weight: 500;
+		font-size: 2em;
+		line-height: 1.7;
 
 		// @include tablet {
-		// 	padding-top: 1%;
+		// 	font-size: 3em;
 		// }
-
-		@include desktop {
-			padding: 0 1em;
-			text-align: center;
-		}
-
-		// @include bigger-desktop {
-		// 	padding-top: 15%;
-		// }
-
-		nav {
-			list-style: none;
-			font-weight: 500;
-			font-size: 2em;
-			line-height: 1.7;
-
-			// @include tablet {
-			// 	font-size: 3em;
-			// }
 			
-			@include desktop {
-				font-size: 3em;
-				max-width: 1000px;
-			}
-
-			.nav-dash {
-				display: none;
-
-				@include desktop {
-					display: inline;
-				}
-			}
-
-			li {
-				@include desktop {
-					display: inline;
-				}
-			}
-
-			a {
-				text-decoration: none;
-				text-transform: lowercase;
-				color: $home-copy-color;
-			}
-		}
-	}
-
-	.kr-footer {
-		width: 85%;
-		max-width: 550px;
-		font-family: $url-font;
-		font-size: 1.5em;
-		text-transform: lowercase;
-
-		// @include tablet {
-		// 	padding-top: 8%;
-		// }
-
 		@include desktop {
-			width: 100%;
-			max-width: unset;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: auto;
+			font-size: 3em;
+			max-width: 1000px;
 		}
 
-		.social {
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-
-			@include desktop {
-				width: 20%;
-			}
-
-			.icon {
-				width: 37px;
-				height: 32px;
-
-				a {
-					color: rgba(0,0,0,0);
-				}
-			}
-
-			.fb-icon {
-				background: url(../../dist/img/fb-icon.png) no-repeat center;
-				background-size: auto 100%;
-			}
-
-			.ig-icon {
-				background: url(../../dist/img/ig-icon.png) no-repeat center;
-				background-size: auto 100%;
-			}
-
-			.tw-icon {
-				background: url(../../dist/img/twitter-icon.png) no-repeat center;
-				background-size: auto 100%;
-			}
-		}
-
-		p {
+		.nav-dash {
 			display: none;
 
 			@include desktop {
-			display: flex;
-			flex-direction: column;
-			text-align: right;
+				display: inline;
 			}
+		}
+
+
+		li {
+			@include desktop {
+				display: inline;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			text-transform: lowercase;
+			color: $home-copy-color;
+		}
+
+		//li {
+
+			//@include desktop {
+			// .description{
+			// 	display: block;
+			// 	// display: none;
+			// 	position: relative;
+			// 	font-family: $url-font;
+			// 	font-size: 30px;
+			// 	padding: 0px;
+			// 	// width: 500px;
+			// 	margin: 0px 0px 0px 0px;
+
+			// 	&.left{
+			// 		text-align: left;
+			// 		display: block;
+			// 		margin: 0px;
+			// 	}
+
+			// 	&.right{
+			// 		text-align: right;
+			// 	}
+			// }
+	}
+}
+
+.kr-footer {
+	width: 85%;
+	max-width: 550px;
+	font-family: $url-font;
+	font-size: 1.5em;
+	text-transform: lowercase;
+
+	// @include tablet {
+	// 	padding-top: 8%;
+	// }
+
+	@include desktop {
+		width: 100%;
+		max-width: unset;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
+	}
+
+	.social {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@include desktop {
+			width: 20%;
+		}
+
+		.icon {
+			width: 37px;
+			height: 32px;
+
+			a {
+				color: rgba(0,0,0,0);
+			}
+		}
+
+		.fb-icon {
+			background: url(../../dist/img/fb-icon.png) no-repeat center;
+			background-size: auto 100%;
+		}
+
+		.ig-icon {
+			background: url(../../dist/img/ig-icon.png) no-repeat center;
+			background-size: auto 100%;
+		}
+
+		.tw-icon {
+			background: url(../../dist/img/twitter-icon.png) no-repeat center;
+			background-size: auto 100%;
+		}
+	}
+
+	p {
+		display: none;
+
+		@include desktop {
+		display: flex;
+		flex-direction: column;
+		text-align: right;
 		}
 	}
 }
+
