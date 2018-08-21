@@ -167,6 +167,25 @@ body {
 	}
 }
 
+.content .middle-group ul .description {
+	display: block;
+	position: relative;
+	font-family: "nimbus-sans";
+	font-size: 30px;
+	padding: 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+.content .middle-group ul .description.left {
+	text-align: left;
+	display: block;
+	margin: 0px;
+}
+
+.content .middle-group ul .description.right {
+	text-align: right;
+}
+
 @media only screen and (min-width: 1027px) {
 	.content .middle-group ul li {
 		display: inline;

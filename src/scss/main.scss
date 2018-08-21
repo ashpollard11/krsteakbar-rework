@@ -138,6 +138,27 @@ body {
 				}
 			}
 
+			.description{
+				display: block;
+				// display: none;
+				position: relative;
+				font-family: $url-font;
+				font-size: 30px;
+				padding: 0px;
+				// width: 500px;
+				margin: 0px 0px 0px 0px;
+
+				&.left{
+					text-align: left;
+					display: block;
+					margin: 0px;
+				}
+
+				&.right{
+					text-align: right;
+				}
+			}
+
 			li{
 				@include desktop{
 					display: inline;
