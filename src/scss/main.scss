@@ -25,19 +25,24 @@ $url-font: "nimbus-sans";
 $copy-font: "Michroma";
 
 
-@mixin tablet{
+$home-bg-color: #eae6df;
+$home-copy-color: #9e8261;
+$home-accent-color: #eba900;
+
+
+@mixin tablet {
 	@media only screen and (min-width: $tablet-breakpoint){
 		@content;
 	}
 }
 
-@mixin desktop{
+@mixin desktop {
 	@media only screen and (min-width: $desktop-breakpoint){
 		@content;
 	}
 }
 
-@mixin bigger-desktop{
+@mixin bigger-desktop {
 	@media only screen and (min-width: $edge-breakpoint){
 		@content;
 	}
@@ -51,128 +56,221 @@ $copy-font: "Michroma";
 }
 
 body {
-	background: #4d4d4d;
-	color: white;
-	width: 100vw;
-	overflow: hidden;
+	background: $home-bg-color;
+	width: 100%;
+	height: 100%;
+	// overflow: hidden;
+
+	&.home-body {
+		color: $home-copy-color;
+	}
 }
 
-
-
-
+.phone-number {
+	color: $home-accent-color;
+}
 
 
 /* 2. Content ================================= */
 
 .content {
+	width: 100%;
+	height: 100vh;
 	position: relative;
 	font-family: Michroma;
-	width: 95%;
-	// background: red;
-	margin: 0 auto;
-	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.8em;
 
-	.phone-number{
+	.top-section {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include desktop {
+			flex-direction: row;
+			align-items: unset;
+			justify-content: space-between;
+		}
+	}
+
+	.phone-number, .reservations {
 		font-family: $url-font;
 		font-size: 1.5em;
+	}
+
+	.phone-number {
+		margin-bottom: 50px;
 		
-		span{
+		span {
 			padding: 10px;
 		}
 	}
 
-	.middle-group{
-		padding-top: 15%;
-		// display: flex;
+	.hamburger-menu {
+		background: url(../../dist/img/hamburger.png) no-repeat center;
+		background-size: auto 100%;
+		width: 69px;
+		height: 64px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 
-		@include tablet{
-			padding-top: 1%;
-		}
+		div {
+			width: 32px;
+			height: 1px;
+			background: white;
+			margin: 5px 0;
 
-		@include bigger-desktop{
-			padding-top: 15%;
-		}
-
-		.reservations{
-			font-size: 2em;
-			padding: 50px;
-			font-family: $url-font;
-			text-align: center;
-		
-			@include bigger-desktop{
-				transform:rotate(-90deg);  
-				transform-origin: left;
-				position: relative;
-				left: 15px;
-				top: 214px;
-				font-size: 2em;
-				padding: 0px;
-				text-align: left;
-				//    float: left;
+			&:nth-child(2) {
+				margin-left: 10px;
 			}
 		}
 
-		ul {
-			clear: both;
+		@include desktop {
+			display: none;
+		}
+	}
+
+	.reservations {
+		color: $home-copy-color;
+		display: none;
+		text-decoration: none;
+
+		@include desktop {
+			display: block;
+		}
+		
+		// @include bigger-desktop {
+		// 	transform:rotate(-90deg);  
+		// 	transform-origin: left;
+		// 	position: relative;
+		// 	left: 15px;
+		// 	top: 214px;
+		// 	font-size: 2em;
+		// 	padding: 0px;
+		// 	text-align: left;
+		// }
+	}
+
+	.middle-group {
+		margin: 42px 0;
+
+		// @include tablet {
+		// 	padding-top: 1%;
+		// }
+
+		@include desktop {
+			padding: 0 1em;
+			text-align: center;
+		}
+
+		// @include bigger-desktop {
+		// 	padding-top: 15%;
+		// }
+
+		nav {
+			list-style: none;
 			font-weight: 500;
 			font-size: 2em;
-			text-align: center;
-			margin: 0 auto;
-			line-height: 1.25em;
-			// flex: 0 0 90%;
+			line-height: 1.7;
 
-			@include tablet{
-				font-size: 3em;
-			}
+			// @include tablet {
+			// 	font-size: 3em;
+			// }
 			
-			@include desktop{
-				font-size: 5em;
+			@include desktop {
+				font-size: 3em;
 				max-width: 1000px;
 			}
 
-			.nav-dash{
+			.nav-dash {
 				display: none;
 
-				@include desktop{
+				@include desktop {
 					display: inline;
 				}
 			}
 
-			li{
-				@include desktop{
+			li {
+				@include desktop {
 					display: inline;
-					margin: 0 10px 10px 0;
 				}
 			}
 
-			a{
+			a {
 				text-decoration: none;
 				text-transform: lowercase;
-				color: white;
+				color: $home-copy-color;
 			}
 		}
 	}
 
-	.kr-footer{
-		position: relative;
-		right: auto;
+	.kr-footer {
+		width: 85%;
+		max-width: 550px;
 		font-family: $url-font;
 		font-size: 1.5em;
 		text-transform: lowercase;
-		float: right;
-		clear: both;
-		padding-top: 20%;
 
-		@include tablet{
-			padding-top: 8%;
+		// @include tablet {
+		// 	padding-top: 8%;
+		// }
+
+		@include desktop {
+			width: 100%;
+			max-width: unset;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: auto;
 		}
 
-		@include desktop{
-			padding-top: 5%;
+		.social {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+
+			@include desktop {
+				width: 20%;
+			}
+
+			.icon {
+				width: 37px;
+				height: 32px;
+
+				a {
+					color: rgba(0,0,0,0);
+				}
+			}
+
+			.fb-icon {
+				background: url(../../dist/img/fb-icon.png) no-repeat center;
+				background-size: auto 100%;
+			}
+
+			.ig-icon {
+				background: url(../../dist/img/ig-icon.png) no-repeat center;
+				background-size: auto 100%;
+			}
+
+			.tw-icon {
+				background: url(../../dist/img/twitter-icon.png) no-repeat center;
+				background-size: auto 100%;
+			}
 		}
 
-		span{
-			display: block;
+		p {
+			display: none;
+
+			@include desktop {
+			display: flex;
+			flex-direction: column;
+			text-align: right;
+			}
 		}
 	}
 }

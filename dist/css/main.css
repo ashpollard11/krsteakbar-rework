@@ -75,136 +75,211 @@ table {
 }
 
 body {
-	background: #4d4d4d;
-	color: white;
-	width: 100vw;
-	overflow: hidden;
+	background: #eae6df;
+	width: 100%;
+	height: 100%;
+}
+
+body.home-body {
+	color: #9e8261;
+}
+
+.phone-number {
+	color: #eba900;
 }
 
 /* 2. Content ================================= */
 .content {
+	width: 100%;
+	height: 100vh;
 	position: relative;
 	font-family: Michroma;
-	width: 95%;
-	margin: 0 auto;
-	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.8em;
+}
+
+.content .top-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .top-section {
+		flex-direction: row;
+		align-items: unset;
+		justify-content: space-between;
+	}
+}
+
+.content .phone-number, .content .reservations {
+	font-family: "nimbus-sans";
+	font-size: 1.5em;
 }
 
 .content .phone-number {
-	font-family: "nimbus-sans";
-	font-size: 1.5em;
+	margin-bottom: 50px;
 }
 
 .content .phone-number span {
 	padding: 10px;
 }
 
-.content .middle-group {
-	padding-top: 15%;
+.content .hamburger-menu {
+	background: url(../../dist/img/hamburger.png) no-repeat center;
+	background-size: auto 100%;
+	width: 69px;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-@media only screen and (min-width: 640px) {
-	.content .middle-group {
-		padding-top: 1%;
-	}
+.content .hamburger-menu div {
+	width: 32px;
+	height: 1px;
+	background: white;
+	margin: 5px 0;
 }
 
-@media only screen and (min-width: 1440px) {
-	.content .middle-group {
-		padding-top: 15%;
-	}
-}
-
-.content .middle-group .reservations {
-	font-size: 2em;
-	padding: 50px;
-	font-family: "nimbus-sans";
-	text-align: center;
-}
-
-@media only screen and (min-width: 1440px) {
-	.content .middle-group .reservations {
-		transform: rotate(-90deg);
-		transform-origin: left;
-		position: relative;
-		left: 15px;
-		top: 214px;
-		font-size: 2em;
-		padding: 0px;
-		text-align: left;
-	}
-}
-
-.content .middle-group ul {
-	clear: both;
-	font-weight: 500;
-	font-size: 2em;
-	text-align: center;
-	margin: 0 auto;
-	line-height: 1.25em;
-}
-
-@media only screen and (min-width: 640px) {
-	.content .middle-group ul {
-		font-size: 3em;
-	}
+.content .hamburger-menu div:nth-child(2) {
+	margin-left: 10px;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group ul {
-		font-size: 5em;
+	.content .hamburger-menu {
+		display: none;
+	}
+}
+
+.content .reservations {
+	color: #9e8261;
+	display: none;
+	text-decoration: none;
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .reservations {
+		display: block;
+	}
+}
+
+.content .middle-group {
+	margin: 42px 0;
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .middle-group {
+		padding: 0 1em;
+		text-align: center;
+	}
+}
+
+.content .middle-group nav {
+	list-style: none;
+	font-weight: 500;
+	font-size: 2em;
+	line-height: 1.7;
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .middle-group nav {
+		font-size: 3em;
 		max-width: 1000px;
 	}
 }
 
-.content .middle-group ul .nav-dash {
+.content .middle-group nav .nav-dash {
 	display: none;
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group ul .nav-dash {
+	.content .middle-group nav .nav-dash {
 		display: inline;
 	}
 }
 
 @media only screen and (min-width: 1027px) {
-	.content .middle-group ul li {
+	.content .middle-group nav li {
 		display: inline;
-		margin: 0 10px 10px 0;
 	}
 }
 
-.content .middle-group ul a {
+.content .middle-group nav a {
 	text-decoration: none;
 	text-transform: lowercase;
-	color: white;
+	color: #9e8261;
 }
 
 .content .kr-footer {
-	position: relative;
-	right: auto;
+	width: 85%;
+	max-width: 550px;
 	font-family: "nimbus-sans";
 	font-size: 1.5em;
 	text-transform: lowercase;
-	float: right;
-	clear: both;
-	padding-top: 20%;
-}
-
-@media only screen and (min-width: 640px) {
-	.content .kr-footer {
-		padding-top: 8%;
-	}
 }
 
 @media only screen and (min-width: 1027px) {
 	.content .kr-footer {
-		padding-top: 5%;
+		width: 100%;
+		max-width: unset;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
 	}
 }
 
-.content .kr-footer span {
-	display: block;
+.content .kr-footer .social {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .kr-footer .social {
+		width: 20%;
+	}
+}
+
+.content .kr-footer .social .icon {
+	width: 37px;
+	height: 32px;
+}
+
+.content .kr-footer .social .icon a {
+	color: rgba(0, 0, 0, 0);
+}
+
+.content .kr-footer .social .fb-icon {
+	background: url(../../dist/img/fb-icon.png) no-repeat center;
+	background-size: auto 100%;
+}
+
+.content .kr-footer .social .ig-icon {
+	background: url(../../dist/img/ig-icon.png) no-repeat center;
+	background-size: auto 100%;
+}
+
+.content .kr-footer .social .tw-icon {
+	background: url(../../dist/img/twitter-icon.png) no-repeat center;
+	background-size: auto 100%;
+}
+
+.content .kr-footer p {
+	display: none;
+}
+
+@media only screen and (min-width: 1027px) {
+	.content .kr-footer p {
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+	}
 }
 
 /*# sourceMappingURL=main.css.map */
