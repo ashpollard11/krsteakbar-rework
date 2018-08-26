@@ -17,6 +17,7 @@ TABLE OF CONTENTS:
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Michroma|Spectral');
 @import url("https://use.typekit.net/cco7rbw.css");
+@import 'gel';
 
 $tablet-breakpoint: 640px;
 $desktop-breakpoint: 1027px;
@@ -297,3 +298,20 @@ body {
 	}
 }
 
+// navigation link styles
+
+ul li{
+	transition: opacity 0.4s ease-out;
+}
+
+ul:hover li, ul:active li {
+	opacity: 0.2;
+}
+
+ul:hover li:hover {
+    opacity: 1;
+}
+
+.active{
+	background: red;
+}

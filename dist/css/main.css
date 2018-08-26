@@ -69,6 +69,10 @@ table {
 	border-spacing: 0;
 }
 
+.active {
+	color: red;
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
@@ -290,6 +294,22 @@ body.home-body {
 		flex-direction: column;
 		text-align: right;
 	}
+}
+
+ul li {
+	transition: opacity 0.4s ease-out;
+}
+
+ul:hover li, ul:active li {
+	opacity: 0.2;
+}
+
+ul:hover li:hover {
+	opacity: 1;
+}
+
+.active {
+	background: red;
 }
 
 /*# sourceMappingURL=main.css.map */
