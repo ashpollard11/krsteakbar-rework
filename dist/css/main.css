@@ -88,6 +88,10 @@ body.home-body {
 	color: #9e8261;
 }
 
+body.dinnerBG {
+	background: #07263a;
+}
+
 .phone-number {
 	color: #eba900;
 }
@@ -229,6 +233,12 @@ body.home-body {
 	color: #9e8261;
 }
 
+.middle-group nav a.dinner-highlight {
+	color: #ffa489;
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
 .kr-footer {
 	width: 85%;
 	max-width: 550px;
@@ -306,10 +316,6 @@ ul:hover li, ul:active li {
 
 ul:hover li:hover {
 	opacity: 1;
-}
-
-.active {
-	background: red;
 }
 
 /*# sourceMappingURL=main.css.map */

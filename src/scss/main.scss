@@ -65,6 +65,10 @@ body {
 	&.home-body {
 		color: $home-copy-color;
 	}
+
+	&.dinnerBG{
+		background: #07263a;
+	}
 }
 
 .phone-number {
@@ -205,6 +209,12 @@ body {
 			text-decoration: none;
 			text-transform: lowercase;
 			color: $home-copy-color;
+
+			&.dinner-highlight{
+				color: #ffa489;
+				text-decoration: underline;
+				text-decoration-color: white;
+			}
 		}
 
 		//li {
@@ -310,8 +320,4 @@ ul:hover li, ul:active li {
 
 ul:hover li:hover {
     opacity: 1;
-}
-
-.active{
-	background: red;
 }
