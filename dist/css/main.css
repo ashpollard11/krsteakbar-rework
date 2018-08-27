@@ -96,7 +96,6 @@ body.home-body {
 	font-family: Michroma;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	padding: 1.8em;
 }
 
@@ -122,6 +121,15 @@ body.home-body {
 
 .phone-number {
 	margin-bottom: 50px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 1440px) {
+	.phone-number {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
 .phone-number span {
@@ -137,6 +145,7 @@ body.home-body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	cursor: pointer;
 }
 
 .hamburger-menu div {
@@ -154,6 +163,60 @@ body.home-body {
 	.hamburger-menu {
 		display: none;
 	}
+}
+
+nav {
+	list-style: none;
+	background-color: #eba900;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	color: #fff;
+	font-size: 1.6em;
+	display: flex;
+	flex-direction: column;
+	padding: 90px 20px;
+	display: none;
+}
+
+nav.is-active {
+	display: flex;
+}
+
+nav .close-menu {
+	background: url(../../dist/img/close-menu.png) no-repeat center;
+	background-size: auto 100%;
+	width: 66px;
+	height: 69px;
+	align-self: center;
+	margin-bottom: 44px;
+	cursor: pointer;
+}
+
+nav li {
+	margin-bottom: 1.6em;
+}
+
+nav li.more {
+	cursor: pointer;
+}
+
+nav li.more ul {
+	font-size: 0.7em;
+	border-left: 1px solid;
+	margin: 24px;
+	padding: 18px;
+	display: none;
+}
+
+nav li.more ul.is-active {
+	display: block;
+}
+
+nav li.more li {
+	margin-bottom: 1em;
 }
 
 .reservations {
@@ -185,59 +248,59 @@ body.home-body {
 @media only screen and (min-width: 640px) {
 	.middle-group {
 		padding: 0 1em;
-		text-align: center;
 	}
 }
 
-.middle-group nav {
-	list-style: none;
+.middle-group ul {
 	font-weight: 500;
-	font-size: 2em;
-	line-height: 1.7;
+	font-size: 2.1em;
+	line-height: 1.8;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav {
+	.middle-group ul {
 		font-size: 3em;
 		max-width: 1000px;
 	}
 }
 
-.middle-group nav .nav-dash {
+.middle-group ul .nav-dash {
 	display: none;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav .nav-dash {
+	.middle-group ul .nav-dash {
 		display: inline;
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav li {
+	.middle-group ul li {
 		display: inline;
 	}
 }
 
-.middle-group nav a {
+.middle-group ul a {
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #9e8261;
 }
 
 .kr-footer {
-	width: 85%;
+	width: 100%;
 	max-width: 550px;
 	font-family: "nimbus-sans";
 	font-size: 1.5em;
 	text-transform: lowercase;
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
 }
 
 @media only screen and (min-width: 640px) {
 	.kr-footer {
 		width: 100%;
 		max-width: unset;
-		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-top: auto;
@@ -247,7 +310,7 @@ body.home-body {
 .kr-footer .social {
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
+	width: 85%;
 }
 
 @media only screen and (min-width: 640px) {

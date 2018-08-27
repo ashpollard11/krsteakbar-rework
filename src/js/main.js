@@ -1,6 +1,22 @@
-console.log(`Hello World from app.js! 
-Change this message, and make sure it changes in the browser 
-to verify that you're working in the right files.`)
+
 
 // let navItems = document.querySelectorAll(`.navItems`)
 // console.log(navItems)
+
+let nav =  document.querySelector("nav");
+let menuOpen = document.querySelector(".hamburger-menu");
+let menuClose = document.querySelector(".close-menu");
+let moreKevin = document.querySelector(".more");
+let moreKevinUl = document.querySelector(".more ul");
+
+menuOpen.addEventListener('click', function(e) {
+	nav.classList.add('is-active');
+})
+
+menuClose.addEventListener('click', function(e) {
+	nav.classList.remove('is-active');
+})
+
+moreKevin.addEventListener('click', function(e) {
+	moreKevinUl.classList.toggle('is-active');
+})
