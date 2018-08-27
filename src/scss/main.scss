@@ -218,6 +218,10 @@ body {
 			text-transform: lowercase;
 			color: $home-copy-color;
 
+			&.dinner-highlight-others{
+				color: #030e14;
+			}
+
 			&.dinner-highlight{
 				color: #ffa489;
 				text-decoration: underline;
@@ -257,6 +261,10 @@ body {
 	font-family: $url-font;
 	font-size: 1.5em;
 	text-transform: lowercase;
+
+	&.dinnerBodyCopy{
+		color: #83a0b0;
+	}
 
 	// @include tablet {
 	// 	padding-top: 8%;
@@ -324,12 +332,8 @@ ul li{
 
 ul:hover li, ul:active li {
 	opacity: 0.2;
-
-	// &.dinner{
-	// 	color: #030e14;
-	// }
 }
 
-ul:hover li:hover {
+ul:hover li:hover, li:active {
     opacity: 1;
 }

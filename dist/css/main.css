@@ -241,6 +241,10 @@ body.dinnerBG {
 	color: #9e8261;
 }
 
+.middle-group nav a.dinner-highlight-others {
+	color: #030e14;
+}
+
 .middle-group nav a.dinner-highlight {
 	color: #ffa489;
 	text-decoration: underline;
@@ -253,6 +257,10 @@ body.dinnerBG {
 	font-family: "nimbus-sans";
 	font-size: 1.5em;
 	text-transform: lowercase;
+}
+
+.kr-footer.dinnerBodyCopy {
+	color: #83a0b0;
 }
 
 @media only screen and (min-width: 640px) {
@@ -322,7 +330,7 @@ ul:hover li, ul:active li {
 	opacity: 0.2;
 }
 
-ul:hover li:hover {
+ul:hover li:hover, li:active {
 	opacity: 1;
 }
 
