@@ -96,6 +96,10 @@ body.dinnerBG {
 	color: #eba900;
 }
 
+.phone-number.dinnerBodyCopy {
+	color: #83a0b0;
+}
+
 /* 2. Content ================================= */
 .content {
 	width: 100%;
@@ -126,6 +130,10 @@ body.dinnerBG {
 .phone-number, .reservations {
 	font-family: "nimbus-sans";
 	font-size: 1.5em;
+}
+
+.phone-number.dinnerBodyCopy, .reservations.dinnerBodyCopy {
+	color: #83a0b0;
 }
 
 .phone-number {

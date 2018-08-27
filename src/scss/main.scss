@@ -73,6 +73,10 @@ body {
 
 .phone-number {
 	color: $home-accent-color;
+
+	&.dinnerBodyCopy{
+		color: #83a0b0;
+	}
 }
 
 
@@ -105,6 +109,10 @@ body {
 .phone-number, .reservations {
 	font-family: $url-font;
 	font-size: 1.5em;
+
+	&.dinnerBodyCopy{
+		color: #83a0b0;
+	}
 }
 
 .phone-number {
@@ -316,6 +324,10 @@ ul li{
 
 ul:hover li, ul:active li {
 	opacity: 0.2;
+
+	// &.dinner{
+	// 	color: #030e14;
+	// }
 }
 
 ul:hover li:hover {
