@@ -345,3 +345,37 @@ ul:hover li, ul:active li {
 ul:hover li:hover, li:active {
     opacity: 1;
 }
+
+// panel
+
+// .description{
+//     font-size: 20px;
+// 	font-family: spectral;
+// 	color: #83a0b0;
+// }
+
+.panel{
+	font-size: 20px;
+	font-family: spectral;
+	color: #83a0b0;
+	overflow: hidden;
+	max-height: 0px;
+	padding: 0px;
+	transition-property: max-height, padding;
+	transition-duration: 0.3s, 0s;
+	transition-delay: 0s;
+	display: none;
+
+	&.open{
+		max-height: 1000px;
+		padding: 20px;
+		display: block;
+	}
+	
+	&.close{
+		max-height: 0px;
+		padding: 0px;
+		transition-delay: 0s, 0.3s;
+		display: none;
+	}
+}
