@@ -178,6 +178,10 @@ body.dinnerBG {
 	text-decoration: none;
 }
 
+.reservations.dinner-highlight {
+	color: #ffa489;
+}
+
 @media only screen and (min-width: 640px) {
 	.reservations {
 		display: block;
@@ -242,7 +246,13 @@ body.dinnerBG {
 }
 
 .middle-group nav a.dinner-highlight-others {
-	color: #030e14;
+	color: #83a0b0;
+}
+
+@media only screen and (min-width: 640px) {
+	.middle-group nav a.dinner-highlight-others {
+		color: #030e14;
+	}
 }
 
 .middle-group nav a.dinner-highlight {

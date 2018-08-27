@@ -154,6 +154,10 @@ body {
 	display: none;
 	text-decoration: none;
 
+	&.dinner-highlight{
+		color: #ffa489;
+	}
+
 	@include tablet {
 		display: block;
 	}
@@ -219,7 +223,11 @@ body {
 			color: $home-copy-color;
 
 			&.dinner-highlight-others{
-				color: #030e14;
+				color: #83a0b0;
+
+				@include tablet{
+					color: #030e14;
+				}
 			}
 
 			&.dinner-highlight{
