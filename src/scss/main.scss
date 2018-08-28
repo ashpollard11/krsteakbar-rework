@@ -116,11 +116,11 @@ body {
 	font-family: $url-font;
 	font-size: 1.5em;
 
-	&.dinnerBodyCopy{
+	.dinnerBG & {
 		color: #83a0b0;
 	}
 
-	&.bureauBodyCopy{
+	.bureauBG & {
 		color: #f79549;
 	}
 }
@@ -229,39 +229,49 @@ body {
 			@include tablet {
 				display: inline;
 			}
-		}
 
-		a {
-			text-decoration: none;
-			text-transform: lowercase;
-			color: $home-copy-color;
-
-			&.dinner-highlight-others{
-				color: #83a0b0;
-
-				@include tablet{
-					color: #030e14;
+			.dinnerBG &{
+				&:nth-child(1) {
+					a {
+						color: #f79549;
+						
+					}
 				}
 			}
+			
 
-			&.bureau-highlight-others{
-				color: #f79549;
+			a {
+				text-decoration: none;
+				text-transform: lowercase;
+				color: $home-copy-color;
 
-				@include tablet{
-					color: #030e14;
+				.dinnerBG &{
+					color: #83a0b0;
+
+					@include tablet{
+						color: #030e14;
+					}
 				}
-			}
 
-			&.dinner-highlight{
-				color: #ffa489;
-				text-decoration: underline;
-				text-decoration-color: white;
-			}
+				&.bureau-highlight-others{
+					color: #f79549;
 
-			&.bureau-highlight{
-				color: #8cc6c6;
-				text-decoration: underline;
-				text-decoration-color: white;
+					@include tablet{
+						color: #030e14;
+					}
+				}
+
+				&.dinner-highlight{
+					color: #ffa489;
+					text-decoration: underline;
+					text-decoration-color: white;
+				}
+
+				&.bureau-highlight{
+					color: #8cc6c6;
+					text-decoration: underline;
+					text-decoration-color: white;
+				}
 			}
 		}
 
@@ -392,17 +402,16 @@ ul:hover li:hover, li:active {
 	transition-delay: 0s;
 	display: none;
 
+	
+	max-height: 0px;
+	padding: 0px;
+	transition-delay: 0s, 0.3s;
+
 	&.open{
 		max-height: 1000px;
 		display: block;
 	}
-	
-	&.close{
-		max-height: 0px;
-		padding: 0px;
-		transition-delay: 0s, 0.3s;
-		display: none;
-	}
+
 
 	.panel-img{
 		width: 100%;

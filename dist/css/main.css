@@ -139,11 +139,11 @@ body.bureauBG {
 	font-size: 1.5em;
 }
 
-.phone-number.dinnerBodyCopy, .reservations.dinnerBodyCopy {
+.dinnerBG .phone-number, .dinnerBG .reservations {
 	color: #83a0b0;
 }
 
-.phone-number.bureauBodyCopy, .reservations.bureauBodyCopy {
+.bureauBG .phone-number, .bureauBG .reservations {
 	color: #f79549;
 }
 
@@ -256,39 +256,43 @@ body.bureauBG {
 	}
 }
 
-.middle-group nav a {
+.dinnerBG .middle-group nav li:nth-child(1) a {
+	color: #f79549;
+}
+
+.middle-group nav li a {
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #9e8261;
 }
 
-.middle-group nav a.dinner-highlight-others {
+.dinnerBG .middle-group nav li a {
 	color: #83a0b0;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav a.dinner-highlight-others {
+	.dinnerBG .middle-group nav li a {
 		color: #030e14;
 	}
 }
 
-.middle-group nav a.bureau-highlight-others {
+.middle-group nav li a.bureau-highlight-others {
 	color: #f79549;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav a.bureau-highlight-others {
+	.middle-group nav li a.bureau-highlight-others {
 		color: #030e14;
 	}
 }
 
-.middle-group nav a.dinner-highlight {
+.middle-group nav li a.dinner-highlight {
 	color: #ffa489;
 	text-decoration: underline;
 	text-decoration-color: white;
 }
 
-.middle-group nav a.bureau-highlight {
+.middle-group nav li a.bureau-highlight {
 	color: #8cc6c6;
 	text-decoration: underline;
 	text-decoration-color: white;
@@ -392,18 +396,14 @@ ul:hover li:hover, li:active {
 	transition-duration: 0.3s, 0s;
 	transition-delay: 0s;
 	display: none;
+	max-height: 0px;
+	padding: 0px;
+	transition-delay: 0s, 0.3s;
 }
 
 .panel.open {
 	max-height: 1000px;
 	display: block;
-}
-
-.panel.close {
-	max-height: 0px;
-	padding: 0px;
-	transition-delay: 0s, 0.3s;
-	display: none;
 }
 
 .panel .panel-img {
