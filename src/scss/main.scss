@@ -17,6 +17,7 @@ TABLE OF CONTENTS:
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Michroma|Spectral');
 @import url("https://use.typekit.net/cco7rbw.css");
+@import 'gel';
 
 $tablet-breakpoint: 640px;
 $desktop-breakpoint: 1027px;
@@ -64,10 +65,18 @@ body {
 	&.home-body {
 		color: $home-copy-color;
 	}
+
+	&.dinnerBG{
+		background: #07263a;
+	}
 }
 
 .phone-number {
 	color: $home-accent-color;
+
+	&.dinnerBodyCopy{
+		color: #83a0b0;
+	}
 }
 
 
@@ -89,6 +98,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: absolute;
 
 	@include tablet {
 		flex-direction: row;
@@ -100,6 +110,10 @@ body {
 .phone-number, .reservations {
 	font-family: $url-font;
 	font-size: 1.5em;
+
+	&.dinnerBodyCopy{
+		color: #83a0b0;
+	}
 }
 
 .phone-number {
@@ -119,6 +133,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+
 
 	div {
 		width: 32px;
@@ -141,6 +156,10 @@ body {
 	display: none;
 	text-decoration: none;
 
+	&.dinner-highlight{
+		color: #ffa489;
+	}
+
 	@include tablet {
 		display: block;
 	}
@@ -155,11 +174,12 @@ body {
 }
 
 .middle-group {
-	margin: 42px 0;
+	margin: 48% 10% 53%;
+	display: block;
 
-	// @include tablet {
-	// 	padding-top: 1%;
-	// }
+	@include tablet {
+		padding-top: 1%;
+	}
 
 	@include tablet {
 		padding: 0 1em;
@@ -204,6 +224,20 @@ body {
 			text-decoration: none;
 			text-transform: lowercase;
 			color: $home-copy-color;
+
+			&.dinner-highlight-others{
+				color: #83a0b0;
+
+				@include tablet{
+					color: #030e14;
+				}
+			}
+
+			&.dinner-highlight{
+				color: #ffa489;
+				text-decoration: underline;
+				text-decoration-color: white;
+			}
 		}
 
 		//li {
@@ -238,6 +272,10 @@ body {
 	font-family: $url-font;
 	font-size: 1.5em;
 	text-transform: lowercase;
+
+	&.dinnerBodyCopy{
+		color: #83a0b0;
+	}
 
 	// @include tablet {
 	// 	padding-top: 8%;
@@ -297,3 +335,50 @@ body {
 	}
 }
 
+// navigation link styles
+
+ul li{
+	transition: opacity 0.4s ease-out;
+}
+
+ul:hover li, ul:active li {
+	opacity: 0.2;
+}
+
+ul:hover li:hover, li:active {
+    opacity: 1;
+}
+
+// panel
+
+// .description{
+//     font-size: 20px;
+// 	font-family: spectral;
+// 	color: #83a0b0;
+// }
+
+.panel{
+	font-size: 20px;
+	font-family: spectral;
+	color: #83a0b0;
+	overflow: hidden;
+	max-height: 0px;
+	padding: 0px;
+	transition-property: max-height, padding;
+	transition-duration: 0.3s, 0s;
+	transition-delay: 0s;
+	display: none;
+
+	&.open{
+		max-height: 1000px;
+		padding: 20px;
+		display: block;
+	}
+	
+	&.close{
+		max-height: 0px;
+		padding: 0px;
+		transition-delay: 0s, 0.3s;
+		display: none;
+	}
+}
