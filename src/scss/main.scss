@@ -101,6 +101,7 @@ body {
 	position: absolute;
 
 	@include tablet {
+		width: 95%;
 		flex-direction: row;
 		align-items: unset;
 		justify-content: space-between;
@@ -176,14 +177,12 @@ body {
 .middle-group {
 	margin: 48% 10% 53%;
 	display: block;
+	width: 85%;
 
 	@include tablet {
-		padding-top: 1%;
-	}
-
-	@include tablet {
+		margin: 15%;
 		padding: 0 1em;
-		text-align: center;
+		// text-align: center;
 	}
 
 	// @include bigger-desktop {
@@ -345,21 +344,15 @@ ul:hover li, ul:active li {
 	opacity: 0.2;
 }
 
-ul:hover li:hover, li:active {
+ul:hover li:hover,ul:active li:active {
     opacity: 1;
 }
 
-// panel
-
-// .description{
-//     font-size: 20px;
-// 	font-family: spectral;
-// 	color: #83a0b0;
-// }
+// PANEL STUFF
 
 .panel{
 	font-size: 20px;
-	font-family: spectral;
+	font-family: "spectral";
 	color: #83a0b0;
 	overflow: hidden;
 	max-height: 0px;
@@ -371,7 +364,6 @@ ul:hover li:hover, li:active {
 
 	&.open{
 		max-height: 1000px;
-		padding: 20px;
 		display: block;
 	}
 	
@@ -381,4 +373,27 @@ ul:hover li:hover, li:active {
 		transition-delay: 0s, 0.3s;
 		display: none;
 	}
+
+	.panel-img{
+		width: 100%;
+		height: 355px;
+		margin: 20px 0px;
+
+		@include tablet{
+			height: 755px;
+		}
+	}
+
+	.description-link{
+		display: block;
+		text-align: center;
+		font-family: $url-font;
+		font-size: 24px;
+		margin: 50px;
+
+		.desc-link-a {
+			color: #ffa489;
+		}
+	}
 }
+
