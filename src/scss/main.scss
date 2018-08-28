@@ -69,6 +69,10 @@ body {
 	&.dinnerBG{
 		background: #07263a;
 	}
+
+	&.bureauBG{
+		background: #a03712;
+	}
 }
 
 .phone-number {
@@ -115,6 +119,10 @@ body {
 	&.dinnerBodyCopy{
 		color: #83a0b0;
 	}
+
+	&.bureauBodyCopy{
+		color: #f79549;
+	}
 }
 
 .phone-number {
@@ -159,6 +167,10 @@ body {
 
 	&.dinner-highlight{
 		color: #ffa489;
+	}
+
+	&.bureau-highlight{
+		color: #f79549;
 	}
 
 	@include tablet {
@@ -232,8 +244,22 @@ body {
 				}
 			}
 
+			&.bureau-highlight-others{
+				color: #f79549;
+
+				@include tablet{
+					color: #030e14;
+				}
+			}
+
 			&.dinner-highlight{
 				color: #ffa489;
+				text-decoration: underline;
+				text-decoration-color: white;
+			}
+
+			&.bureau-highlight{
+				color: #8cc6c6;
 				text-decoration: underline;
 				text-decoration-color: white;
 			}
@@ -274,6 +300,10 @@ body {
 
 	&.dinnerBodyCopy{
 		color: #83a0b0;
+	}
+
+	&.bureauBodyCopy{
+		color: #f79549;
 	}
 
 	// @include tablet {
@@ -344,7 +374,7 @@ ul:hover li, ul:active li {
 	opacity: 0.2;
 }
 
-ul:hover li:hover,ul:active li:active {
+ul:hover li:hover, li:active {
     opacity: 1;
 }
 
@@ -389,10 +419,15 @@ ul:hover li:hover,ul:active li:active {
 		text-align: center;
 		font-family: $url-font;
 		font-size: 24px;
-		margin: 50px;
+		margin: 50px 0px;
 
-		.desc-link-a {
+		.dinner-a {
 			color: #ffa489;
+		}
+
+		.bureau-a{
+			font-size: 20px;
+			color: #8cc6c6;
 		}
 	}
 }

@@ -93,6 +93,10 @@ body.dinnerBG {
 	background: #07263a;
 }
 
+body.bureauBG {
+	background: #a03712;
+}
+
 .phone-number {
 	color: #eba900;
 }
@@ -139,6 +143,10 @@ body.dinnerBG {
 	color: #83a0b0;
 }
 
+.phone-number.bureauBodyCopy, .reservations.bureauBodyCopy {
+	color: #f79549;
+}
+
 .phone-number {
 	margin-bottom: 50px;
 }
@@ -183,6 +191,10 @@ body.dinnerBG {
 
 .reservations.dinner-highlight {
 	color: #ffa489;
+}
+
+.reservations.bureau-highlight {
+	color: #f79549;
 }
 
 @media only screen and (min-width: 640px) {
@@ -260,8 +272,24 @@ body.dinnerBG {
 	}
 }
 
+.middle-group nav a.bureau-highlight-others {
+	color: #f79549;
+}
+
+@media only screen and (min-width: 640px) {
+	.middle-group nav a.bureau-highlight-others {
+		color: #030e14;
+	}
+}
+
 .middle-group nav a.dinner-highlight {
 	color: #ffa489;
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
+.middle-group nav a.bureau-highlight {
+	color: #8cc6c6;
 	text-decoration: underline;
 	text-decoration-color: white;
 }
@@ -276,6 +304,10 @@ body.dinnerBG {
 
 .kr-footer.dinnerBodyCopy {
 	color: #83a0b0;
+}
+
+.kr-footer.bureauBodyCopy {
+	color: #f79549;
 }
 
 @media only screen and (min-width: 640px) {
@@ -345,7 +377,7 @@ ul:hover li, ul:active li {
 	opacity: 0.2;
 }
 
-ul:hover li:hover, ul:active li:active {
+ul:hover li:hover, li:active {
 	opacity: 1;
 }
 
@@ -391,11 +423,16 @@ ul:hover li:hover, ul:active li:active {
 	text-align: center;
 	font-family: "nimbus-sans";
 	font-size: 24px;
-	margin: 50px;
+	margin: 50px 0px;
 }
 
-.panel .description-link .desc-link-a {
+.panel .description-link .dinner-a {
 	color: #ffa489;
+}
+
+.panel .description-link .bureau-a {
+	font-size: 20px;
+	color: #8cc6c6;
 }
 
 /*# sourceMappingURL=main.css.map */
