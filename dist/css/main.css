@@ -373,7 +373,7 @@ ul:hover li:hover, li:active {
 	opacity: 1;
 }
 
-.panel {
+.dinner-mobile {
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
@@ -389,25 +389,31 @@ ul:hover li:hover, li:active {
 	transition-delay: 0s, 0.3s;
 }
 
-.panel.open {
+.dinner-mobile.open {
 	max-height: 1000px;
 	display: block;
 	overflow: auto;
 }
 
-.panel .panel-img {
+@media only screen and (min-width: 640px) {
+	.dinner-mobile.open {
+		display: none;
+	}
+}
+
+.dinner-mobile .panel-img {
 	width: 100%;
 	height: 355px;
 	margin: 20px 0px;
 }
 
 @media only screen and (min-width: 640px) {
-	.panel .panel-img {
+	.dinner-mobile .panel-img {
 		height: 755px;
 	}
 }
 
-.panel .description-link {
+.dinner-mobile .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
@@ -415,13 +421,26 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.panel .description-link .dinner-a {
+.dinner-mobile .description-link .dinner-a {
 	color: #ffa489;
 }
 
-.panel .description-link .bureau-a {
+.dinner-mobile .description-link .bureau-a {
 	font-size: 20px;
 	color: #8cc6c6;
+}
+
+#dinnerDescription {
+	font-size: 20px;
+	font-family: "spectral";
+	color: #83a0b0;
+	display: none;
+}
+
+@media only screen and (min-width: 640px) {
+	#dinnerDescription.open {
+		display: block;
+	}
 }
 
 /*# sourceMappingURL=main.css.map */

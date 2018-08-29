@@ -1,60 +1,71 @@
-const media = window.matchMedia("(max-width: 640px)");
+// window.addEventListener('resize', function(){
+const mql = window.matchMedia("(max-width: 640px)");
 
 const content = document.querySelector('.content');
 const dinner = document.querySelector('.dinner');
-const dinnerDescription = document.querySelector('#dinnerDescription');
+// const dinnerDescription = document.querySelector('#dinnerDescription');
+const dinnerDescription = document.querySelector('.dinnerDescription');
+const dinnerPreview = document.querySelector('.panel');
 const dinnerDash = document.querySelector('.nav-dash.dinner');
-// var moveMe = document.getElementById('moveMe');
+const dinnerH2 = document.querySelector('.dinnerH2') ;
 // var item3 = document.getElementById('item3');
 // var item4 = document.getElementById('item4');
 
-let mobileSize = {
+let small = {
     setup: function() {
-        dinner.addEventListener('click', mobileSize.onClick);
+        console.log("small setup")
+        dinnerH2.addEventListener('click', small.onClick);
     },
     teardown: function() {
-        dinner.removeEventListener('click', mobileSize.onClick);
+        console.log("small teardown")
+        dinnerH2.removeEventListener('click', small.onClick);
     },
     onClick: function() { 
-        if (dinnerDescription.classList.contains("close")){
-            dinnerDescription.classList.toggle("open");
-        } 
-        // else {
-        //     dinnerDescription.classList.add("close");
-        //     dinnerDescription.classList.remove("open");
-        // }
+        if (dinnerPreview.classList.contains("close")){
+            dinnerPreview.classList.add("open");
+            dinnerPreview.classList.remove("close");
+        } else {
+            dinnerPreview.classList.add("close");
+            dinnerPreview.classList.remove("open");
+        }
+
+        dinnerDescription.classList.remove(`open`)
     }
 }
-
-let notMobileSize = {
+    
+let large = {
     setup: function() {
-        dinner.addEventListener('click', notMobileSize.onClick)
+        console.log("large setup")
+        dinnerH2.addEventListener('click', large.onClick)
     },
     teardown: function() {
-        dinner.removeEventListener('click', notMobileSize.onClick)
+        console.log("large teardown")
+        dinnerH2.removeEventListener('click', large.onClick)
     },
-    onClick: function() { 
+    onClick: function() {
+        console.log(`not appending large`)
         dinnerDescription.classList.add(`open`)
-        console.log(`im on the wrong thing`)
+        dinnerH2.appendChild(dinnerDescription)
     }
 };
 
-// checkMedia(mql);
-// mql.addListener(checkMedia);
 
-media.addListener(function(data) {
+mql.addListener(function(data) {
     if (data.matches) {
-        console.log(data)
-        mobileSize.teardown();
-        notMobileSize.setup();
+        console.log("mql changed to small")
+        large.teardown()
+        small.setup()
     } else {
-        notMobileSize.teardown();
-        mobileSize.setup();
+        console.log("mql changed to large")
+        small.teardown()
+        large.setup()
     }
-});
+})
 
-if (media.matches) {
-    notMobileSize.setup();
-    } else {
-    mobileSize.setup();
-}
+if (mql.matches) {
+    small.setup()
+
+} else {
+    large.setup()
+}   
+// });
