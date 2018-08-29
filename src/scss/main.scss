@@ -66,7 +66,7 @@ body {
 		color: $home-copy-color;
 	}
 
-	&.dinnerBG{
+	&.food{
 		background: #07263a;
 	}
 
@@ -112,7 +112,7 @@ body {
 	font-family: $url-font;
 	font-size: 1.5em;
 
-	.dinnerBG & {
+	.food & {
 		color: #83a0b0;
 	}
 
@@ -218,10 +218,12 @@ body {
 				display: inline;
 			}
 
-			.dinnerBG & {
+			.food & {
 				&:nth-child(1) {
 					a {
-						color: #f79549;
+						color: #ffa489;
+						text-decoration: underline;
+						text-decoration-color: white;
 					}
 				}
 			}
@@ -232,7 +234,7 @@ body {
 				text-transform: lowercase;
 				color: $home-copy-color;
 
-				.dinnerBG &{
+				.food &{
 					color: #83a0b0;
 
 					@include tablet{
@@ -248,7 +250,7 @@ body {
 					}
 				}
 
-				&.dinner-highlight{
+				&.food-highlight{
 					color: #ffa489;
 					text-decoration: underline;
 					text-decoration-color: white;
@@ -295,7 +297,7 @@ body {
 	font-size: 1.5em;
 	text-transform: lowercase;
 
-	&.dinnerBodyCopy{
+	.food & {
 		color: #83a0b0;
 	}
 
@@ -377,7 +379,7 @@ ul:hover li:hover, li:active {
 
 // PANEL STUFF
 
-.dinner-mobile{
+.food-mobile{
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
@@ -421,7 +423,7 @@ ul:hover li:hover, li:active {
 		font-size: 24px;
 		margin: 50px 0px;
 
-		.dinner-a {
+		.food-a {
 			color: #ffa489;
 		}
 
@@ -432,16 +434,34 @@ ul:hover li:hover, li:active {
 	}
 }
 
-.dinnerDescription{
+.foodDescription{
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
 	display: none;
+	text-decoration: none;
 
 	@include tablet{
 		
 		&.open{
 			display: block;
+		}
+	}
+
+	.description-link{
+		display: block;
+		text-align: center;
+		font-family: $url-font;
+		font-size: 24px;
+		margin: 50px 0px;
+
+		.food-a {
+			color: #ffa489;
+		}
+
+		.bureau-a{
+			font-size: 20px;
+			color: #8cc6c6;
 		}
 	}
 }

@@ -89,7 +89,7 @@ body.home-body {
 	color: #9e8261;
 }
 
-body.dinnerBG {
+body.food {
 	background: #07263a;
 }
 
@@ -135,7 +135,7 @@ body.bureauBG {
 	font-size: 1.5em;
 }
 
-.dinnerBG .phone-number, .dinnerBG .reservations {
+.food .phone-number, .food .reservations {
 	color: #83a0b0;
 }
 
@@ -244,8 +244,10 @@ body.bureauBG {
 	}
 }
 
-.dinnerBG .middle-group nav li:nth-child(1) a {
-	color: #f79549;
+.food .middle-group nav li:nth-child(1) a {
+	color: #ffa489;
+	text-decoration: underline;
+	text-decoration-color: white;
 }
 
 .middle-group nav li a {
@@ -254,12 +256,12 @@ body.bureauBG {
 	color: #9e8261;
 }
 
-.dinnerBG .middle-group nav li a {
+.food .middle-group nav li a {
 	color: #83a0b0;
 }
 
 @media only screen and (min-width: 640px) {
-	.dinnerBG .middle-group nav li a {
+	.food .middle-group nav li a {
 		color: #030e14;
 	}
 }
@@ -274,7 +276,7 @@ body.bureauBG {
 	}
 }
 
-.middle-group nav li a.dinner-highlight {
+.middle-group nav li a.food-highlight {
 	color: #ffa489;
 	text-decoration: underline;
 	text-decoration-color: white;
@@ -294,7 +296,7 @@ body.bureauBG {
 	text-transform: lowercase;
 }
 
-.kr-footer.dinnerBodyCopy {
+.food .kr-footer {
 	color: #83a0b0;
 }
 
@@ -373,7 +375,7 @@ ul:hover li:hover, li:active {
 	opacity: 1;
 }
 
-.dinner-mobile {
+.food-mobile {
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
@@ -389,31 +391,31 @@ ul:hover li:hover, li:active {
 	transition-delay: 0s, 0.3s;
 }
 
-.dinner-mobile.open {
+.food-mobile.open {
 	max-height: 1000px;
 	display: block;
 	overflow: auto;
 }
 
 @media only screen and (min-width: 640px) {
-	.dinner-mobile.open {
+	.food-mobile.open {
 		display: none;
 	}
 }
 
-.dinner-mobile .panel-img {
+.food-mobile .panel-img {
 	width: 100%;
 	height: 355px;
 	margin: 20px 0px;
 }
 
 @media only screen and (min-width: 640px) {
-	.dinner-mobile .panel-img {
+	.food-mobile .panel-img {
 		height: 755px;
 	}
 }
 
-.dinner-mobile .description-link {
+.food-mobile .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
@@ -421,26 +423,44 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.dinner-mobile .description-link .dinner-a {
+.food-mobile .description-link .food-a {
 	color: #ffa489;
 }
 
-.dinner-mobile .description-link .bureau-a {
+.food-mobile .description-link .bureau-a {
 	font-size: 20px;
 	color: #8cc6c6;
 }
 
-.dinnerDescription {
+.foodDescription {
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
 	display: none;
+	text-decoration: none;
 }
 
 @media only screen and (min-width: 640px) {
-	.dinnerDescription.open {
+	.foodDescription.open {
 		display: block;
 	}
+}
+
+.foodDescription .description-link {
+	display: block;
+	text-align: center;
+	font-family: "nimbus-sans";
+	font-size: 24px;
+	margin: 50px 0px;
+}
+
+.foodDescription .description-link .food-a {
+	color: #ffa489;
+}
+
+.foodDescription .description-link .bureau-a {
+	font-size: 20px;
+	color: #8cc6c6;
 }
 
 /*# sourceMappingURL=main.css.map */
