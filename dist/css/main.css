@@ -392,6 +392,7 @@ ul:hover li:hover, li:active {
 .panel.open {
 	max-height: 1000px;
 	display: block;
+	overflow: auto;
 }
 
 .panel .panel-img {

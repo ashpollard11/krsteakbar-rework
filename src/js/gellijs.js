@@ -2,7 +2,7 @@ const media = window.matchMedia("(max-width: 640px)");
 
 const content = document.querySelector('.content');
 const dinner = document.querySelector('.dinner');
-const panel = document.querySelector('.panel');
+const dinnerDescription = document.querySelector('#dinnerDescription');
 // var moveMe = document.getElementById('moveMe');
 // var item3 = document.getElementById('item3');
 // var item4 = document.getElementById('item4');
@@ -15,7 +15,13 @@ let mobileSize = {
         dinner.removeEventListener('click', mobileSize.onClick);
     },
     onClick: function() { 
-        panel.classList.add(`open`)
+        if (dinnerDescription.classList.contains("close")){
+            dinnerDescription.classList.add("open");
+            dinnerDescription.classList.remove("close");
+        } else {
+            dinnerDescription.classList.add("close");
+            dinnerDescription.classList.remove("open");
+        }
     }
 }
 
@@ -27,7 +33,8 @@ let notMobileSize = {
         document.removeEventListener('click', notMobileSize.onClick);
     },
     onClick: function() { 
-        alert('Hi I\'m large');
+        dinnerDescription.classList.add(`.open`)
+        dinner.appendChild(dinnerDescription)
     }
 };
 

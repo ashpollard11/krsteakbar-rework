@@ -396,6 +396,7 @@ ul:hover li:hover, li:active {
 	&.open{
 		max-height: 1000px;
 		display: block;
+		overflow: auto;
 	}
 
 
