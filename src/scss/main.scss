@@ -432,13 +432,14 @@ ul:hover li:hover, li:active {
 	}
 }
 
-#dinnerDescription{
+.dinnerDescription{
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
 	display: none;
 
 	@include tablet{
+		
 		&.open{
 			display: block;
 		}

@@ -430,7 +430,7 @@ ul:hover li:hover, li:active {
 	color: #8cc6c6;
 }
 
-#dinnerDescription {
+.dinnerDescription {
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
@@ -438,7 +438,7 @@ ul:hover li:hover, li:active {
 }
 
 @media only screen and (min-width: 640px) {
-	#dinnerDescription.open {
+	.dinnerDescription.open {
 		display: block;
 	}
 }

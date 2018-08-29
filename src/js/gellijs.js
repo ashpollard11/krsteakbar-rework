@@ -44,8 +44,15 @@ let large = {
     },
     onClick: function() {
         console.log(`not appending large`)
-        dinnerDescription.classList.add(`open`)
         dinnerH2.appendChild(dinnerDescription)
+
+        if (dinnerDescription.classList.contains("close")){
+            dinnerDescription.classList.add("open");
+            dinnerDescription.classList.remove("close");
+        } else {
+            dinnerDescription.classList.add("close");
+            dinnerDescription.classList.remove("open");
+        }
     }
 };
 
