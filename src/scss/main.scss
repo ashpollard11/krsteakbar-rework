@@ -77,10 +77,6 @@ body {
 
 .phone-number {
 	color: $home-accent-color;
-
-	&.dinnerBodyCopy{
-		color: #83a0b0;
-	}
 }
 
 
@@ -165,14 +161,6 @@ body {
 	display: none;
 	text-decoration: none;
 
-	&.dinner-highlight{
-		color: #ffa489;
-	}
-
-	&.bureau-highlight{
-		color: #f79549;
-	}
-
 	@include tablet {
 		display: block;
 	}
@@ -230,11 +218,10 @@ body {
 				display: inline;
 			}
 
-			.dinnerBG &{
+			.dinnerBG & {
 				&:nth-child(1) {
 					a {
 						color: #f79549;
-						
 					}
 				}
 			}
@@ -402,7 +389,6 @@ ul:hover li:hover, li:active {
 	transition-delay: 0s;
 	display: none;
 
-	
 	max-height: 0px;
 	padding: 0px;
 	transition-delay: 0s, 0.3s;

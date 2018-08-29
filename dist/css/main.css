@@ -101,10 +101,6 @@ body.bureauBG {
 	color: #eba900;
 }
 
-.phone-number.dinnerBodyCopy {
-	color: #83a0b0;
-}
-
 /* 2. Content ================================= */
 .content {
 	width: 100%;
@@ -187,14 +183,6 @@ body.bureauBG {
 	color: #9e8261;
 	display: none;
 	text-decoration: none;
-}
-
-.reservations.dinner-highlight {
-	color: #ffa489;
-}
-
-.reservations.bureau-highlight {
-	color: #f79549;
 }
 
 @media only screen and (min-width: 640px) {
