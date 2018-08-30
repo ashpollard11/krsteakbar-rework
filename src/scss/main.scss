@@ -368,11 +368,20 @@ ul:hover li:hover, li:active {
 
 // PANEL STUFF
 
-@each $name in 'food' 'bureau' 'bar' 'table' 'location' 'hours'{
-    .#{$name}Description {
+$navItems: (
+	'food': #83a0b0,
+	'bureau': #83a0b0,
+	'bar': #83a0b0,
+	'table': #83a0b0,
+	'location': #83a0b0,
+	'hours': #83a0b0,
+);
+
+@each $navItem, $color in $navItems{
+    .#{$navItem}Description{
 		font-size: 20px;
 		font-family: "spectral";
-		color: #83a0b0;
+		color: $color;
 		overflow: hidden;
 		max-height: 0px;
 		padding: 0px;
