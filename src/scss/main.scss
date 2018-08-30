@@ -368,53 +368,55 @@ ul:hover li:hover, li:active {
 
 // PANEL STUFF
 
-.foodDescription{
-	font-size: 20px;
-	font-family: "spectral";
-	color: #83a0b0;
-	overflow: hidden;
-	max-height: 0px;
-	padding: 0px;
-	transition-property: max-height, padding;
-	transition-duration: 0.3s, 0s;
-	transition-delay: 0s;
-	display: none;
+@each $name in 'food' 'bureau' 'bar' 'table' 'location' 'hours'{
+    .#{$name}Description {
+		font-size: 20px;
+		font-family: "spectral";
+		color: #83a0b0;
+		overflow: hidden;
+		max-height: 0px;
+		padding: 0px;
+		transition-property: max-height, padding;
+		transition-duration: 0.3s, 0s;
+		transition-delay: 0s;
+		display: none;
 
-	max-height: 0px;
-	padding: 0px;
-	transition-delay: 0s, 0.3s;
+		max-height: 0px;
+		padding: 0px;
+		transition-delay: 0s, 0.3s;
 
-	&.open{
-		max-height: 1200px;
-		display: block;
-		overflow: auto;
-	}
-
-
-	.panel-img{
-		width: 100%;
-		height: 355px;
-		margin: 20px 0px;
-
-		@include tablet{
-			height: 755px;
-		}
-	}
-
-	.description-link{
-		display: block;
-		text-align: center;
-		font-family: $url-font;
-		font-size: 24px;
-		margin: 50px 0px;
-
-		.food-a {
-			color: #ffa489;
+		&.open{
+			max-height: 1200px;
+			display: block;
+			overflow: auto;
 		}
 
-		.bureau-a{
-			font-size: 20px;
-			color: #8cc6c6;
+
+		.panel-img{
+			width: 100%;
+			height: 355px;
+			margin: 20px 0px;
+
+			@include tablet{
+				height: 755px;
+			}
+		}
+
+		.description-link{
+			display: block;
+			text-align: center;
+			font-family: $url-font;
+			font-size: 24px;
+			margin: 50px 0px;
+
+			.food-a {
+				color: #ffa489;
+			}
+
+			.bureau-a{
+				font-size: 20px;
+				color: #8cc6c6;
+			}
 		}
 	}
 }
