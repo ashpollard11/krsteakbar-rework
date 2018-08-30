@@ -81,6 +81,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	padding: 1.8em;
+	justify-content: space-between;
 }
 
 .top-section {
@@ -104,6 +105,10 @@ body {
 .phone-number {
 	margin-bottom: 50px;
 	text-align: center;
+
+	@include tablet {
+		text-align: left;
+	}
 
 	@include bigger-desktop {
 		width: 100%;
@@ -130,7 +135,7 @@ body {
 	div {
 		width: 32px;
 		height: 1px;
-		background: white;
+		background: $home-bg-color;
 		margin: 5px 0;
 
 		&:nth-child(2) {
@@ -216,7 +221,10 @@ nav {
 }
 
 .middle-group {
-	margin: 42px 0;
+	// margin: 42px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	// @include tablet {
 	// 	padding-top: 1%;
@@ -235,13 +243,20 @@ nav {
 		font-size: 2.1em;
 		line-height: 1.8;
 
+
 		// @include tablet {
 		// 	font-size: 3em;
 		// }
 			
 		@include tablet {
 			font-size: 3em;
-			max-width: 1000px;
+			max-width: 560px;
+			padding-bottom: 84px;
+		}
+
+		@include desktop {
+			font-size: 3.8em;
+			max-width: 814px;
 		}
 
 		.nav-dash {
@@ -299,14 +314,14 @@ nav {
 	text-transform: lowercase;
 	display: flex;
 	justify-content: center;
-	margin-top: auto;
+	// margin-top: auto;
 
 	@include tablet {
 		width: 100%;
 		max-width: unset;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: auto;
+		// margin-top: auto;
 	}
 
 	.social {
@@ -318,28 +333,68 @@ nav {
 			width: 25%;
 		}
 
-		.icon {
-			width: 37px;
-			height: 32px;
+		// a {
+		// 	color: rgba(0,0,0,0);
+		// 	// font-size: 0px;
+		// }
 
-			a {
-				color: rgba(0,0,0,0);
+		li {
+			width: 69px;
+			height: 64px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:hover {
+				// background: url(../../dist/img/social-hover.svg) no-repeat center;
+				// background-size: auto 100%;
+				transition: 0.3s;
+
+				.icon {
+					// background: url(../../dist/img/tw-icon.svg) no-repeat center;
+					// width: 37px;
+					// height: 32px;
+					// fill: $home-bg-color;
+				}
+
+				path {
+					transition: 0.5s;
+				}
+
+				path.circle {
+					fill: $home-accent-color;
+					// transform-origin: 24px 24px;
+					// transform: rotate(360deg);
+				}
+
+				path.icon-path {
+					stroke: $home-bg-color;
+					transition-delay: 0.3s;
+				}
 			}
 		}
 
+		.icon {
+			width: 48px;
+			height: 45px;
+			display: block;
+			
+		}
+
 		.fb-icon {
-			background: url(../../dist/img/fb-icon.png) no-repeat center;
-			background-size: auto 100%;
+			// background: url(../../dist/img/fb-icon.svg) no-repeat center;
+			// background-size: auto 100%;
 		}
 
 		.ig-icon {
-			background: url(../../dist/img/ig-icon.png) no-repeat center;
-			background-size: auto 100%;
+			// background: url(../../dist/img/ig-icon.svg) no-repeat center;
+			// background-size: auto 100%;
 		}
 
 		.tw-icon {
-			background: url(../../dist/img/twitter-icon.png) no-repeat center;
-			background-size: auto 100%;
+			// background: url(../../dist/img/tw-icon.svg) no-repeat center;
+			// background-size: auto 100%;
+			
 		}
 	}
 
@@ -347,10 +402,12 @@ nav {
 		display: none;
 
 		@include tablet {
-		display: flex;
-		flex-direction: column;
-		text-align: right;
+			display: flex;
+			flex-direction: column;
+			text-align: right;
 		}
 	}
 }
+
+
 

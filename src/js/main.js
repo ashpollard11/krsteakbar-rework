@@ -15,6 +15,8 @@ menuOpen.addEventListener('click', function(e) {
 
 menuClose.addEventListener('click', function(e) {
 	nav.classList.remove('is-active');
+	moreKevinUl.classList.remove('is-active');
+
 })
 
 moreKevin.addEventListener('click', function(e) {
