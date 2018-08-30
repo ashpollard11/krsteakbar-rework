@@ -6,7 +6,10 @@ const mql = window.matchMedia(`(max-width: 640px)`);
 let menuItemNames = [
     `food`,
     `bureau`,
-    // "bar"
+    `bar`,
+    `table`,
+    `location`,
+    `hours`
 ]
 
 

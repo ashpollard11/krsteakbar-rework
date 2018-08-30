@@ -2,7 +2,7 @@
 
 var mql = window.matchMedia('(max-width: 640px)');
 
-var menuItemNames = ['food', 'bureau'];
+var menuItemNames = ['food', 'bureau', 'bar', 'table', 'location', 'hours'];
 
 menuItemNames.forEach(function (menuItemName) {
 
