@@ -544,16 +544,16 @@ ul:hover li:hover, li:active {
 
 // PANEL STUFF
 
-$navItems: (
-	'food': $food-text-color,
-	'bureau': $bureau-text-color,
-	'bar': $bar-text-color,
-	'table': $table-text-color,
-	'location': $location-text-color,
-	'hours': $hours-text-color,
-);
+$navItems: 
+	(food, $food-text-color, $food-main-links)
+	(bureau, $bureau-text-color, $bureau-main-links)
+	(bar, $bar-text-color, $bar-main-links)
+	(table, $table-text-color, $table-main-links)
+	(location, $location-text-color, $location-main-links)
+	(hours, $hours-text-color, $hours-main-links)
+;
 
-@each $navItem, $color in $navItems{
+@each $navItem, $color, $description-color in $navItems{
     .#{$navItem}Description{
 		font-size: 20px;
 		font-family: "spectral";
@@ -594,8 +594,9 @@ $navItems: (
 			font-size: 24px;
 			margin: 50px 0px;
 
+			
 			.#{$navItem}-a {
-				color: #{$navItem}-main-links;
+				color: $description-color;
 			}
 		}
 	}

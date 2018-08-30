@@ -38,14 +38,14 @@ menuItemNames.forEach(function (menuItemName) {
     var large = {
         setup: function setup() {
             console.log('large setup');
-            h2.addEventListener('mouseover', large.hover);
-            h2.addEventListener('mouseout', large.offHover);
+            // h2.addEventListener('mouseover', large.hover)
+            // h2.addEventListener('mouseout', large.offHover)
             h2.addEventListener('click', large.onClick);
         },
         teardown: function teardown() {
             console.log('large teardown');
-            h2.removeEventListener('mouseover', large.hover);
-            h2.removeEventListener('mouseout', large.offHover);
+            // h2.removeEventListener('mouseover', large.hover)
+            // h2.removeEventListener('mouseout', large.offHover)
             h2.removeEventListener('click', large.onClick);
         },
         onClick: function onClick() {
@@ -54,8 +54,8 @@ menuItemNames.forEach(function (menuItemName) {
 
             if (description.classList.contains('close')) {
                 document.body.classList.add(menuItemName);
-                h2.removeEventListener('mouseout', large.offHover);
-                h2.removeEventListener('mouseover', large.hover);
+                // h2.removeEventListener('mouseout', large.offHover)
+                // h2.removeEventListener('mouseover', large.hover)
                 description.classList.add('open');
                 description.classList.remove('close');
             } else {

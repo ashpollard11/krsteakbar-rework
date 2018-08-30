@@ -564,7 +564,7 @@ ul:hover li:hover, li:active {
 }
 
 .foodDescription .description-link .food-a {
-	color: food-main-links;
+	color: #f9a68a;
 }
 
 .bureauDescription {
@@ -610,7 +610,7 @@ ul:hover li:hover, li:active {
 }
 
 .bureauDescription .description-link .bureau-a {
-	color: bureau-main-links;
+	color: #8bbfc1;
 }
 
 .barDescription {
@@ -656,7 +656,7 @@ ul:hover li:hover, li:active {
 }
 
 .barDescription .description-link .bar-a {
-	color: bar-main-links;
+	color: #e2ae1e;
 }
 
 .tableDescription {
@@ -702,7 +702,7 @@ ul:hover li:hover, li:active {
 }
 
 .tableDescription .description-link .table-a {
-	color: table-main-links;
+	color: #f58319;
 }
 
 .locationDescription {
@@ -748,7 +748,7 @@ ul:hover li:hover, li:active {
 }
 
 .locationDescription .description-link .location-a {
-	color: location-main-links;
+	color: #4c5ec0;
 }
 
 .hoursDescription {
@@ -794,7 +794,7 @@ ul:hover li:hover, li:active {
 }
 
 .hoursDescription .description-link .hours-a {
-	color: hours-main-links;
+	color: #ddb67a;
 }
 
 /*# sourceMappingURL=main.css.map */
