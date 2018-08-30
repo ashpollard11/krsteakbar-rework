@@ -93,8 +93,24 @@ body.food {
 	background: #07263a;
 }
 
-body.bureauBG {
+body.bureau {
 	background: #a13612;
+}
+
+body.bar {
+	background: #806875;
+}
+
+body.table {
+	background: #4b5b42;
+}
+
+body.location {
+	background: #ffffff;
+}
+
+body.hours {
+	background: #ffffff;
 }
 
 .phone-number {
@@ -139,8 +155,24 @@ body.bureauBG {
 	color: #83a0b0;
 }
 
-.bureauBG .phone-number, .bureauBG .reservations {
-	color: #f79549;
+.bureau .phone-number, .bureau .reservations {
+	color: #fb9d52;
+}
+
+.bar .phone-number, .bar .reservations {
+	color: #fad5e9;
+}
+
+.table .phone-number, .table .reservations {
+	color: #a4c48f;
+}
+
+.location .phone-number, .location .reservations {
+	color: #494949;
+}
+
+.hours .phone-number, .hours .reservations {
+	color: #b4b4b4;
 }
 
 .phone-number {
@@ -249,6 +281,21 @@ body.bureauBG {
 	.food .middle-group nav h2:hover + .preview {
 		color: #83a0b0;
 	}
+	.bureau .middle-group nav h2:hover + .preview {
+		color: #fb9d52;
+	}
+	.bar .middle-group nav h2:hover + .preview {
+		color: #fad5e9;
+	}
+	.table .middle-group nav h2:hover + .preview {
+		color: #a4c48f;
+	}
+	.location .middle-group nav h2:hover + .preview {
+		color: #494949;
+	}
+	.hours .middle-group nav h2:hover + .preview {
+		color: #b4b4b4;
+	}
 }
 
 @media only screen and (min-width: 640px) {
@@ -257,10 +304,46 @@ body.bureauBG {
 	}
 }
 
-.food .middle-group nav li:nth-child(1) a {
+.food .middle-group nav li:nth-of-type(1) a {
 	color: #f9a68a;
 	text-decoration: underline;
 	text-decoration-color: white;
+	opacity: 1;
+}
+
+.bureau .middle-group nav li:nth-of-type(2) a {
+	color: #8bbfc1;
+	text-decoration: underline;
+	text-decoration-color: white;
+	opacity: 1;
+}
+
+.bar .middle-group nav li:nth-of-type(3) a {
+	color: #e2ae1e;
+	text-decoration: underline;
+	text-decoration-color: white;
+	opacity: 1;
+}
+
+.table .middle-group nav li:nth-of-type(4) a {
+	color: #f58319;
+	text-decoration: underline;
+	text-decoration-color: white;
+	opacity: 1;
+}
+
+.hours .middle-group nav li:nth-of-type(5) a {
+	color: #ddb67a;
+	text-decoration: underline;
+	text-decoration-color: white;
+	opacity: 1;
+}
+
+.location .middle-group nav li:nth-of-type(6) a {
+	color: #4c5ec0;
+	text-decoration: underline;
+	text-decoration-color: white;
+	opacity: 1;
 }
 
 .middle-group nav li a {
@@ -276,29 +359,63 @@ body.bureauBG {
 @media only screen and (min-width: 640px) {
 	.food .middle-group nav li a {
 		color: #030e14;
+		opacity: .5;
 	}
 }
 
-.middle-group nav li a.bureau-highlight-others {
-	color: #f79549;
+.bureau .middle-group nav li a {
+	color: #fb9d52;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav li a.bureau-highlight-others {
-		color: #030e14;
+	.bureau .middle-group nav li a {
+		color: #000;
+		opacity: .5;
 	}
 }
 
-.middle-group nav li a.food-highlight {
-	color: #f9a68a;
-	text-decoration: underline;
-	text-decoration-color: white;
+.bar .middle-group nav li a {
+	color: #fad5e9;
 }
 
-.middle-group nav li a.bureau-highlight {
-	color: #8cc6c6;
-	text-decoration: underline;
-	text-decoration-color: white;
+@media only screen and (min-width: 640px) {
+	.bar .middle-group nav li a {
+		color: #000;
+		opacity: .5;
+	}
+}
+
+.table .middle-group nav li a {
+	color: #a4c48f;
+}
+
+@media only screen and (min-width: 640px) {
+	.table .middle-group nav li a {
+		color: #000;
+		opacity: .5;
+	}
+}
+
+.location .middle-group nav li a {
+	color: #494949;
+}
+
+@media only screen and (min-width: 640px) {
+	.location .middle-group nav li a {
+		color: #000;
+		opacity: .5;
+	}
+}
+
+.hours .middle-group nav li a {
+	color: #b4b4b4;
+}
+
+@media only screen and (min-width: 640px) {
+	.hours .middle-group nav li a {
+		color: #000;
+		opacity: .5;
+	}
 }
 
 .kr-footer {
@@ -313,8 +430,24 @@ body.bureauBG {
 	color: #83a0b0;
 }
 
-.kr-footer.bureauBodyCopy {
-	color: #f79549;
+.bureau .kr-footer {
+	color: #fb9d52;
+}
+
+.bar .kr-footer {
+	color: #fad5e9;
+}
+
+.table .kr-footer {
+	color: #a4c48f;
+}
+
+.location .kr-footer {
+	color: #494949;
+}
+
+.hours .kr-footer {
+	color: #b4b4b4;
 }
 
 @media only screen and (min-width: 640px) {
@@ -431,18 +564,13 @@ ul:hover li:hover, li:active {
 }
 
 .foodDescription .description-link .food-a {
-	color: #ffa489;
-}
-
-.foodDescription .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
+	color: food-main-links;
 }
 
 .bureauDescription {
 	font-size: 20px;
 	font-family: "spectral";
-	color: #83a0b0;
+	color: #fb9d52;
 	overflow: hidden;
 	max-height: 0px;
 	padding: 0px;
@@ -481,19 +609,14 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.bureauDescription .description-link .food-a {
-	color: #ffa489;
-}
-
 .bureauDescription .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
+	color: bureau-main-links;
 }
 
 .barDescription {
 	font-size: 20px;
 	font-family: "spectral";
-	color: #83a0b0;
+	color: #fad5e9;
 	overflow: hidden;
 	max-height: 0px;
 	padding: 0px;
@@ -532,19 +655,14 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.barDescription .description-link .food-a {
-	color: #ffa489;
-}
-
-.barDescription .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
+.barDescription .description-link .bar-a {
+	color: bar-main-links;
 }
 
 .tableDescription {
 	font-size: 20px;
 	font-family: "spectral";
-	color: #83a0b0;
+	color: #a4c48f;
 	overflow: hidden;
 	max-height: 0px;
 	padding: 0px;
@@ -583,19 +701,14 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.tableDescription .description-link .food-a {
-	color: #ffa489;
-}
-
-.tableDescription .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
+.tableDescription .description-link .table-a {
+	color: table-main-links;
 }
 
 .locationDescription {
 	font-size: 20px;
 	font-family: "spectral";
-	color: #83a0b0;
+	color: #494949;
 	overflow: hidden;
 	max-height: 0px;
 	padding: 0px;
@@ -634,19 +747,14 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.locationDescription .description-link .food-a {
-	color: #ffa489;
-}
-
-.locationDescription .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
+.locationDescription .description-link .location-a {
+	color: location-main-links;
 }
 
 .hoursDescription {
 	font-size: 20px;
 	font-family: "spectral";
-	color: #83a0b0;
+	color: #b4b4b4;
 	overflow: hidden;
 	max-height: 0px;
 	padding: 0px;
@@ -685,13 +793,8 @@ ul:hover li:hover, li:active {
 	margin: 50px 0px;
 }
 
-.hoursDescription .description-link .food-a {
-	color: #ffa489;
-}
-
-.hoursDescription .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
+.hoursDescription .description-link .hours-a {
+	color: hours-main-links;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -62,8 +62,8 @@ menuItemNames.forEach(function (menuItemName) {
                 description.classList.add('close');
                 document.body.classList.remove(menuItemName);
                 description.classList.remove('open');
-                h2.addEventListener('mouseout', large.offHover);
-                h2.addEventListener('mouseover', large.hover);
+                // h2.addEventListener('mouseout', large.offHover)
+                // h2.addEventListener('mouseover', large.hover)
             }
         },
         hover: function hover() {
