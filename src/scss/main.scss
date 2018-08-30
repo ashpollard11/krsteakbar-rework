@@ -227,7 +227,6 @@ body {
 					}
 				}
 			}
-			
 
 			a {
 				text-decoration: none;
@@ -236,7 +235,7 @@ body {
 
 				.food &{
 					color: #83a0b0;
-
+					
 					@include tablet{
 						color: #030e14;
 					}
@@ -263,30 +262,6 @@ body {
 				}
 			}
 		}
-
-		//li {
-
-			//@include desktop {
-			// .description{
-			// 	display: block;
-			// 	// display: none;
-			// 	position: relative;
-			// 	font-family: $url-font;
-			// 	font-size: 30px;
-			// 	padding: 0px;
-			// 	// width: 500px;
-			// 	margin: 0px 0px 0px 0px;
-
-			// 	&.left{
-			// 		text-align: left;
-			// 		display: block;
-			// 		margin: 0px;
-			// 	}
-
-			// 	&.right{
-			// 		text-align: right;
-			// 	}
-			// }
 	}
 }
 

@@ -1,39 +1,39 @@
 // window.addEventListener('resize', function(){
-const mql = window.matchMedia("(max-width: 640px)");
+const mql = window.matchMedia(`(max-width: 640px)`);
 
 
 
 let menuItemNames = [
-    "food",
-    "bureau",
-    "bar"
+    `food`,
+    // "bureau",
+    // "bar"
 ]
 
 
 menuItemNames.forEach(function(menuItemName) {
         
-    const content = document.querySelector('.content');
-    const description = document.querySelector(`.${menuItemName}Description`);
-    const preview = document.querySelector('.panel');
-    const h2 = document.querySelector(`.${menuItemName}H2`) ;// var item4 = document.getElementById('item4');
+    const content = document.querySelector(`.content`);
+    const description = document.querySelector(`.${menuItemName}Description`)
+    const preview = document.querySelector(`.panel`)
+    const h2 = document.querySelector(`.${menuItemName}H2`)
 
     let small = {
         setup: function() {
-            console.log("small setup")
-            h2.addEventListener('click', small.onClick);
+            console.log(`small setup`)
+            h2.addEventListener(`click`, small.onClick);
         },
         teardown: function() {
             console.log("small teardown")
-            h2.removeEventListener('click', small.onClick);
+            h2.removeEventListener(`click`, small.onClick);
         },
         onClick: function() { 
-            if (preview.classList.contains("close")){
+            if (preview.classList.contains(`close`)){
                 document.body.classList.add(menuItemName)
-                preview.classList.add("open")
-                preview.classList.remove("close")
+                preview.classList.add(`open`)
+                preview.classList.remove(`close`)
             } else {
-                preview.classList.add("close")
-                preview.classList.remove("open")
+                preview.classList.add(`close`)
+                preview.classList.remove(`open`)
                 document.body.classList.remove(menuItemName)
             }
 
@@ -43,26 +43,26 @@ menuItemNames.forEach(function(menuItemName) {
         
     let large = {
         setup: function() {
-            console.log("large setup")
+            console.log(`large setup`)
             h2.addEventListener('click', large.onClick)
         },
         teardown: function() {
-            console.log("large teardown")
+            console.log(`large teardown`)
             h2.removeEventListener('click', large.onClick)
         },
         onClick: function() {
-            console.log(`not appending large`)
+            console.log(`appending large`)
             h2.appendChild(description)
 
             
-            if (description.classList.contains("close")){
-                document.body.classList.add(`food`)
-                description.classList.add("open")
-                description.classList.remove("close")
+            if (description.classList.contains(`close`)){
+                document.body.classList.add(menuItemName)
+                description.classList.add(`open`)
+                description.classList.remove(`close`)
             } else {
-                description.classList.add("close")
-                document.body.classList.remove(`food`)
-                description.classList.remove("open")
+                description.classList.add(`close`)
+                document.body.classList.remove(menuItemName)
+                description.classList.remove(`open`)
             }
         }
     };
@@ -70,11 +70,11 @@ menuItemNames.forEach(function(menuItemName) {
 
     mql.addListener(function(data) {
         if (data.matches) {
-            console.log("mql changed to small")
+            console.log(`mql changed to small`)
             large.teardown()
             small.setup()
         } else {
-            console.log("mql changed to large")
+            console.log(`mql changed to large`)
             small.teardown()
             large.setup()
         }
