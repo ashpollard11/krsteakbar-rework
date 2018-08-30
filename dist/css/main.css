@@ -238,6 +238,16 @@ body.bureauBG {
 	}
 }
 
+.middle-group nav .preview {
+	display: none;
+}
+
+@media only screen and (min-width: 640px) {
+	.middle-group nav h2:hover + .preview {
+		display: block;
+	}
+}
+
 @media only screen and (min-width: 640px) {
 	.middle-group nav li {
 		display: inline;
@@ -375,7 +385,7 @@ ul:hover li:hover, li:active {
 	opacity: 1;
 }
 
-.food-mobile {
+.foodDescription {
 	font-size: 20px;
 	font-family: "spectral";
 	color: #83a0b0;
@@ -391,58 +401,21 @@ ul:hover li:hover, li:active {
 	transition-delay: 0s, 0.3s;
 }
 
-.food-mobile.open {
+.foodDescription.open {
 	max-height: 1000px;
 	display: block;
 	overflow: auto;
 }
 
-@media only screen and (min-width: 640px) {
-	.food-mobile.open {
-		display: none;
-	}
-}
-
-.food-mobile .panel-img {
+.foodDescription .panel-img {
 	width: 100%;
 	height: 355px;
 	margin: 20px 0px;
 }
 
 @media only screen and (min-width: 640px) {
-	.food-mobile .panel-img {
+	.foodDescription .panel-img {
 		height: 755px;
-	}
-}
-
-.food-mobile .description-link {
-	display: block;
-	text-align: center;
-	font-family: "nimbus-sans";
-	font-size: 24px;
-	margin: 50px 0px;
-}
-
-.food-mobile .description-link .food-a {
-	color: #ffa489;
-}
-
-.food-mobile .description-link .bureau-a {
-	font-size: 20px;
-	color: #8cc6c6;
-}
-
-.foodDescription {
-	font-size: 20px;
-	font-family: "spectral";
-	color: #83a0b0;
-	display: none;
-	text-decoration: none;
-}
-
-@media only screen and (min-width: 640px) {
-	.foodDescription.open {
-		display: block;
 	}
 }
 

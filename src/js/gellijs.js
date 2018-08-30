@@ -27,17 +27,29 @@ menuItemNames.forEach(function(menuItemName) {
             h2.removeEventListener(`click`, small.onClick);
         },
         onClick: function() { 
-            if (preview.classList.contains(`close`)){
-                document.body.classList.add(menuItemName)
-                preview.classList.add(`open`)
-                preview.classList.remove(`close`)
-            } else {
-                preview.classList.add(`close`)
-                preview.classList.remove(`open`)
-                document.body.classList.remove(menuItemName)
-            }
+            // if (preview.classList.contains(`close`)){
+            //     document.body.classList.add(menuItemName)
+            //     preview.classList.add(`open`)
+            //     preview.classList.remove(`close`)
+            // } else {
+            //     preview.classList.add(`close`)
+            //     preview.classList.remove(`open`)
+            //     document.body.classList.remove(menuItemName)
+            // }
 
-            description.classList.remove(`open`)
+            // description.classList.remove(`open`)
+            h2.appendChild(description)
+
+            
+            if (description.classList.contains(`close`)){
+                document.body.classList.add(menuItemName)
+                description.classList.add(`open`)
+                description.classList.remove(`close`)
+            } else {
+                description.classList.add(`close`)
+                document.body.classList.remove(menuItemName)
+                description.classList.remove(`open`)
+            }
         }
     }
         
