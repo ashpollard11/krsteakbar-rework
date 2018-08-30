@@ -83,6 +83,7 @@ body {
 	background: #eae6df;
 	width: 100%;
 	height: 100%;
+	transition: background 0.3s;
 }
 
 body.home-body {
@@ -110,7 +111,7 @@ body.location {
 }
 
 body.hours {
-	background: #ffffff;
+	background: #3f3f3f;
 }
 
 .phone-number {
@@ -272,6 +273,10 @@ body.hours {
 
 .middle-group nav .preview {
 	display: none;
+}
+
+.middle-group nav h2:hover + .preview img {
+	width: 200px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -545,22 +550,15 @@ ul:hover li:hover, li:active {
 
 .foodDescription .panel-img {
 	width: 100%;
-	height: 355px;
 	margin: 20px 0px;
-}
-
-@media only screen and (min-width: 640px) {
-	.foodDescription .panel-img {
-		height: 755px;
-	}
 }
 
 .foodDescription .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
-	font-size: 24px;
 	margin: 50px 0px;
+	font-size: 24px;
 }
 
 .foodDescription .description-link .food-a {
@@ -591,22 +589,15 @@ ul:hover li:hover, li:active {
 
 .bureauDescription .panel-img {
 	width: 100%;
-	height: 355px;
 	margin: 20px 0px;
-}
-
-@media only screen and (min-width: 640px) {
-	.bureauDescription .panel-img {
-		height: 755px;
-	}
 }
 
 .bureauDescription .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
-	font-size: 24px;
 	margin: 50px 0px;
+	font-size: 24px;
 }
 
 .bureauDescription .description-link .bureau-a {
@@ -637,22 +628,15 @@ ul:hover li:hover, li:active {
 
 .barDescription .panel-img {
 	width: 100%;
-	height: 355px;
 	margin: 20px 0px;
-}
-
-@media only screen and (min-width: 640px) {
-	.barDescription .panel-img {
-		height: 755px;
-	}
 }
 
 .barDescription .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
-	font-size: 24px;
 	margin: 50px 0px;
+	font-size: 24px;
 }
 
 .barDescription .description-link .bar-a {
@@ -683,22 +667,15 @@ ul:hover li:hover, li:active {
 
 .tableDescription .panel-img {
 	width: 100%;
-	height: 355px;
 	margin: 20px 0px;
-}
-
-@media only screen and (min-width: 640px) {
-	.tableDescription .panel-img {
-		height: 755px;
-	}
 }
 
 .tableDescription .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
-	font-size: 24px;
 	margin: 50px 0px;
+	font-size: 24px;
 }
 
 .tableDescription .description-link .table-a {
@@ -729,22 +706,15 @@ ul:hover li:hover, li:active {
 
 .locationDescription .panel-img {
 	width: 100%;
-	height: 355px;
 	margin: 20px 0px;
-}
-
-@media only screen and (min-width: 640px) {
-	.locationDescription .panel-img {
-		height: 755px;
-	}
 }
 
 .locationDescription .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
-	font-size: 24px;
 	margin: 50px 0px;
+	font-size: 24px;
 }
 
 .locationDescription .description-link .location-a {
@@ -775,22 +745,15 @@ ul:hover li:hover, li:active {
 
 .hoursDescription .panel-img {
 	width: 100%;
-	height: 355px;
 	margin: 20px 0px;
-}
-
-@media only screen and (min-width: 640px) {
-	.hoursDescription .panel-img {
-		height: 755px;
-	}
 }
 
 .hoursDescription .description-link {
 	display: block;
 	text-align: center;
 	font-family: "nimbus-sans";
-	font-size: 24px;
 	margin: 50px 0px;
+	font-size: 24px;
 }
 
 .hoursDescription .description-link .hours-a {

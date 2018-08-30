@@ -13,12 +13,13 @@ let menuItemNames = [
 ]
 
 
+const allDescriptions =  document.querySelectorAll(".descriptionDiv");
+
 menuItemNames.forEach(function(menuItemName) {
-        
-    const content = document.querySelector(`.content`);
+    
+    const theLI = document.querySelector(`nav li.${menuItemName}`);
+    const h2 = theLI.querySelector(`h2`)
     const description = document.querySelector(`.${menuItemName}Description`)
-    const preview = document.querySelector(`.preview`)
-    const h2 = document.querySelector(`.${menuItemName}H2`)
 
     let small = {
         setup: function() {
@@ -29,55 +30,64 @@ menuItemNames.forEach(function(menuItemName) {
             console.log("small teardown")
             h2.removeEventListener(`click`, small.onClick);
         },
-        onClick: function() { 
+        onClick: function(e) { 
             h2.appendChild(description)
-
+            // small.clearSpecialClass()
+            small.onlyShowOnePanel(e)
             
             if (description.classList.contains(`close`)){
+                small.clearSpecialClassOnBody()
                 document.body.classList.add(menuItemName)
                 description.classList.add(`open`)
-                description.classList.remove(`close`)
             } else {
-                description.classList.add(`close`)
+                small.clearSpecialClassOnBody()
                 document.body.classList.remove(menuItemName)
                 description.classList.remove(`open`)
             }
+        },
+        clearSpecialClassOnBody: function() {
+            menuItemNames.forEach((itemName) => {
+                document.body.classList.remove(itemName)
+            })
+        },
+        onlyShowOnePanel: function(e){
+            allDescriptions.forEach(function(el) {
+                el.classList.remove("open");
+            });
+            e.target.className = "open";
         }
     }
         
     let large = {
         setup: function() {
             console.log(`large setup`)
-            // h2.addEventListener('mouseover', large.hover)
-            // h2.addEventListener('mouseout', large.offHover)
+            theLI.addEventListener('mouseover', large.hover)
+            theLI.addEventListener('mouseout', large.offHover)
             h2.addEventListener('click', large.onClick)
         },
         teardown: function() {
             console.log(`large teardown`)
-            // h2.removeEventListener('mouseover', large.hover)
-            // h2.removeEventListener('mouseout', large.offHover)
+            theLI.removeEventListener('mouseover', large.hover)
+            theLI.removeEventListener('mouseout', large.offHover)
             h2.removeEventListener('click', large.onClick)
             
         },
-        onClick: function() {
-            console.log(`appending large`)
-            h2.appendChild(description)
-
-
-            if (description.classList.contains(`close`)){
-                document.body.classList.add(menuItemName)
-                // h2.removeEventListener('mouseout', large.offHover)
-                // h2.removeEventListener('mouseover', large.hover)
-                description.classList.add(`open`)
-                description.classList.remove(`close`)
-            } else {
-                description.classList.add(`close`)
-                document.body.classList.remove(menuItemName)
-                description.classList.remove(`open`)
-                // h2.addEventListener('mouseout', large.offHover)
-                // h2.addEventListener('mouseover', large.hover)
-            }
+        onClick: function(e) { 
+            console.log("large.onclick")
+            document.querySelector("nav").style.display = "none";
         },
+        clearSpecialClassOnBody: function() {
+            menuItemNames.forEach((itemName) => {
+                document.body.classList.remove(itemName)
+            })
+        },
+        onlyShowOnePanel: function(e){
+            allDescriptions.forEach(function(el) {
+                el.classList.remove("open");
+            });
+            e.target.className = "open";
+        },
+
         hover: function(){
             document.body.classList.add(menuItemName)
         },
