@@ -220,6 +220,10 @@ body {
 
 			@include tablet{
 				display: block;
+
+				.food & {
+					color: #83a0b0;
+				}
 			}
 		}
 
@@ -381,7 +385,7 @@ ul:hover li:hover, li:active {
 	transition-delay: 0s, 0.3s;
 
 	&.open{
-		max-height: 1000px;
+		max-height: 1200px;
 		display: block;
 		overflow: auto;
 	}
