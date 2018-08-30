@@ -30,6 +30,10 @@ $home-bg-color: #eae6df;
 $home-copy-color: #9e8261;
 $home-accent-color: #eba900;
 
+$food-background-color: #07263a;
+$food-text-color: #83a0b0;
+$food-main-links: #f9a68a;
+
 
 @mixin tablet {
 	@media only screen and (min-width: $tablet-breakpoint){
@@ -67,7 +71,7 @@ body {
 	}
 
 	&.food{
-		background: #07263a;
+		background: $food-background-color;
 	}
 
 	&.bureauBG{
@@ -113,7 +117,7 @@ body {
 	font-size: 1.5em;
 
 	.food & {
-		color: #83a0b0;
+		color: $food-text-color;
 	}
 
 	.bureauBG & {
@@ -222,7 +226,7 @@ body {
 				display: block;
 
 				.food & {
-					color: #83a0b0;
+					color: $food-text-color;
 				}
 			}
 		}
@@ -235,7 +239,7 @@ body {
 			.food & {
 				&:nth-child(1) {
 					a {
-						color: #ffa489;
+						color: $food-main-links;
 						text-decoration: underline;
 						text-decoration-color: white;
 					}
@@ -248,7 +252,7 @@ body {
 				color: $home-copy-color;
 
 				.food & {
-					color: #83a0b0;
+					color: $food-text-color;
 					
 					@include tablet{
 						color: #030e14;
@@ -264,7 +268,7 @@ body {
 				}
 
 				&.food-highlight{
-					color: #ffa489;
+					color: $food-main-links;
 					text-decoration: underline;
 					text-decoration-color: white;
 				}
@@ -287,7 +291,7 @@ body {
 	text-transform: lowercase;
 
 	.food & {
-		color: #83a0b0;
+		color: $food-text-color;
 	}
 
 	&.bureauBodyCopy{

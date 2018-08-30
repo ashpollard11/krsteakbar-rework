@@ -258,7 +258,7 @@ body.bureauBG {
 }
 
 .food .middle-group nav li:nth-child(1) a {
-	color: #ffa489;
+	color: #f9a68a;
 	text-decoration: underline;
 	text-decoration-color: white;
 }
@@ -290,7 +290,7 @@ body.bureauBG {
 }
 
 .middle-group nav li a.food-highlight {
-	color: #ffa489;
+	color: #f9a68a;
 	text-decoration: underline;
 	text-decoration-color: white;
 }
