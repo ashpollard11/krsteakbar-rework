@@ -69,6 +69,44 @@ table {
 	border-spacing: 0;
 }
 
+.circle {
+	pointer-events: none;
+}
+
+.circle-l {
+	width: 50%;
+	height: 462px;
+	position: absolute;
+	top: 13%;
+	right: 10%;
+}
+
+.circle-l path.circle-l-path {
+	fill: none;
+	stroke: #fffbfb;
+}
+
+.circle-l path.circle-l-path.circle-l2, .circle-l path.circle-l-path.circle-l3, .circle-l path.circle-l-path.circle-l4, .circle-l path.circle-l-path.circle-l5 {
+	visibility: hidden;
+}
+
+.circle-sm {
+	width: 20%;
+	height: 250px;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+}
+
+.circle-sm path.circle-sm-path {
+	fill: none;
+	stroke: #fffbfb;
+}
+
+.circle-sm path.circle-sm-path.circle-sm2, .circle-sm path.circle-sm-path.circle-sm3, .circle-sm path.circle-sm-path.circle-sm4, .circle-sm path.circle-sm-path.circle-sm5 {
+	visibility: hidden;
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;

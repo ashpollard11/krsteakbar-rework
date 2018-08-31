@@ -17,37 +17,9 @@ TABLE OF CONTENTS:
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Michroma|Spectral');
 @import url("https://use.typekit.net/cco7rbw.css");
-
-$tablet-breakpoint: 640px;
-$desktop-breakpoint: 1027px;
-$edge-breakpoint: 1440px;
-$url-font: "nimbus-sans";
-$copy-font: "Michroma";
-
-
-$home-bg-color: #eae6df;
-$home-copy-color: #9e8261;
-$home-accent-color: #eba900;
-
-
-@mixin tablet {
-	@media only screen and (min-width: $tablet-breakpoint){
-		@content;
-	}
-}
-
-@mixin desktop {
-	@media only screen and (min-width: $desktop-breakpoint){
-		@content;
-	}
-}
-
-@mixin bigger-desktop {
-	@media only screen and (min-width: $edge-breakpoint){
-		@content;
-	}
-}
-
+@import 'gel';
+@import 'ashley';
+@import 'variables';
 
 /* 1. Main Layout ================================= */
 
@@ -221,32 +193,18 @@ nav {
 }
 
 .middle-group {
-	// margin: 42px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	// @include tablet {
-	// 	padding-top: 1%;
-	// }
 
 	@include tablet {
 		padding: 0 1em;
 	}
 
-	// @include bigger-desktop {
-	// 	padding-top: 15%;
-	// }
-
 	ul {
 		font-weight: 500;
 		font-size: 2.1em;
 		line-height: 1.8;
-
-
-		// @include tablet {
-		// 	font-size: 3em;
-		// }
 			
 		@include tablet {
 			font-size: 3em;
@@ -314,14 +272,12 @@ nav {
 	text-transform: lowercase;
 	display: flex;
 	justify-content: center;
-	// margin-top: auto;
 
 	@include tablet {
 		width: 100%;
 		max-width: unset;
 		justify-content: space-between;
 		align-items: center;
-		// margin-top: auto;
 	}
 
 	.social {
@@ -346,15 +302,10 @@ nav {
 			align-items: center;
 
 			&:hover {
-				// background: url(../../dist/img/social-hover.svg) no-repeat center;
-				// background-size: auto 100%;
 				transition: 0.3s;
 
 				.icon {
-					// background: url(../../dist/img/tw-icon.svg) no-repeat center;
-					// width: 37px;
-					// height: 32px;
-					// fill: $home-bg-color;
+
 				}
 
 				path {
@@ -382,18 +333,14 @@ nav {
 		}
 
 		.fb-icon {
-			// background: url(../../dist/img/fb-icon.svg) no-repeat center;
-			// background-size: auto 100%;
+			
 		}
 
 		.ig-icon {
-			// background: url(../../dist/img/ig-icon.svg) no-repeat center;
-			// background-size: auto 100%;
+			
 		}
 
 		.tw-icon {
-			// background: url(../../dist/img/tw-icon.svg) no-repeat center;
-			// background-size: auto 100%;
 			
 		}
 	}

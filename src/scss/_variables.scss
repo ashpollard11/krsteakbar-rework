@@ -1,0 +1,32 @@
+
+
+$tablet-breakpoint: 640px;
+$desktop-breakpoint: 1027px;
+$edge-breakpoint: 1440px;
+$url-font: "nimbus-sans";
+$copy-font: "Michroma";
+
+
+$home-bg-color: #eae6df;
+$home-copy-color: #9e8261;
+$home-accent-color: #eba900;
+$white-accent-color: #fffbfb;
+
+
+@mixin tablet {
+	@media only screen and (min-width: $tablet-breakpoint){
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (min-width: $desktop-breakpoint){
+		@content;
+	}
+}
+
+@mixin bigger-desktop {
+	@media only screen and (min-width: $edge-breakpoint){
+		@content;
+	}
+}
