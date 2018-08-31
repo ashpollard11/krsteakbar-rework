@@ -579,6 +579,11 @@ $navItems:
 			max-height: 1200px;
 			display: block;
 			overflow: auto;
+
+			@include tablet{
+				display: block;
+				
+			}
 		}
 
 
@@ -597,8 +602,8 @@ $navItems:
 			text-align: center;
 			font-family: $url-font;
 			margin: 50px 0px;
-			font-size: 24px;
 			
+			font-size: 24px;
 			
 			.#{$navItem}-a {
 				color: $description-color;

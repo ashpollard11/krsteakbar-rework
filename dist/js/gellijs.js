@@ -23,17 +23,21 @@ menuItemNames.forEach(function (menuItemName) {
         },
         onClick: function onClick(e) {
             h2.appendChild(description);
-            // small.clearSpecialClass()
+            // small.clearSpecialClass(e)
             small.onlyShowOnePanel(e);
+            console.log(e.target);
 
-            if (description.classList.contains("close")) {
-                small.clearSpecialClassOnBody();
+            if (e.target.classList.contains("open")) {
+                small.clearSpecialClassOnBody(e);
                 document.body.classList.add(menuItemName);
                 description.classList.add("open");
+                console.log("closing it");
             } else {
-                small.clearSpecialClassOnBody();
+                console.log(description);
+                small.clearSpecialClassOnBody(e);
                 document.body.classList.remove(menuItemName);
                 description.classList.remove("open");
+                e.target.classList.remove("open");
             }
         },
         clearSpecialClassOnBody: function clearSpecialClassOnBody() {
@@ -45,7 +49,8 @@ menuItemNames.forEach(function (menuItemName) {
             allDescriptions.forEach(function (el) {
                 el.classList.remove("open");
             });
-            e.target.className = "open";
+            // e.target.classList.add(`open`)
+            e.target.classList.add("open");
         }
     };
 
@@ -65,6 +70,7 @@ menuItemNames.forEach(function (menuItemName) {
         onClick: function onClick(e) {
             console.log("large.onclick");
             document.querySelector("nav").style.display = "none";
+            description.classList.add("open");
         },
         clearSpecialClassOnBody: function clearSpecialClassOnBody() {
             menuItemNames.forEach(function (itemName) {

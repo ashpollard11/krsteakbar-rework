@@ -19,7 +19,7 @@ menuItemNames.forEach(function(menuItemName) {
     
     const theLI = document.querySelector(`nav li.${menuItemName}`);
     const h2 = theLI.querySelector(`h2`)
-    const description = document.querySelector(`.${menuItemName}Description`)
+    let description = document.querySelector(`.${menuItemName}Description`)
 
     let small = {
         setup: function() {
@@ -32,18 +32,23 @@ menuItemNames.forEach(function(menuItemName) {
         },
         onClick: function(e) { 
             h2.appendChild(description)
-            // small.clearSpecialClass()
+            // small.clearSpecialClass(e)
             small.onlyShowOnePanel(e)
+            console.log(e.target)
             
-            if (description.classList.contains(`close`)){
-                small.clearSpecialClassOnBody()
+            if (e.target.classList.contains(`open`)){
+                small.clearSpecialClassOnBody(e)
                 document.body.classList.add(menuItemName)
                 description.classList.add(`open`)
+                console.log(`closing it`)
             } else {
-                small.clearSpecialClassOnBody()
+                console.log(description)
+                small.clearSpecialClassOnBody(e)
                 document.body.classList.remove(menuItemName)
                 description.classList.remove(`open`)
+                e.target.classList.remove(`open`)
             }
+                
         },
         clearSpecialClassOnBody: function() {
             menuItemNames.forEach((itemName) => {
@@ -52,12 +57,16 @@ menuItemNames.forEach(function(menuItemName) {
         },
         onlyShowOnePanel: function(e){
             allDescriptions.forEach(function(el) {
-                el.classList.remove("open");
+                el.classList.remove("open")
             });
-            e.target.className = "open";
-        }
+            // e.target.classList.add(`open`)
+            e.target.classList.add(`open`)
+            
+        },
     }
         
+
+
     let large = {
         setup: function() {
             console.log(`large setup`)
@@ -75,6 +84,7 @@ menuItemNames.forEach(function(menuItemName) {
         onClick: function(e) { 
             console.log("large.onclick")
             document.querySelector("nav").style.display = "none";
+            description.classList.add("open")
         },
         clearSpecialClassOnBody: function() {
             menuItemNames.forEach((itemName) => {

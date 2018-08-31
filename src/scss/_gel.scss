@@ -1,4 +1,613 @@
-.description{
-    font-size: 20px;
-    font-family: spectral;
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+@import 'reset';
+@import url('https://fonts.googleapis.com/css?family=Michroma|Spectral');
+@import url("https://use.typekit.net/cco7rbw.css");
+@import 'gel';
+
+$tablet-breakpoint: 640px;
+$desktop-breakpoint: 1027px;
+$edge-breakpoint: 1440px;
+$url-font: "nimbus-sans";
+$copy-font: "Michroma";
+
+
+$home-bg-color: #eae6df;
+$home-copy-color: #9e8261;
+$home-accent-color: #eba900;
+
+$food-background-color: #07263a;
+$food-text-color: #83a0b0;
+$food-main-links: #f9a68a;
+
+$bureau-background-color: #a13612;
+$bureau-text-color: #fb9d52;
+$bureau-main-links: #8bbfc1;
+
+$bar-background-color: #806875;
+$bar-text-color: #fad5e9;
+$bar-main-links: #e2ae1e;
+
+$table-background-color: #4b5b42;
+$table-text-color: #a4c48f;
+$table-main-links: #f58319;
+
+$location-background-color: #ffffff;
+$location-text-color: #494949;
+$location-main-links: #4c5ec0;
+
+$hours-background-color: #3f3f3f;
+$hours-text-color: #b4b4b4;
+$hours-main-links: #ddb67a;
+
+
+
+
+@mixin tablet {
+	@media only screen and (min-width: $tablet-breakpoint){
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media only screen and (min-width: $desktop-breakpoint){
+		@content;
+	}
+}
+
+@mixin bigger-desktop {
+	@media only screen and (min-width: $edge-breakpoint){
+		@content;
+	}
+}
+
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: $home-bg-color;
+	width: 100%;
+	height: 100%;
+	// overflow: hidden;
+	transition: background 0.3s;
+
+	&.home-body {
+		color: $home-copy-color;
+	}
+
+	&.food{
+		background: $food-background-color;
+	}
+
+	&.bureau{
+		background: $bureau-background-color;
+	}
+
+	&.bar{
+		background: $bar-background-color;
+	}
+
+	&.table{
+		background: $table-background-color;
+	}
+
+	&.location{
+		background: $location-background-color;
+	}
+
+	&.hours{
+		background: $hours-background-color;
+	}
+}
+
+.phone-number {
+	color: $home-accent-color;
+}
+
+
+/* 2. Content ================================= */
+
+.content {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	font-family: Michroma;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1.8em;
+}
+
+.top-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+
+	@include tablet {
+		width: 95%;
+		flex-direction: row;
+		align-items: unset;
+		justify-content: space-between;
+	}
+}
+
+.phone-number, .reservations {
+	font-family: $url-font;
+	font-size: 1.5em;
+
+	.food & {
+		color: $food-text-color;
+	}
+
+	.bureau & {
+		color: $bureau-text-color;
+	}
+
+	.bar & {
+		color: $bar-text-color;
+	}
+
+	.table & {
+		color: $table-text-color;
+	}
+
+	.location & {
+		color: $location-text-color;
+	}
+
+	.hours & {
+		color: $hours-text-color;
+	}
+}
+
+.phone-number {
+	margin-bottom: 50px;
+		
+	span {
+		padding: 10px;
+	}
+}
+
+.hamburger-menu {
+	background: url(../../dist/img/hamburger.png) no-repeat center;
+	background-size: auto 100%;
+	width: 69px;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+
+	div {
+		width: 32px;
+		height: 1px;
+		background: white;
+		margin: 5px 0;
+
+		&:nth-child(2) {
+			margin-left: 10px;
+		}
+	}
+
+	@include tablet {
+		display: none;
+	}
+}
+
+.reservations {
+	color: $home-copy-color;
+	display: none;
+	text-decoration: none;
+
+	@include tablet {
+		display: block;
+	}
+		
+	@include bigger-desktop {
+		transform: rotate(-90deg);
+		transform-origin: 0;
+		position: absolute;
+		top: 67%;
+		font-size: 1.5em;
+	}
+}
+
+.middle-group {
+	margin: 48% 10% 53%;
+	display: block;
+	width: 85%;
+
+	@include tablet {
+		margin: 15%;
+		padding: 0 1em;
+		// text-align: center;
+	}
+
+	// @include bigger-desktop {
+	// 	padding-top: 15%;
+	// }
+
+	nav {
+		list-style: none;
+		font-weight: 500;
+		font-size: 2em;
+		line-height: 1.7;
+
+		// @include tablet {
+		// 	font-size: 3em;
+		// }
+			
+		@include tablet {
+			font-size: 3em;
+			max-width: 1000px;
+		}
+
+		.nav-dash {
+			display: none;
+
+			@include tablet {
+				display: inline;
+			}
+		}
+
+		.preview {
+			display: none;
+		}
+			
+		h2:hover + .preview {
+
+			img {
+				width: 200px;
+			}
+
+			@include tablet{
+				display: block;
+
+				.food & {
+					color: $food-text-color;
+				}
+
+				.bureau & {
+					color: $bureau-text-color;
+				}
+
+				.bar & {
+					color: $bar-text-color;
+				}
+
+				.table & {
+					color: $table-text-color;
+				}
+
+				.location & {
+					color: $location-text-color;
+				}
+
+				.hours & {
+					color: $hours-text-color;
+				}
+			}
+		}
+
+		li {
+			@include tablet {
+				display: inline;
+			}
+
+			.food & {
+				&:nth-of-type(1) {
+					a {
+						color: $food-main-links;
+						text-decoration: underline;
+						text-decoration-color: white;
+						opacity: 1;
+					}
+				}
+			}
+
+			.bureau & {
+				&:nth-of-type(2) {
+					a {
+						color: $bureau-main-links;
+						text-decoration: underline;
+						text-decoration-color: white;
+						opacity: 1;
+					}
+				}
+			}
+
+			.bar & {
+				&:nth-of-type(3) {
+					a {
+						color: $bar-main-links;
+						text-decoration: underline;
+						text-decoration-color: white;
+						opacity: 1;
+					}
+				}
+			}
+
+			.table & {
+				&:nth-of-type(4) {
+					a {
+						color: $table-main-links;
+						text-decoration: underline;
+						text-decoration-color: white;
+						opacity: 1;
+					}
+				}
+			}
+
+			.hours & {
+				&:nth-of-type(5) {
+					a {
+						color: $hours-main-links;
+						text-decoration: underline;
+						text-decoration-color: white;
+						opacity: 1;
+					}
+				}
+			}
+
+			.location & {
+				&:nth-of-type(6) {
+					a {
+						color: $location-main-links;
+						text-decoration: underline;
+						text-decoration-color: white;
+						opacity: 1;
+					}
+				}
+			}
+
+			a {
+				text-decoration: none;
+				text-transform: lowercase;
+				color: $home-copy-color;
+
+				.food & {
+					color: $food-text-color;
+					
+					@include tablet{
+						color: #030e14;
+						opacity: .5;
+					}
+				}
+
+				.bureau & {
+					color: $bureau-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.bar & {
+					color: $bar-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.table & {
+					color: $table-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.location & {
+					color: $location-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.hours & {
+					color: $hours-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+			}
+		}
+	}
+}
+
+.kr-footer {
+	width: 85%;
+	max-width: 550px;
+	font-family: $url-font;
+	font-size: 1.5em;
+	text-transform: lowercase;
+
+	.food & {
+		color: $food-text-color;
+	}
+
+	.bureau & {
+		color: $bureau-text-color;
+	}
+
+	.bar & {
+		color: $bar-text-color;
+	}
+
+	.table & {
+		color: $table-text-color;
+	}
+
+	.location & {
+		color: $location-text-color;
+	}
+
+	.hours & {
+		color: $hours-text-color;
+	}
+
+	// @include tablet {
+	// 	padding-top: 8%;
+	// }
+
+	@include tablet {
+		width: 100%;
+		max-width: unset;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
+	}
+
+	.social {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@include tablet {
+			width: 25%;
+		}
+
+		.icon {
+			width: 37px;
+			height: 32px;
+
+			a {
+				color: rgba(0,0,0,0);
+			}
+		}
+
+		.fb-icon {
+			background: url(../../dist/img/fb-icon.png) no-repeat center;
+			background-size: auto 100%;
+		}
+
+		.ig-icon {
+			background: url(../../dist/img/ig-icon.png) no-repeat center;
+			background-size: auto 100%;
+		}
+
+		.tw-icon {
+			background: url(../../dist/img/twitter-icon.png) no-repeat center;
+			background-size: auto 100%;
+		}
+	}
+
+	p {
+		display: none;
+
+		@include tablet {
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+		}
+	}
+}
+
+// navigation link styles
+
+ul li{
+	transition: opacity 0.4s ease-out;
+}
+
+ul:hover li, ul:active li {
+	opacity: 0.2;
+}
+
+ul:hover li:hover, li:active {
+    opacity: 1;
+}
+
+// PANEL STUFF
+
+$navItems: 
+	(food, $food-text-color, $food-main-links)
+	(bureau, $bureau-text-color, $bureau-main-links)
+	(bar, $bar-text-color, $bar-main-links)
+	(table, $table-text-color, $table-main-links)
+	(location, $location-text-color, $location-main-links)
+	(hours, $hours-text-color, $hours-main-links)
+;
+
+@each $navItem, $color, $description-color in $navItems{
+    .#{$navItem}Description{
+		font-size: 20px;
+		font-family: "spectral";
+		color: $color;
+		overflow: hidden;
+		max-height: 0px;
+		padding: 0px;
+		transition-property: max-height, padding;
+		transition-duration: 0.3s, 0s;
+		transition-delay: 0s;
+		display: none;
+
+		max-height: 0px;
+		padding: 0px;
+		transition-delay: 0s, 0.3s;
+
+		&.open{
+			max-height: 1200px;
+			display: block;
+			overflow: auto;
+
+			@include tablet{
+				display: block;
+				
+			}
+		}
+
+
+		.panel-img{
+			width: 100%;
+			// height: 355px;
+			margin: 20px 0px;
+
+			@include tablet{
+				// height: 755px;
+			}
+		}
+
+		.description-link{
+			display: block;
+			text-align: center;
+			font-family: $url-font;
+			margin: 50px 0px;
+			
+			font-size: 24px;
+			
+			.#{$navItem}-a {
+				color: $description-color;
+			}
+		}
+	}
 }

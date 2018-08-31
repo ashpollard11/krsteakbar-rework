@@ -548,6 +548,12 @@ ul:hover li:hover, li:active {
 	overflow: auto;
 }
 
+@media only screen and (min-width: 640px) {
+	.foodDescription.open {
+		display: block;
+	}
+}
+
 .foodDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
@@ -585,6 +591,12 @@ ul:hover li:hover, li:active {
 	max-height: 1200px;
 	display: block;
 	overflow: auto;
+}
+
+@media only screen and (min-width: 640px) {
+	.bureauDescription.open {
+		display: block;
+	}
 }
 
 .bureauDescription .panel-img {
@@ -626,6 +638,12 @@ ul:hover li:hover, li:active {
 	overflow: auto;
 }
 
+@media only screen and (min-width: 640px) {
+	.barDescription.open {
+		display: block;
+	}
+}
+
 .barDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
@@ -663,6 +681,12 @@ ul:hover li:hover, li:active {
 	max-height: 1200px;
 	display: block;
 	overflow: auto;
+}
+
+@media only screen and (min-width: 640px) {
+	.tableDescription.open {
+		display: block;
+	}
 }
 
 .tableDescription .panel-img {
@@ -704,6 +728,12 @@ ul:hover li:hover, li:active {
 	overflow: auto;
 }
 
+@media only screen and (min-width: 640px) {
+	.locationDescription.open {
+		display: block;
+	}
+}
+
 .locationDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
@@ -741,6 +771,12 @@ ul:hover li:hover, li:active {
 	max-height: 1200px;
 	display: block;
 	overflow: auto;
+}
+
+@media only screen and (min-width: 640px) {
+	.hoursDescription.open {
+		display: block;
+	}
 }
 
 .hoursDescription .panel-img {
