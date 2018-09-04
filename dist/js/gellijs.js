@@ -8,7 +8,7 @@ var allDescriptions = document.querySelectorAll(".descriptionDiv");
 
 menuItemNames.forEach(function (menuItemName) {
 
-    var theLI = document.querySelector("nav li." + menuItemName);
+    var theLI = document.querySelector("li." + menuItemName);
     var h2 = theLI.querySelector("h2");
     var description = document.querySelector("." + menuItemName + "Description");
 
@@ -29,15 +29,16 @@ menuItemNames.forEach(function (menuItemName) {
 
             if (e.target.classList.contains("open")) {
                 small.clearSpecialClassOnBody(e);
-                document.body.classList.add(menuItemName);
-                description.classList.add("open");
+                document.body.classList.remove(menuItemName);
+                description.classList.remove("open");
+                e.target.classList.remove("open");
                 console.log("closing it");
             } else {
                 console.log(description);
                 small.clearSpecialClassOnBody(e);
-                document.body.classList.remove(menuItemName);
-                description.classList.remove("open");
-                e.target.classList.remove("open");
+                document.body.classList.add(menuItemName);
+                // description.classList.add(`open`)
+                // e.target.classList.add(`open`)
             }
         },
         clearSpecialClassOnBody: function clearSpecialClassOnBody() {
@@ -81,7 +82,7 @@ menuItemNames.forEach(function (menuItemName) {
             allDescriptions.forEach(function (el) {
                 el.classList.remove("open");
             });
-            e.target.className = "open";
+            e.nextElementSibling.className = "open";
         },
 
         hover: function hover() {

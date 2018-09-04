@@ -17,7 +17,7 @@ const allDescriptions =  document.querySelectorAll(".descriptionDiv");
 
 menuItemNames.forEach(function(menuItemName) {
     
-    const theLI = document.querySelector(`nav li.${menuItemName}`);
+    const theLI = document.querySelector(`li.${menuItemName}`);
     const h2 = theLI.querySelector(`h2`)
     let description = document.querySelector(`.${menuItemName}Description`)
 
@@ -38,15 +38,16 @@ menuItemNames.forEach(function(menuItemName) {
             
             if (e.target.classList.contains(`open`)){
                 small.clearSpecialClassOnBody(e)
-                document.body.classList.add(menuItemName)
-                description.classList.add(`open`)
+                document.body.classList.remove(menuItemName)
+                description.classList.remove(`open`)
+                e.target.classList.remove(`open`)
                 console.log(`closing it`)
             } else {
                 console.log(description)
                 small.clearSpecialClassOnBody(e)
-                document.body.classList.remove(menuItemName)
-                description.classList.remove(`open`)
-                e.target.classList.remove(`open`)
+                document.body.classList.add(menuItemName)
+                // description.classList.add(`open`)
+                // e.target.classList.add(`open`)
             }
                 
         },
@@ -95,7 +96,7 @@ menuItemNames.forEach(function(menuItemName) {
             allDescriptions.forEach(function(el) {
                 el.classList.remove("open");
             });
-            e.target.className = "open";
+            e.nextElementSibling.className = "open";
         },
 
         hover: function(){

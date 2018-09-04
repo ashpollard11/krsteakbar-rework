@@ -69,11 +69,6 @@ table {
 	border-spacing: 0;
 }
 
-.description {
-	font-size: 20px;
-	font-family: spectral;
-}
-
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
@@ -185,7 +180,6 @@ body.hours {
 }
 
 .hamburger-menu {
-	background: url(../../dist/img/hamburger.png) no-repeat center;
 	background-size: auto 100%;
 	width: 69px;
 	height: 64px;
@@ -193,16 +187,30 @@ body.hours {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	cursor: pointer;
+}
+
+.hamburger-menu:hover path.menu-circle {
+	animation: ani-bounce 0.7s forwards;
+}
+
+.hamburger-menu:hover div {
+	animation: ani-slide 0.5s forwards;
+}
+
+.hamburger-menu:hover div:nth-child(3) {
+	animation-delay: 0.1s;
 }
 
 .hamburger-menu div {
 	width: 32px;
 	height: 1px;
-	background: white;
+	background: #eae6df;
 	margin: 5px 0;
+	z-index: 0;
 }
 
-.hamburger-menu div:nth-child(2) {
+.hamburger-menu div:nth-child(3) {
 	margin-left: 10px;
 }
 
@@ -210,6 +218,73 @@ body.hours {
 	.hamburger-menu {
 		display: none;
 	}
+}
+
+.hamburger-menu.is-active svg {
+	transform: scale(100);
+	transform-origin: center;
+	transition: 4s;
+}
+
+.hamburger-menu.is-active div {
+	display: none;
+}
+
+.mobile-menu {
+	list-style: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	color: #fff;
+	font-size: 1.6em;
+	display: flex;
+	flex-direction: column;
+	padding: 90px 20px;
+	opacity: 0;
+	display: none;
+}
+
+.mobile-menu.is-active {
+	display: flex;
+	animation: ani-fade 1s forwards;
+	animation-delay: 0.2s;
+	z-index: 9;
+}
+
+.mobile-menu .close-menu {
+	width: 66px;
+	height: 69px;
+	align-self: center;
+	margin: 35px 44px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.mobile-menu li {
+	margin-bottom: 1.6em;
+	z-index: 2;
+}
+
+.mobile-menu li.more {
+	cursor: pointer;
+}
+
+.mobile-menu li.more ul {
+	font-size: 0.7em;
+	border-left: 1px solid;
+	margin: 24px;
+	padding: 18px;
+	display: none;
+}
+
+.mobile-menu li.more ul.is-active {
+	display: block;
+}
+
+.mobile-menu li.more li {
+	margin-bottom: 1em;
 }
 
 .reservations {
@@ -229,7 +304,6 @@ body.hours {
 		transform: rotate(-90deg);
 		transform-origin: 0;
 		position: absolute;
-		top: 67%;
 		font-size: 1.5em;
 	}
 }
@@ -247,177 +321,185 @@ body.hours {
 	}
 }
 
-.middle-group nav {
+.middle-group .main-content {
 	list-style: none;
 	font-weight: 500;
 	font-size: 2em;
-	line-height: 1.7;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav {
-		font-size: 3em;
-		max-width: 1000px;
+	.middle-group .main-content {
+		font-size: 2.5em;
+		max-width: 1200px;
 	}
 }
 
-.middle-group nav .nav-dash {
+.middle-group .main-content .nav-dash {
 	display: none;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav .nav-dash {
+	.middle-group .main-content .nav-dash {
 		display: inline;
 	}
 }
 
-.middle-group nav .preview {
+.middle-group .main-content p {
+	font-size: 24px;
+	font-family: "nimbus-sans";
+}
+
+.middle-group .main-content h2 {
+	padding-bottom: 20px;
+}
+
+.middle-group .main-content .preview {
 	display: none;
 }
 
-.middle-group nav h2:hover + .preview img {
+.middle-group .main-content h2:hover + .preview img {
 	width: 200px;
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav h2:hover + .preview {
+	.middle-group .main-content h2:hover + .preview {
 		display: block;
 	}
-	.food .middle-group nav h2:hover + .preview {
+	.food .middle-group .main-content h2:hover + .preview {
 		color: #83a0b0;
 	}
-	.bureau .middle-group nav h2:hover + .preview {
+	.bureau .middle-group .main-content h2:hover + .preview {
 		color: #fb9d52;
 	}
-	.bar .middle-group nav h2:hover + .preview {
+	.bar .middle-group .main-content h2:hover + .preview {
 		color: #fad5e9;
 	}
-	.table .middle-group nav h2:hover + .preview {
+	.table .middle-group .main-content h2:hover + .preview {
 		color: #a4c48f;
 	}
-	.location .middle-group nav h2:hover + .preview {
+	.location .middle-group .main-content h2:hover + .preview {
 		color: #494949;
 	}
-	.hours .middle-group nav h2:hover + .preview {
+	.hours .middle-group .main-content h2:hover + .preview {
 		color: #b4b4b4;
 	}
 }
 
 @media only screen and (min-width: 640px) {
-	.middle-group nav li {
-		display: inline;
+	.middle-group .main-content li {
+		display: inline-block;
 	}
 }
 
-.food .middle-group nav li:nth-of-type(1) a {
+.food .middle-group .main-content li:nth-of-type(1) a {
 	color: #f9a68a;
 	text-decoration: underline;
 	text-decoration-color: white;
 	opacity: 1;
 }
 
-.bureau .middle-group nav li:nth-of-type(2) a {
+.bureau .middle-group .main-content li:nth-of-type(2) a {
 	color: #8bbfc1;
 	text-decoration: underline;
 	text-decoration-color: white;
 	opacity: 1;
 }
 
-.bar .middle-group nav li:nth-of-type(3) a {
+.bar .middle-group .main-content li:nth-of-type(3) a {
 	color: #e2ae1e;
 	text-decoration: underline;
 	text-decoration-color: white;
 	opacity: 1;
 }
 
-.table .middle-group nav li:nth-of-type(4) a {
+.table .middle-group .main-content li:nth-of-type(4) a {
 	color: #f58319;
 	text-decoration: underline;
 	text-decoration-color: white;
 	opacity: 1;
 }
 
-.hours .middle-group nav li:nth-of-type(5) a {
+.hours .middle-group .main-content li:nth-of-type(5) a {
 	color: #ddb67a;
 	text-decoration: underline;
 	text-decoration-color: white;
 	opacity: 1;
 }
 
-.location .middle-group nav li:nth-of-type(6) a {
+.location .middle-group .main-content li:nth-of-type(6) a {
 	color: #4c5ec0;
 	text-decoration: underline;
 	text-decoration-color: white;
 	opacity: 1;
 }
 
-.middle-group nav li a {
+.middle-group .main-content li a {
 	text-decoration: none;
 	text-transform: lowercase;
 	color: #9e8261;
 }
 
-.food .middle-group nav li a {
+.food .middle-group .main-content li a {
 	color: #83a0b0;
 }
 
 @media only screen and (min-width: 640px) {
-	.food .middle-group nav li a {
+	.food .middle-group .main-content li a {
 		color: #030e14;
 		opacity: .5;
 	}
 }
 
-.bureau .middle-group nav li a {
+.bureau .middle-group .main-content li a {
 	color: #fb9d52;
 }
 
 @media only screen and (min-width: 640px) {
-	.bureau .middle-group nav li a {
+	.bureau .middle-group .main-content li a {
 		color: #000;
 		opacity: .5;
 	}
 }
 
-.bar .middle-group nav li a {
+.bar .middle-group .main-content li a {
 	color: #fad5e9;
 }
 
 @media only screen and (min-width: 640px) {
-	.bar .middle-group nav li a {
+	.bar .middle-group .main-content li a {
 		color: #000;
 		opacity: .5;
 	}
 }
 
-.table .middle-group nav li a {
+.table .middle-group .main-content li a {
 	color: #a4c48f;
 }
 
 @media only screen and (min-width: 640px) {
-	.table .middle-group nav li a {
+	.table .middle-group .main-content li a {
 		color: #000;
 		opacity: .5;
 	}
 }
 
-.location .middle-group nav li a {
+.location .middle-group .main-content li a {
 	color: #494949;
 }
 
 @media only screen and (min-width: 640px) {
-	.location .middle-group nav li a {
+	.location .middle-group .main-content li a {
 		color: #000;
 		opacity: .5;
 	}
 }
 
-.hours .middle-group nav li a {
+.hours .middle-group .main-content li a {
 	color: #b4b4b4;
 }
 
 @media only screen and (min-width: 640px) {
-	.hours .middle-group nav li a {
+	.hours .middle-group .main-content li a {
 		color: #000;
 		opacity: .5;
 	}
