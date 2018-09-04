@@ -1,7 +1,7 @@
 // let navItems = document.querySelectorAll(`.navItems`)
 // console.log(navItems)
 
-let nav =  document.querySelector(".top-section .nav");
+let nav =  document.querySelector(".nav");
 let menuOpen = document.querySelector(".hamburger-menu");
 let menuClose = document.querySelector(".close-svg");
 let moreKevin = document.querySelector(".more");

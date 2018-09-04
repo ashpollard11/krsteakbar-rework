@@ -3,7 +3,7 @@
 // let navItems = document.querySelectorAll(`.navItems`)
 // console.log(navItems)
 
-var nav = document.querySelector(".top-section .nav");
+var nav = document.querySelector(".nav");
 var menuOpen = document.querySelector(".hamburger-menu");
 var menuClose = document.querySelector(".close-svg");
 var moreKevin = document.querySelector(".more");

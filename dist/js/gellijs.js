@@ -21,26 +21,23 @@ menuItemNames.forEach(function (menuItemName) {
             console.log("small teardown");
             h2.removeEventListener("click", small.onClick);
         },
-        onClick: function onClick(e) {
+        onClick: function onClick() {
             h2.appendChild(description);
-            // small.clearSpecialClass(e)
-            small.onlyShowOnePanel(e);
-            console.log(e.target);
+            description.classList.add("open");
+            small.clearSpecialClassOnBody();
 
-            if (e.target.classList.contains("open")) {
-                small.clearSpecialClassOnBody(e);
-                document.body.classList.remove(menuItemName);
-                description.classList.remove("open");
-                e.target.classList.remove("open");
-                console.log("closing it");
-            } else {
-                console.log(description);
-                small.clearSpecialClassOnBody(e);
+            if (!h2.classList.contains("open")) {
+                h2.classList.add("open");
                 document.body.classList.add(menuItemName);
-                // description.classList.add(`open`)
-                // e.target.classList.add(`open`)
+                description.classList.add("open");
+                console.log("open");
+            } else {
+                h2.classList.remove("open");
+                description.classList.remove("open");
+                console.log("close");
             }
         },
+
         clearSpecialClassOnBody: function clearSpecialClassOnBody() {
             menuItemNames.forEach(function (itemName) {
                 document.body.classList.remove(itemName);
@@ -50,8 +47,7 @@ menuItemNames.forEach(function (menuItemName) {
             allDescriptions.forEach(function (el) {
                 el.classList.remove("open");
             });
-            // e.target.classList.add(`open`)
-            e.target.classList.add("open");
+            console.log(description);
         }
     };
 
@@ -82,7 +78,7 @@ menuItemNames.forEach(function (menuItemName) {
             allDescriptions.forEach(function (el) {
                 el.classList.remove("open");
             });
-            e.nextElementSibling.className = "open";
+            e.target.className = "open";
         },
 
         hover: function hover() {
