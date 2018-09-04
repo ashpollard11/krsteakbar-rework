@@ -42,11 +42,8 @@ kevNameDesktop.addEventListener('click', function(e) {
 
 //svgs
 
-// var tl = new TimelineLite()
 
-let circle1Large = document.querySelector(".circle-l1");
-let circle1Sm = document.querySelector(".circle-sm1");
-let circle1Med = document.querySelector(".circle-m1");
+
 
 // TweenLite.to(circle1, 1, {morphSVG:".circle-l2"}, "+=1")
 // TweenLite.to(circle1, 1, {morphSVG:".circle-l3"}, "+=1")
@@ -54,28 +51,38 @@ let circle1Med = document.querySelector(".circle-m1");
 // TweenLite.to(circle1, 1, {morphSVG:".circle-l5"}, "+=1")
 // TweenLite.to(circle1, 1, {morphSVG:circle1}, "+=1");
 
+// TweenMax.set(".svgtest #star", {display: "none"})
+// TweenMax.set(".svgtest #circle", {display: "none"})
 
-var tlLarge = new TimelineMax({ repeat:-1, yoyo: true});
-tlLarge.to(circle1Large, 2, {morphSVG: ".circle-l2", ease: Power3.easeOut})
-.to(".circle-l3", 2, {morphSVG: ".circle-l4", xPercent:-20},  0)
-.to(".circle-l5", 2, {morphSVG: ".circle-l1", xPercent:-40, yPercent:20}, 0);
+
+// var tlLarge = new TimelineMax({ repeat:-1, yoyo: true});
+// tlLarge.to(circle1Large, 2, {morphSVG: ".circle-l2", ease: Power2.easeInOut})
+// .to(".circle-l3", 2, {morphSVG: ".circle-l4", xPercent:-20, ease: Power2.easeInOut},  0)
+// .to(".circle-l5", 2, {morphSVG: ".circle-l1", xPercent:-40, yPercent:20, ease: Power2.easeInOut}, 0);
 // .to(".circle-l4", 4.5, {morphSVG: ".circle-l5", xPercent:100, yPercent:100}, 0);
 
-
-var tlSm = new TimelineMax({ repeat:-1, yoyo: true});
-tlSm.to(circle1Sm, 2, {morphSVG: ".circle-sm2", ease: Power3.easeOut}, "+=1")
-.to(".circle-sm3", 2, {morphSVG: ".circle-sm4", xPercent:-20, yPercent:70}, 0)
-.to(".circle-sm5", 2, {morphSVG: ".circle-sm1"}, 0);
-// .to(".circle-sm5", 2, {morphSVG: ".circle-sm4"}, 0);
-
-
-var tlMd = new TimelineMax({ repeat:-1, yoyo: true});
-tlMd.to(circle1Med, 7, {morphSVG: ".circle-m2", ease: Power3.easeOut})
-.to(".circle-m2", 7, {morphSVG: ".circle-m3", xPercent:-20},  0)
-.to(".circle-m3", 7, {morphSVG: ".circle-m4", xPercent:-40, yPercent:20}, 0)
-.to(".circle-m4", 7, {morphSVG: ".circle-m5", xPercent:100, yPercent:100}, 0);
+var tlLarge = new TimelineMax({ repeat:-1, yoyo: false});
+tlLarge.to(".circle-l1", 2.5, {morphSVG: ".circle-l2"})
+tlLarge.to(".circle-l1", 2.5, {morphSVG: ".circle-l3"})
+tlLarge.to(".circle-l1", 2.5, {morphSVG: ".circle-l4"})
+tlLarge.to(".circle-l1", 2.5, {morphSVG: ".circle-l5"})
+tlLarge.to(".circle-l1", 2.5, {morphSVG: ".circle-l1"});
 
 
+var tlMd = new TimelineMax({ repeat:-1, yoyo: false});
+tlMd.to(".circle-m1", 2, {morphSVG: ".circle-m2"})
+tlMd.to(".circle-m1", 2, {morphSVG: ".circle-m3"})
+tlMd.to(".circle-m1", 2, {morphSVG: ".circle-m4"})
+tlMd.to(".circle-m1", 2, {morphSVG: ".circle-m5"})
+tlMd.to(".circle-m1", 2, {morphSVG: ".circle-m1"});
+
+
+var tlSm = new TimelineMax({ repeat:-1, yoyo: false});
+tlSm.to(".circle-sm1", 1.8, {morphSVG: ".circle-sm2"})
+tlSm.to(".circle-sm1", 1.8, {morphSVG: ".circle-sm3"})
+tlSm.to(".circle-sm1", 1.8, {morphSVG: ".circle-sm4"})
+tlSm.to(".circle-sm1", 1.8, {morphSVG: ".circle-sm5"})
+tlSm.to(".circle-sm1", 1.8, {morphSVG: ".circle-sm1"});
 
 
 

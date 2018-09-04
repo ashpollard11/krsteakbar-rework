@@ -387,6 +387,8 @@ footer {
 
 		@include desktop {
 			width: 60%;
+			min-width: 647px;
+			max-width: 647px;
 			flex-direction: row;
 		}
 
@@ -417,7 +419,9 @@ footer {
 		}
 
 		.kr-text {
-			width: 305px;
+			width: 27%;
+			min-width: 205px;
+			max-width: 205px;
 			display: flex;
 			align-items: flex-end;
 			flex-direction: column;

@@ -535,6 +535,8 @@ footer .kr-footer {
 @media only screen and (min-width: 1027px) {
 	footer .kr-footer {
 		width: 60%;
+		min-width: 647px;
+		max-width: 647px;
 		flex-direction: row;
 	}
 }
@@ -569,7 +571,9 @@ footer .kr-footer ul.is-active {
 }
 
 footer .kr-footer .kr-text {
-	width: 305px;
+	width: 27%;
+	min-width: 205px;
+	max-width: 205px;
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
