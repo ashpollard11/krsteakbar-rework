@@ -318,13 +318,14 @@ body.hours {
 	.middle-group {
 		margin: 15%;
 		padding: 0 1em;
+		position: absolute;
 	}
 }
 
 .middle-group .main-content {
 	list-style: none;
 	font-weight: 500;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 @media only screen and (min-width: 640px) {
@@ -363,7 +364,9 @@ body.hours {
 
 @media only screen and (min-width: 640px) {
 	.middle-group .main-content h2:hover + .preview {
-		display: block;
+		width: 600px;
+		display: flex;
+		justify-content: space-around;
 	}
 	.food .middle-group .main-content h2:hover + .preview {
 		color: #83a0b0;
@@ -632,7 +635,7 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.foodDescription.open {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -677,7 +680,7 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.bureauDescription.open {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -722,7 +725,7 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.barDescription.open {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -767,7 +770,7 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.tableDescription.open {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -812,7 +815,7 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.locationDescription.open {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -857,7 +860,7 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.hoursDescription.open {
-		display: block;
+		display: flex;
 	}
 }
 
