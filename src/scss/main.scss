@@ -31,8 +31,7 @@ body {
 	background: $home-bg-color;
 	width: 100%;
 	height: 100%;
-	// overflow: hidden;
-
+	
 	&.home-body {
 		color: $home-copy-color;
 	}
@@ -54,6 +53,7 @@ body {
 	flex-direction: column;
 	padding: 1.8em;
 	justify-content: space-between;
+	overflow: hidden;
 }
 
 .top-section {
@@ -94,7 +94,7 @@ body {
 }
 
 .hamburger-menu {
-	background: url(../../dist/img/hamburger.png) no-repeat center;
+	// background: url(../../dist/img/hamburger.svg) no-repeat center;
 	background-size: auto 100%;
 	width: 69px;
 	height: 64px;
@@ -104,13 +104,29 @@ body {
 	flex-direction: column;
 	cursor: pointer;
 
+	&:hover {
+
+		path.menu-circle {
+			animation: ani-bounce 0.7s forwards;
+		}
+
+		div {
+			animation: ani-slide 0.5s forwards;
+
+			&:nth-child(3) {
+				animation-delay: 0.1s;
+			}
+		}
+	}
+
 	div {
 		width: 32px;
 		height: 1px;
 		background: $home-bg-color;
 		margin: 5px 0;
+		z-index: 0;
 
-		&:nth-child(2) {
+		&:nth-child(3) {
 			margin-left: 10px;
 		}
 	}
@@ -118,11 +134,24 @@ body {
 	@include tablet {
 		display: none;
 	}
+
+	&.is-active {
+
+		svg {
+			transform: scale(100);
+			transform-origin: center;
+			transition: 4s;
+		}
+
+		div {
+			display: none;
+		}
+	}
 }
 
 nav {
 	list-style: none;
-	background-color: $home-accent-color;
+	// background-color: $home-accent-color;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -133,24 +162,30 @@ nav {
 	display: flex;
 	flex-direction: column;
 	padding: 90px 20px;
+	opacity: 0;
 	display: none;
 
 	&.is-active {
 		display: flex;
+		animation: ani-fade 1s forwards;
+		animation-delay: 0.2s;
+		z-index: 9;
 	}
 
 	.close-menu {
-		background: url(../../dist/img/close-menu.png) no-repeat center;
-		background-size: auto 100%;
+		// background: url(../../dist/img/close-menu.svg) no-repeat center;
+		// background-size: auto 100%;
 		width: 66px;
 		height: 69px;
 		align-self: center;
-		margin-bottom: 44px;
+		margin: 35px 44px;
 		cursor: pointer;
+		z-index: 1;
 	}
 
 	li {
 		margin-bottom: 1.6em;
+		z-index: 2;
 
 		&.more {
 			cursor: pointer;
@@ -204,8 +239,8 @@ nav {
 	ul {
 		font-weight: 500;
 		font-size: 2.1em;
-		line-height: 1.8;
-			
+		line-height: 1.6;
+
 		@include tablet {
 			font-size: 3em;
 			max-width: 560px;
@@ -284,9 +319,11 @@ nav {
 		display: flex;
 		justify-content: space-between;
 		width: 85%;
+		max-width: 300px;
 
 		@include tablet {
-			width: 25%;
+			width: 33%;
+			max-width: 220px;
 		}
 
 		// a {
@@ -294,9 +331,13 @@ nav {
 		// 	// font-size: 0px;
 		// }
 
+		svg {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+		}
+
 		li {
-			width: 69px;
-			height: 64px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -304,18 +345,13 @@ nav {
 			&:hover {
 				transition: 0.3s;
 
-				.icon {
-
-				}
-
 				path {
 					transition: 0.5s;
 				}
 
-				path.circle {
+				path.social-circle {
 					fill: $home-accent-color;
-					// transform-origin: 24px 24px;
-					// transform: rotate(360deg);
+					animation: ani-bounce 0.8s forwards;
 				}
 
 				path.icon-path {
@@ -323,25 +359,16 @@ nav {
 					transition-delay: 0.3s;
 				}
 			}
+
+			.sc-2, .sc-3 {
+				visibility: hidden;
+			}
 		}
 
 		.icon {
 			width: 48px;
 			height: 45px;
-			display: block;
-			
-		}
-
-		.fb-icon {
-			
-		}
-
-		.ig-icon {
-			
-		}
-
-		.tw-icon {
-			
+			display: block;	
 		}
 	}
 
