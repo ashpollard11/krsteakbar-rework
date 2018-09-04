@@ -364,9 +364,9 @@ body.hours {
 
 @media only screen and (min-width: 640px) {
 	.middle-group .main-content h2:hover + .preview {
-		width: 600px;
 		display: flex;
 		justify-content: space-around;
+		background: red;
 	}
 	.food .middle-group .main-content h2:hover + .preview {
 		color: #83a0b0;

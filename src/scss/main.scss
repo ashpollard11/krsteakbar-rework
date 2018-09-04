@@ -407,9 +407,11 @@ body {
 
 			@include tablet{
 				// display: block;
-				width: 600px;
 				display: flex;
 				justify-content: space-around;
+				background: red;
+
+				//add width to each of the divs underneath
 
 				.food & {
 					color: $food-text-color;
