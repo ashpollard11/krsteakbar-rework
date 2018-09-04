@@ -7,7 +7,13 @@ var nav = document.querySelector("nav");
 var menuOpen = document.querySelector(".hamburger-menu");
 var menuClose = document.querySelector(".close-svg");
 var moreKevin = document.querySelector(".more");
+
 var moreKevinUl = document.querySelector(".more ul");
+
+var kevNameDesktop = document.querySelector(".kev-name");
+var krFooterUl = document.querySelector(".kr-footer ul");
+var krBorder = document.querySelector(".kr-border");
+var krText = document.querySelector(".kr-text");
 
 menuOpen.addEventListener('click', function (e) {
 	nav.classList.add('is-active');
@@ -24,6 +30,12 @@ menuClose.addEventListener('click', function (e) {
 
 moreKevin.addEventListener('click', function (e) {
 	moreKevinUl.classList.toggle('is-active');
+});
+
+kevNameDesktop.addEventListener('click', function (e) {
+	krBorder.classList.toggle('is-active');
+	krFooterUl.classList.toggle('is-active');
+	krText.classList.toggle('is-active');
 });
 
 //svgs
@@ -52,5 +64,5 @@ tlSm.to(circle1Sm, 2, { morphSVG: ".circle-sm2", ease: Power3.easeOut }, "+=1").
 
 
 var tlMd = new TimelineMax({ repeat: -1, yoyo: true });
-tlMd.to(circle1Med, 1.5, { morphSVG: ".circle-m2", ease: Power3.easeOut }).to(".circle-m2", 1.5, { morphSVG: ".circle-m3", xPercent: -20 }, 0).to(".circle-m3", 1.5, { morphSVG: ".circle-m4", xPercent: -40, yPercent: 20 }, 0).to(".circle-m4", 1.5, { morphSVG: ".circle-m5", xPercent: 100, yPercent: 100 }, 0);
+tlMd.to(circle1Med, 7, { morphSVG: ".circle-m2", ease: Power3.easeOut }).to(".circle-m2", 7, { morphSVG: ".circle-m3", xPercent: -20 }, 0).to(".circle-m3", 7, { morphSVG: ".circle-m4", xPercent: -40, yPercent: 20 }, 0).to(".circle-m4", 7, { morphSVG: ".circle-m5", xPercent: 100, yPercent: 100 }, 0);
 //# sourceMappingURL=main.js.map

@@ -41,6 +41,10 @@ body {
 	color: $home-accent-color;
 }
 
+footer {
+	color: $home-accent-color;
+}
+
 
 /* 2. Content ================================= */
 
@@ -233,7 +237,7 @@ nav {
 	align-items: center;
 
 	@include tablet {
-		padding: 0 1em;
+		padding: 4em 1em 0 1em;
 	}
 
 	ul {
@@ -299,7 +303,7 @@ nav {
 	}
 }
 
-.kr-footer {
+footer {
 	width: 100%;
 	max-width: 550px;
 	font-family: $url-font;
@@ -312,7 +316,7 @@ nav {
 		width: 100%;
 		max-width: unset;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-end;
 	}
 
 	.social {
@@ -372,13 +376,81 @@ nav {
 		}
 	}
 
-	p {
+	.kr-footer {
 		display: none;
 
 		@include tablet {
 			display: flex;
 			flex-direction: column;
 			text-align: right;
+		}
+
+		@include desktop {
+			width: 60%;
+			flex-direction: row;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			height: 140px;
+			justify-content: space-between;
+			opacity: 0;
+
+			@include desktop {
+				width: 100%;
+				max-width: 800px;
+				height: unset;
+				flex-direction: row;
+				transition: 0.2s;
+			}
+
+			&.is-active {
+				opacity: 1;
+				margin-bottom: 65px;
+
+				@include desktop {
+					margin-bottom: unset;
+				}
+				
+			}
+		}
+
+		.kr-text {
+			width: 305px;
+			display: flex;
+			align-items: flex-end;
+			flex-direction: column;
+
+			@include desktop {
+				flex-direction: row;
+			}
+
+			&.is-active {
+
+				@include desktop {
+					align-items: center;
+				}
+			}
+
+			.kr-border {
+					
+				transition: 0.2s;
+				transform-origin: right;
+
+				&.is-active {
+					transform: rotate(90deg);
+				}
+			}
+
+			.kev-name {
+				cursor: pointer;
+				transition: 0.5s;
+
+				&:hover {
+					color: $home-copy-color;
+				}
+			}
 		}
 	}
 }
