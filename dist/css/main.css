@@ -358,6 +358,20 @@ body.hours {
 	display: none;
 }
 
+.middle-group .main-content .preview p {
+	position: absolute;
+	width: 400px;
+	left: 0;
+	top: 78px;
+}
+
+.middle-group .main-content .preview img {
+	position: absolute;
+	width: 100px;
+	top: 100%;
+	left: 0;
+}
+
 .middle-group .main-content h2:hover + .preview img {
 	width: 200px;
 	height: 100px;
@@ -391,7 +405,8 @@ body.hours {
 @media only screen and (min-width: 640px) {
 	.middle-group .main-content li {
 		display: inline-block;
-		opacity: 1;
+		position: relative;
+		padding-bottom: 120px;
 	}
 }
 

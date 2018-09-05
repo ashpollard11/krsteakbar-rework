@@ -398,6 +398,20 @@ body {
 
 		.preview {
 			display: none;
+			
+			p{
+				position: absolute;
+				width: 400px;
+				left: 0;
+				top: 78px;
+			}
+
+			img{
+				position: absolute;
+				width: 100px;
+				top: 100%;
+				left: 0;
+			}
 		}
 			
 		h2:hover + .preview {
@@ -445,7 +459,8 @@ body {
 			
 			@include tablet {
 				display: inline-block;
-				opacity: 1;
+				position: relative;
+				padding-bottom:120px;
 			}
 
 			.food & {
@@ -573,12 +588,6 @@ body {
 					}
 				}
 			}
-
-			// .preview{
-			// 	@include tablet{
-			// 		width: 
-			// 	}
-			// }
 		}
 	}
 }

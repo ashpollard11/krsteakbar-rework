@@ -26,6 +26,7 @@ menuItemNames.forEach(function (menuItemName) {
             h2.appendChild(description);
             description.classList.add("open");
             small.clearSpecialClassOnBody();
+            small.onlyShowOnePanel();
 
             if (!h2.classList.contains("open")) {
                 h2.classList.add("open");
@@ -98,6 +99,7 @@ menuItemNames.forEach(function (menuItemName) {
 
         hover: function hover() {
             document.body.classList.add(menuItemName);
+            preview.display.style = "none";
         },
         offHover: function offHover() {
             document.body.classList.remove(menuItemName);
@@ -105,23 +107,12 @@ menuItemNames.forEach(function (menuItemName) {
             description.classList.remove("open");
             h2.classList.remove("open");
         }
-    };
 
-    var onClick = function onClick() {
-        h2.appendChild(description);
-        description.classList.add("open");
-        small.clearSpecialClassOnBody();
-
-        if (!h2.classList.contains("open")) {
-            h2.classList.add("open");
-            document.body.classList.add(menuItemName);
-            description.classList.add("open");
-            console.log("open");
-        } else {
-            h2.classList.remove("open");
-            description.classList.remove("open");
-            console.log("close");
-        }
+        // notDisplayingPreview: function() {
+        //     previews.forEach((preview) => {
+        //         document.body.classList.remove(itemName)
+        //     })
+        // },
     };
 
     mql.addListener(function (data) {
