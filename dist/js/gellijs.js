@@ -11,6 +11,7 @@ menuItemNames.forEach(function (menuItemName) {
     var theLI = document.querySelector("li." + menuItemName);
     var h2 = theLI.querySelector("h2");
     var description = document.querySelector("." + menuItemName + "Description");
+    var preview = document.querySelector(".preview");
 
     var small = {
         setup: function setup() {
@@ -64,11 +65,25 @@ menuItemNames.forEach(function (menuItemName) {
             theLI.removeEventListener('mouseout', large.offHover);
             h2.removeEventListener('click', large.onClick);
         },
-        onClick: function onClick(e) {
-            console.log("large.onclick");
-            document.querySelector("nav").style.display = "none";
+        onClick: function onClick() {
+            h2.appendChild(description);
             description.classList.add("open");
+            large.clearSpecialClassOnBody();
+
+            if (!h2.classList.contains("open")) {
+                h2.classList.add("open");
+                document.body.classList.add(menuItemName);
+                description.classList.add("open");
+                console.log("open");
+                preview.style.display = "none";
+            } else {
+                h2.classList.remove("open");
+                description.classList.remove("open");
+                console.log("close");
+                preview.removeAttribute("style");
+            }
         },
+
         clearSpecialClassOnBody: function clearSpecialClassOnBody() {
             menuItemNames.forEach(function (itemName) {
                 document.body.classList.remove(itemName);
@@ -78,7 +93,7 @@ menuItemNames.forEach(function (menuItemName) {
             allDescriptions.forEach(function (el) {
                 el.classList.remove("open");
             });
-            e.target.className = "open";
+            console.log(description);
         },
 
         hover: function hover() {
@@ -86,6 +101,26 @@ menuItemNames.forEach(function (menuItemName) {
         },
         offHover: function offHover() {
             document.body.classList.remove(menuItemName);
+            preview.removeAttribute("style");
+            description.classList.remove("open");
+            h2.classList.remove("open");
+        }
+    };
+
+    var onClick = function onClick() {
+        h2.appendChild(description);
+        description.classList.add("open");
+        small.clearSpecialClassOnBody();
+
+        if (!h2.classList.contains("open")) {
+            h2.classList.add("open");
+            document.body.classList.add(menuItemName);
+            description.classList.add("open");
+            console.log("open");
+        } else {
+            h2.classList.remove("open");
+            description.classList.remove("open");
+            console.log("close");
         }
     };
 

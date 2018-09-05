@@ -358,7 +358,7 @@ body {
 	@include tablet {
 		margin: 15%;
 		padding: 0 1em;
-		position: absolute;
+		// position: absolute;
 		// text-align: center;
 	}
 
@@ -404,6 +404,7 @@ body {
 
 			img {
 				width: 200px;
+				height: 100px;
 			}
 
 			@include tablet{
@@ -444,6 +445,7 @@ body {
 			
 			@include tablet {
 				display: inline-block;
+				opacity: 1;
 			}
 
 			.food & {
@@ -619,10 +621,10 @@ body {
 	@include tablet {
 		width: 100%;
 		max-width: unset;
-		// display: flex;
-		// justify-content: space-between;
-		// align-items: center;
-		// margin-top: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
 	}
 
 	.social {
@@ -680,7 +682,7 @@ ul:hover li, ul:active li {
 	opacity: 0.2;
 }
 
-ul:hover li:hover, li:active {
+ul:hover li:hover, li:active, .preview {
     opacity: 1;
 }
 
@@ -719,7 +721,7 @@ $navItems:
 			overflow: auto;
 
 			@include tablet{
-				display: flex;
+				display: block;
 			}
 		}
 
@@ -730,7 +732,7 @@ $navItems:
 			margin: 20px 0px;
 
 			@include tablet{
-				// height: 755px;
+				width: 100px;
 			}
 		}
 

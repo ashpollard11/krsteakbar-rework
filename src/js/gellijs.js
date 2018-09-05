@@ -20,6 +20,7 @@ menuItemNames.forEach(function(menuItemName) {
     const theLI = document.querySelector(`li.${menuItemName}`);
     const h2 = theLI.querySelector(`h2`)
     const description = document.querySelector(`.${menuItemName}Description`)
+    const preview = document.querySelector(`.preview`)
 
     let small = {
         setup: function() {
@@ -36,12 +37,12 @@ menuItemNames.forEach(function(menuItemName) {
             small.clearSpecialClassOnBody()
             
             if (!h2.classList.contains(`open`)){ 
-                h2.classList.add("open");
+                h2.classList.add(`open`);
                 document.body.classList.add(menuItemName)
                 description.classList.add(`open`)
                 console.log(`open`)
             }  else {
-                h2.classList.remove("open");
+                h2.classList.remove(`open`);
                 description.classList.remove(`open`)
                 console.log(`close`)
             }
@@ -77,11 +78,26 @@ menuItemNames.forEach(function(menuItemName) {
             h2.removeEventListener('click', large.onClick)
             
         },
-        onClick: function(e) { 
-            console.log("large.onclick")
-            document.querySelector("nav").style.display = "none";
-            description.classList.add("open")
+        onClick: function() { 
+            h2.appendChild(description)
+            description.classList.add("open");
+            large.clearSpecialClassOnBody()
+            
+            if (!h2.classList.contains(`open`)){ 
+                h2.classList.add(`open`);
+                document.body.classList.add(menuItemName)
+                description.classList.add(`open`)
+                console.log(`open`)
+                preview.style.display = "none"
+            }  else {
+                h2.classList.remove(`open`);
+                description.classList.remove(`open`)
+                console.log(`close`)
+                preview.removeAttribute(`style`)
+            }
+    
         },
+
         clearSpecialClassOnBody: function() {
             menuItemNames.forEach((itemName) => {
                 document.body.classList.remove(itemName)
@@ -91,7 +107,7 @@ menuItemNames.forEach(function(menuItemName) {
             allDescriptions.forEach(function(el) {
                 el.classList.remove("open");
             });
-            e.target.className = "open";
+            console.log(description)
         },
 
         hover: function(){
@@ -99,8 +115,28 @@ menuItemNames.forEach(function(menuItemName) {
         },
         offHover: function(){
             document.body.classList.remove(menuItemName)
+            preview.removeAttribute(`style`)
+            description.classList.remove(`open`)
+            h2.classList.remove(`open`);
         }
-    };
+    }
+
+    let onClick = function(){
+        h2.appendChild(description)
+        description.classList.add("open");
+        small.clearSpecialClassOnBody()
+        
+        if (!h2.classList.contains(`open`)){ 
+            h2.classList.add(`open`);
+            document.body.classList.add(menuItemName)
+            description.classList.add(`open`)
+            console.log(`open`)
+        }  else {
+            h2.classList.remove(`open`);
+            description.classList.remove(`open`)
+            console.log(`close`)
+        }
+    }
 
 
     mql.addListener(function(data) {

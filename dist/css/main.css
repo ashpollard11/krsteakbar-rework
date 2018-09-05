@@ -318,7 +318,6 @@ body.hours {
 	.middle-group {
 		margin: 15%;
 		padding: 0 1em;
-		position: absolute;
 	}
 }
 
@@ -361,6 +360,7 @@ body.hours {
 
 .middle-group .main-content h2:hover + .preview img {
 	width: 200px;
+	height: 100px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -391,6 +391,7 @@ body.hours {
 @media only screen and (min-width: 640px) {
 	.middle-group .main-content li {
 		display: inline-block;
+		opacity: 1;
 	}
 }
 
@@ -544,6 +545,10 @@ body.hours {
 	.kr-footer {
 		width: 100%;
 		max-width: unset;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: auto;
 	}
 }
 
@@ -603,7 +608,7 @@ ul:hover li, ul:active li {
 	opacity: 0.2;
 }
 
-ul:hover li:hover, li:active {
+ul:hover li:hover, li:active, .preview {
 	opacity: 1;
 }
 
@@ -631,13 +636,19 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.foodDescription.open {
-		display: flex;
+		display: block;
 	}
 }
 
 .foodDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
+}
+
+@media only screen and (min-width: 640px) {
+	.foodDescription .panel-img {
+		width: 100px;
+	}
 }
 
 .foodDescription .description-link {
@@ -676,13 +687,19 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.bureauDescription.open {
-		display: flex;
+		display: block;
 	}
 }
 
 .bureauDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
+}
+
+@media only screen and (min-width: 640px) {
+	.bureauDescription .panel-img {
+		width: 100px;
+	}
 }
 
 .bureauDescription .description-link {
@@ -721,13 +738,19 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.barDescription.open {
-		display: flex;
+		display: block;
 	}
 }
 
 .barDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
+}
+
+@media only screen and (min-width: 640px) {
+	.barDescription .panel-img {
+		width: 100px;
+	}
 }
 
 .barDescription .description-link {
@@ -766,13 +789,19 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.tableDescription.open {
-		display: flex;
+		display: block;
 	}
 }
 
 .tableDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
+}
+
+@media only screen and (min-width: 640px) {
+	.tableDescription .panel-img {
+		width: 100px;
+	}
 }
 
 .tableDescription .description-link {
@@ -811,13 +840,19 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.locationDescription.open {
-		display: flex;
+		display: block;
 	}
 }
 
 .locationDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
+}
+
+@media only screen and (min-width: 640px) {
+	.locationDescription .panel-img {
+		width: 100px;
+	}
 }
 
 .locationDescription .description-link {
@@ -856,13 +891,19 @@ ul:hover li:hover, li:active {
 
 @media only screen and (min-width: 640px) {
 	.hoursDescription.open {
-		display: flex;
+		display: block;
 	}
 }
 
 .hoursDescription .panel-img {
 	width: 100%;
 	margin: 20px 0px;
+}
+
+@media only screen and (min-width: 640px) {
+	.hoursDescription .panel-img {
+		width: 100px;
+	}
 }
 
 .hoursDescription .description-link {
