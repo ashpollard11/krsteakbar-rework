@@ -366,7 +366,7 @@ body {
 	// 	padding-top: 15%;
 	// }
 
-	.main-content {
+	ul.main-content {
 		list-style: none;
 		font-weight: 500;
 		font-size: 1.25em;
@@ -378,6 +378,18 @@ body {
 			position: absolute;
 		}
 
+		
+		&.a-child-is-open {
+			li {
+				visibility: hidden;
+			}
+			.nav-dash {
+				@include tablet {
+					visibility: hidden;
+				}
+			}
+		}
+		
 
 		.nav-dash {
 			display: none;
@@ -387,80 +399,150 @@ body {
 			}
 		}
 
-		p{
-			font-size: 24px;
-			font-family: $url-font;
-		}
-
-		h2{
-			padding-bottom: 20px;
-		}
-
-		.preview {
-			display: none;
-			
-			p{
-				position: absolute;
-				width: 400px;
-				left: 0;
-				top: 78px;
-			}
-
-			img{
-				position: absolute;
-				width: 100px;
-				top: 100%;
-				left: 0;
-			}
-		}
-			
-		h2:hover + .preview {
-
-			img {
-				width: 200px;
-				height: 100px;
-			}
-
-			@include tablet{
-				// display: block;
-				display: flex;
-				justify-content: space-around;
-				// background: red;
-
-				//add width to each of the divs underneath
-
-				.food & {
-					color: $food-text-color;
-				}
-
-				.bureau & {
-					color: $bureau-text-color;
-				}
-
-				.bar & {
-					color: $bar-text-color;
-				}
-
-				.table & {
-					color: $table-text-color;
-				}
-
-				.location & {
-					color: $location-text-color;
-				}
-
-				.hours & {
-					color: $hours-text-color;
-				}
-			}
-		}
-
+		
 		li {
+
+			h2{
+				padding-bottom: 20px;
+				font-size: 6.3vw;
+
+				&:hover{
+					opacity: 1;
+				}
+			}
+		
+			.descriptionDiv {
+				position: absolute;
+				font-size: 20px;
+				font-family: "spectral";
+				overflow: hidden;
+				width: 1000px;
+				padding: 0px;
+				transition-property: max-height, padding;
+				transition-duration: 0.3s, 0s;
+				transition-delay: 0s, 0.3s;
+			
+				display: none;
+			
+				.panel-img{
+					width: 100%;
+					// height: 355px;
+					margin: 20px 0px;
+			
+					@include tablet{
+						width: 100px;
+					}
+				}
+			
+				.description-link{
+					text-align: center;
+					margin: 50px 0px;
+					font-size: 24px;
+				}
+			
+			}
+
+			
+
+			p {
+				font-size: 24px;
+				font-family: $url-font;
+			}
+			
+			.preview-content {
+				display: none;
+			}
+
+			&.preview{
+				.descriptionDiv {
+					display: block;
+				}
+				.preview-content {
+					display: block;
+				}
+			}
+
+			.open-content {
+				display: none;
+			}
+
+			&.open{
+				visibility: visible;
+				.open-content {
+					display: block;
+				}	
+
+				
+			}
+
 			
 			@include tablet {
 				display: inline-block;
 				position: relative;
 				padding-bottom:120px;
+
+			}
+
+			a { // this is currently targeting the a in the h2
+				text-decoration: none;
+				text-transform: lowercase;
+				color: $home-copy-color;
+
+				.food & {
+					color: $food-text-color;
+					
+					@include tablet{
+						color: #030e14;
+						opacity: .5;
+
+					}
+				}
+
+				.bureau & {
+					color: $bureau-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+				
+
+				.bar & {
+					color: $bar-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.table & {
+					color: $table-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.location & {
+					color: $location-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
+
+				.hours & {
+					color: $hours-text-color;
+					
+					@include tablet{
+						color: #000;
+						opacity: .5;
+					}
+				}
 			}
 
 			.food & {
@@ -528,69 +610,10 @@ body {
 					}
 				}
 			}
-
-			a {
-				text-decoration: none;
-				text-transform: lowercase;
-				color: $home-copy-color;
-
-				.food & {
-					color: $food-text-color;
-					
-					@include tablet{
-						color: #030e14;
-						opacity: .5;
-					}
-				}
-
-				.bureau & {
-					color: $bureau-text-color;
-					
-					@include tablet{
-						color: #000;
-						opacity: .5;
-					}
-				}
-
-				.bar & {
-					color: $bar-text-color;
-					
-					@include tablet{
-						color: #000;
-						opacity: .5;
-					}
-				}
-
-				.table & {
-					color: $table-text-color;
-					
-					@include tablet{
-						color: #000;
-						opacity: .5;
-					}
-				}
-
-				.location & {
-					color: $location-text-color;
-					
-					@include tablet{
-						color: #000;
-						opacity: .5;
-					}
-				}
-
-				.hours & {
-					color: $hours-text-color;
-					
-					@include tablet{
-						color: #000;
-						opacity: .5;
-					}
-				}
-			}
 		}
 	}
 }
+
 
 .kr-footer {
 	width: 85%;
@@ -687,13 +710,9 @@ ul li{
 	transition: opacity 0.4s ease-out;
 }
 
-ul:hover li, ul:active li {
-	opacity: 0.2;
-}
-
-ul:hover li:hover, li:active, .preview {
-    opacity: 1;
-}
+// ul:hover li, ul:active a:not(.open) {
+// 	opacity: 0;
+// }
 
 // PANEL STUFF
 
@@ -706,56 +725,45 @@ $navItems:
 	(hours, $hours-text-color, $hours-main-links)
 ;
 
+
+
 @each $navItem, $color, $description-color in $navItems{
     .#{$navItem}Description{
-		font-size: 20px;
-		font-family: "spectral";
 		color: $color;
-		overflow: hidden;
-		max-height: 0px;
-		padding: 0px;
-		transition-property: max-height, padding;
-		transition-duration: 0.3s, 0s;
-		transition-delay: 0s;
-		display: none;
 		
-
-		max-height: 0px;
-		padding: 0px;
-		transition-delay: 0s, 0.3s;
-
-		&.open{
-			max-height: 1200px;
-			display: block;
-			overflow: auto;
-
-			@include tablet{
-				display: block;
-			}
-		}
-
-
-		.panel-img{
-			width: 100%;
-			// height: 355px;
-			margin: 20px 0px;
-
-			@include tablet{
-				width: 100px;
-			}
-		}
-
 		.description-link{
-			display: block;
-			text-align: center;
 			font-family: $url-font;
-			margin: 50px 0px;
-			
-			font-size: 24px;
-			
+
 			.#{$navItem}-a {
 				color: $description-color;
 			}
 		}
+
+		&.preview{
+			.food & {
+				color: $food-text-color;
+			}
+	
+			.bureau & {
+				color: $bureau-text-color;
+			}
+	
+			.bar & {
+				color: $bar-text-color;
+			}
+	
+			.table & {
+				color: $table-text-color;
+			}
+	
+			.location & {
+				color: $location-text-color;
+			}
+	
+			.hours & {
+				color: $hours-text-color;
+			}
+		}
+
 	}
 }
