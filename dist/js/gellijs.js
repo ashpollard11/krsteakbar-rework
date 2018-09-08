@@ -29,8 +29,6 @@ var hideOtherOpenLIs = function hideOtherOpenLIs() {
 
 h2s.forEach(function (h2) {
 
-    var anLI = document.querySelector('li');
-
     var small = {
         setup: function setup() {
             console.log('small setup');

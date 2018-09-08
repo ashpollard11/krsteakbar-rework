@@ -1,7 +1,5 @@
 const mql = window.matchMedia(`(max-width: 640px)`);
 
-
-
 const h2s = document.querySelectorAll(`li h2`)
 const allLIs = document.querySelectorAll(`li`)
 
@@ -29,9 +27,6 @@ let hideOtherOpenLIs = function() {
 
 
 h2s.forEach(function(h2) {
-
-    const anLI = document.querySelector(`li`)
-    
 
     let small = {
         setup: function() {
