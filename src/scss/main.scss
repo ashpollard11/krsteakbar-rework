@@ -412,17 +412,22 @@ body {
 			}
 		
 			.descriptionDiv {
-				position: absolute;
+				position: relative;
 				font-size: 20px;
 				font-family: "spectral";
 				overflow: hidden;
-				width: 1000px;
+				width: auto;
 				padding: 0px;
 				transition-property: max-height, padding;
 				transition-duration: 0.3s, 0s;
 				transition-delay: 0s, 0.3s;
 			
 				display: none;
+
+				@include tablet{
+					width: 1000px;
+					position: absolute;
+				}
 			
 				.panel-img{
 					width: 100%;
@@ -470,9 +475,7 @@ body {
 				visibility: visible;
 				.open-content {
 					display: block;
-				}	
-
-				
+				}		
 			}
 
 			

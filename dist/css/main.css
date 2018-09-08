@@ -365,16 +365,23 @@ body.hours {
 }
 
 .middle-group ul.main-content li .descriptionDiv {
-	position: absolute;
+	position: relative;
 	font-size: 20px;
 	font-family: "spectral";
 	overflow: hidden;
-	width: 1000px;
+	width: auto;
 	padding: 0px;
 	transition-property: max-height, padding;
 	transition-duration: 0.3s, 0s;
 	transition-delay: 0s, 0.3s;
 	display: none;
+}
+
+@media only screen and (min-width: 640px) {
+	.middle-group ul.main-content li .descriptionDiv {
+		width: 1000px;
+		position: absolute;
+	}
 }
 
 .middle-group ul.main-content li .descriptionDiv .panel-img {
