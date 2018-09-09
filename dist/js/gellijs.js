@@ -1,136 +1,111 @@
-"use strict";
+'use strict';
 
-var mql = window.matchMedia("(max-width: 640px)");
+var mql = window.matchMedia('(max-width: 640px)');
 
-var menuItemNames = ["food", "bureau", "bar", "table", "location", "hours"];
+var h2s = document.querySelectorAll('li h2');
+var allLIs = document.querySelectorAll('li');
 
-var allDescriptions = document.querySelectorAll(".descriptionDiv");
+var removeBodyClasses = function removeBodyClasses() {
+    document.body.classList.remove('food');
+    document.body.classList.remove('bureau');
+    document.body.classList.remove('bar');
+    document.body.classList.remove('table');
+    document.body.classList.remove('location');
+    document.body.classList.remove('hours');
+};
 
-menuItemNames.forEach(function (menuItemName) {
+var closeOtherOpenLIs = function closeOtherOpenLIs() {
+    document.querySelectorAll('li.open').forEach(function (otherOpen) {
+        otherOpen.classList.remove('preview');
+        otherOpen.classList.remove('open');
+    });
+};
 
-    var theLI = document.querySelector("li." + menuItemName);
-    var h2 = theLI.querySelector("h2");
-    var description = document.querySelector("." + menuItemName + "Description");
-    var preview = document.querySelector(".preview");
+var hideOtherOpenLIs = function hideOtherOpenLIs() {
+    allLIs.forEach(function (allLI) {
+        allLIs.style.visibility = 'none';
+    });
+};
+
+h2s.forEach(function (h2) {
 
     var small = {
         setup: function setup() {
-            console.log("small setup");
-            h2.addEventListener("click", small.onClick);
+            console.log('small setup');
+            h2.addEventListener('click', small.onClick);
         },
         teardown: function teardown() {
             console.log("small teardown");
-            h2.removeEventListener("click", small.onClick);
+            h2.removeEventListener('click', small.onClick);
         },
-        onClick: function onClick() {
-            h2.appendChild(description);
-            description.classList.add("open");
-            small.clearSpecialClassOnBody();
+        onClick: function onClick(e) {
+            removeBodyClasses();
+            // small.onlyShowOnePanel(e)
+            document.body.classList.add(this.getAttribute('data-body-class'));
 
-            if (!h2.classList.contains("open")) {
-                h2.classList.add("open");
-                document.body.classList.add(menuItemName);
-                description.classList.add("open");
-                console.log("open");
+            if (!h2.parentElement.classList.contains('preview')) {
+                closeOtherOpenLIs();
+                h2.parentElement.classList.add('preview');
+                h2.parentElement.classList.add('open');
+
+                // description.classList.add(`open`)
+                console.log('open');
             } else {
-                h2.classList.remove("open");
-                description.classList.remove("open");
-                console.log("close");
+                h2.parentElement.classList.remove('preview');
+                h2.parentElement.classList.remove('open');
+                console.log('close');
             }
-        },
-
-        clearSpecialClassOnBody: function clearSpecialClassOnBody() {
-            menuItemNames.forEach(function (itemName) {
-                document.body.classList.remove(itemName);
-            });
-        },
-        onlyShowOnePanel: function onlyShowOnePanel(e) {
-            allDescriptions.forEach(function (el) {
-                el.classList.remove("open");
-            });
-            console.log(description);
         }
     };
 
     var large = {
         setup: function setup() {
-            console.log("large setup");
-            theLI.addEventListener('mouseover', large.hover);
-            theLI.addEventListener('mouseout', large.offHover);
-            h2.addEventListener('click', large.onClick);
+            console.log('large setup');
+            h2.addEventListener('mouseover', large.h2MouseOver);
+            h2.addEventListener('mouseout', large.h2MouseOut);
+            h2.addEventListener('click', large.h2MouseClick);
         },
         teardown: function teardown() {
-            console.log("large teardown");
-            theLI.removeEventListener('mouseover', large.hover);
-            theLI.removeEventListener('mouseout', large.offHover);
-            h2.removeEventListener('click', large.onClick);
+            console.log('large teardown');
+            h2.removeEventListener('mouseover', large.h2MouseOver);
+            h2.removeEventListener('mouseout', large.h2MouseOut);
+            h2.removeEventListener('click', large.h2MouseClick);
         },
-        onClick: function onClick() {
-            h2.appendChild(description);
-            description.classList.add("open");
-            large.clearSpecialClassOnBody();
-
-            if (!h2.classList.contains("open")) {
-                h2.classList.add("open");
-                document.body.classList.add(menuItemName);
-                description.classList.add("open");
-                console.log("open");
-                preview.style.display = "none";
+        h2MouseClick: function h2MouseClick() {
+            if (!h2.parentElement.classList.contains('open')) {
+                closeOtherOpenLIs();
+                h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
+                h2.parentElement.classList.add('open'); // the LI
+                h2.removeEventListener('mouseout', large.h2MouseOut);
             } else {
-                h2.classList.remove("open");
-                description.classList.remove("open");
-                console.log("close");
-                preview.removeAttribute("style");
+                h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
+                h2.parentElement.classList.remove('open');
+                h2.parentElement.classList.remove('preview');
+                h2.addEventListener('mouseout', large.h2MouseOut);
+                document.body.classList.remove(this.getAttribute('data-body-class'));
             }
         },
 
-        clearSpecialClassOnBody: function clearSpecialClassOnBody() {
-            menuItemNames.forEach(function (itemName) {
-                document.body.classList.remove(itemName);
-            });
+        h2MouseOver: function h2MouseOver() {
+            console.log("hover");
+            removeBodyClasses();
+            document.body.classList.add(this.getAttribute('data-body-class'));
+            this.parentElement.classList.add('preview');
         },
-        onlyShowOnePanel: function onlyShowOnePanel(e) {
-            allDescriptions.forEach(function (el) {
-                el.classList.remove("open");
-            });
-            console.log(description);
-        },
-
-        hover: function hover() {
-            document.body.classList.add(menuItemName);
-        },
-        offHover: function offHover() {
-            document.body.classList.remove(menuItemName);
-            preview.removeAttribute("style");
-            description.classList.remove("open");
-            h2.classList.remove("open");
-        }
-    };
-
-    var onClick = function onClick() {
-        h2.appendChild(description);
-        description.classList.add("open");
-        small.clearSpecialClassOnBody();
-
-        if (!h2.classList.contains("open")) {
-            h2.classList.add("open");
-            document.body.classList.add(menuItemName);
-            description.classList.add("open");
-            console.log("open");
-        } else {
-            h2.classList.remove("open");
-            description.classList.remove("open");
-            console.log("close");
+        h2MouseOut: function h2MouseOut() {
+            removeBodyClasses();
+            document.body.classList.remove(this.getAttribute('data-body-class'));
+            this.parentElement.classList.remove('preview');
         }
     };
 
     mql.addListener(function (data) {
         if (data.matches) {
-            console.log("mql changed to small");
+            console.log('mql changed to small');
             large.teardown();
             small.setup();
         } else {
-            console.log("mql changed to large");
+            console.log('mql changed to large');
             small.teardown();
             large.setup();
         }
