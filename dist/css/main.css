@@ -76,6 +76,7 @@ table {
 
 svg {
 	overflow: visible;
+	z-index: 9999;
 }
 
 .circle {
