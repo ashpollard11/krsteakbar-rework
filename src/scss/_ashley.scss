@@ -45,6 +45,11 @@ svg {
 	&.is-active {
 		z-index: 8;
 
+		path {
+			stroke: $home-copy-color;
+		}
+		
+
 		@include tablet {
 			z-index: -99;
 		}
