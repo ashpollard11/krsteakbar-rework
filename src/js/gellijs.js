@@ -1,7 +1,7 @@
 const mql = window.matchMedia(`(max-width: 640px)`);
 
-const h2s = document.querySelectorAll(`li h2`)
-const allLIs = document.querySelectorAll(`li`)
+const h2s = document.querySelectorAll(`.main-content h2`)
+const allLIs = document.querySelectorAll(`.main-content li`)
 
 let removeBodyClasses = function() {
     document.body.classList.remove( `food` )
@@ -13,7 +13,7 @@ let removeBodyClasses = function() {
 }
 
 let closeOtherOpenLIs = function() {
-    document.querySelectorAll(`li.open`).forEach(function(otherOpen) {
+    document.querySelectorAll(`.main-content li.open`).forEach(function(otherOpen) {
         otherOpen.classList.remove('preview')
         otherOpen.classList.remove('open')
     })
