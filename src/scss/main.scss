@@ -17,7 +17,6 @@ TABLE OF CONTENTS:
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Michroma|Spectral');
 @import url("https://use.typekit.net/cco7rbw.css");
-// @import 'gel';
 @import 'ashley';
 @import 'variables';
 
@@ -78,13 +77,14 @@ footer {
 
 .content {
 	width: 100%;
-	height: 100%;
+	min-height: 100vh;
 	position: relative;
 	font-family: Michroma;
 	display: flex;
 	flex-direction: column;
 	padding: 1.8em;
 	justify-content: space-between;
+	align-items: center;
 	// overflow: hidden;
 }
 
@@ -101,9 +101,9 @@ footer {
 	}
 }
 
-.phone-number, .reservations, .reservations-bigger-desktop-view {
+.phone-number, .reservations, .kr-footer {
 	font-family: $url-font;
-	font-size: 1.5em;
+	font-size: 1.2em;
 
 	.food & {
 		color: $food-text-color;
@@ -128,11 +128,6 @@ footer {
 	.hours & {
 		color: $hours-text-color;
 	}
-}
-
-.phone-number, .reservations, .reservations-bigger-desktop-view {
-	font-family: $url-font;
-	font-size: 1.5em;
 }
 
 .phone-number {
@@ -228,6 +223,10 @@ nav {
 		animation: ani-fade 1s forwards;
 		animation-delay: 0.2s;
 		z-index: 9;
+
+		@include tablet {
+		display: none;
+		}
 	}
 
 	.close-menu {
@@ -251,10 +250,11 @@ nav {
 				border-left: 1px solid;
 				margin: 24px;
 				padding: 18px;
-				display: none;
+				opacity: 0;
+				transition: 0.3s ease-out;
 
 				&.is-active {
-					display: block;
+					opacity: 1;
 				}
 			}
 
@@ -275,78 +275,40 @@ nav {
 	}
 		
 	@include bigger-desktop {
-		display: none;
-	}
-}
-
-.reservations-bigger-desktop-view {
-	display: none;
-		
-	@include bigger-desktop {
-		display: block;
-		color: $home-copy-color; 
-		transform-origin: top;
-		transform: translateY(-50%) rotate(-90deg);
+		transform: rotate(-90deg);
+		transform-origin: 0;
 		position: absolute;
-		left: -100px;
-		bottom: -45%;
-		font-size: 2em;
+		top: 60%;
 	}
 }
 
 .middle-group {
-	//ashley's
-
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
-
-	// @include tablet {
-	// 	padding: 4em 1em 0 1em;
-	// }
-
-	//gel's
-
-	// margin: 48% 10% 53%;
-	// display: block;
-	// width: 85%;
 
 	@include tablet {
-		margin: 6% 15%;
-		padding: 0 1em;
-		// position: absolute;
-		// text-align: center;
+		margin-top: 50px;
 	}
 
-	//gel's main content
+	@include desktop {
+		margin-top: unset;
+		// margin-right: -195px;
+	}
 
-	// ul.main-content {
-	// 	font-weight: 500;
-	// 	font-size: 1.5em;
-	// 	line-height: 1.3;
-		
-	// 	@include tablet {
-	// 		font-size: 3em;
-	// 		max-width: 560px;
-	// 		padding-bottom: 84px;
-	// 	}
-
-	// 	@include desktop {
-	// 		font-size: 3.8em;
-	// 		max-width: 814px;
-	// 	}
 	ul.main-content {
-		list-style: none;
 		font-weight: 500;
-		font-size: 1.25em;
-		
+		font-size: 2.4em;
+		line-height: 1.7;
 
 		@include tablet {
-			font-size: 2em;
-			max-width: 1200px;
-			position: absolute;
+			font-size: 3.5em;
+			min-width: 620px;
+			max-width: 620px;
+			line-height: 1.3;
 		}
 
+		@include desktop {
+			font-size: 4.1em;
+			max-width: 814px;
+		}
 		
 		&.a-child-is-open {
 			li {
@@ -364,15 +326,12 @@ nav {
 
 			@include tablet {
 				display: inline;
-				font-size: 5vw;
 			}
 		}
 
 		li {
 
 			h2{
-				padding-bottom: 20px;
-				font-size: 6.3vw;
 
 				&:hover {
 					opacity: 1;
@@ -415,8 +374,6 @@ nav {
 			
 			}
 
-			
-
 			p {
 				font-size: 24px;
 				font-family: $url-font;
@@ -445,12 +402,10 @@ nav {
 					display: block;
 				}		
 			}
-
 			
 			@include tablet {
 				display: inline-block;
 				position: relative;
-				padding-bottom: 84px;
 
 			}
 
@@ -589,13 +544,10 @@ footer {
 	width: 100%;
 	max-width: 550px;
 	font-family: $url-font;
-	font-size: 1.5em;
+	// font-size: 1.5em;
 	text-transform: lowercase;
 	display: flex;
 	justify-content: center;
-	bottom: 0%;
-	position: fixed;
-	padding: 1.8em;
 
 	.food & {
 		color: $food-text-color;
@@ -655,6 +607,33 @@ footer {
 			justify-content: center;
 			align-items: center;
 
+			path.icon-path {
+
+				.food & {
+					stroke: $food-text-color;
+				}
+
+				.bureau & {
+					stroke: $bureau-text-color;
+				}
+
+				.bar & {
+					stroke: $bar-text-color;
+				}
+
+				.table & {
+					stroke: $table-text-color;
+				}
+
+				.location & {
+					stroke: $location-text-color;
+				}
+
+				.hours & {
+					stroke: $hours-text-color;
+				}
+			}
+
 			&:hover {
 				transition: 0.3s;
 
@@ -665,11 +644,59 @@ footer {
 				path.social-circle {
 					fill: $home-accent-color;
 					animation: ani-bounce 0.8s forwards;
+
+					.food & {
+						fill: $food-text-color;
+					}
+
+					.bureau & {
+						fill: $bureau-text-color;
+					}
+
+					.bar & {
+						fill: $bar-text-color;
+					}
+
+					.table & {
+						fill: $table-text-color;
+					}
+
+					.location & {
+						fill: $location-text-color;
+					}
+
+					.hours & {
+						fill: $hours-text-color;
+					}
 				}
 
 				path.icon-path {
 					stroke: $home-bg-color;
 					transition-delay: 0.3s;
+
+					.food & {
+						stroke: $food-background-color;
+					}
+
+					.bureau & {
+						stroke: $bureau-background-color;
+					}
+
+					.bar & {
+						stroke: $bar-background-color;
+					}
+
+					.table & {
+						stroke: $table-background-color;
+					}
+
+					.location & {
+						stroke: $location-background-color;
+					}
+
+					.hours & {
+						stroke: $hours-background-color;
+					}
 				}
 			}
 		}
@@ -691,16 +718,17 @@ footer {
 		}
 
 		@include desktop {
-			width: 60%;
-			min-width: 647px;
-			max-width: 647px;
+			width: 51%;
+			min-width: 500px;
+			max-width: 510px;
 			flex-direction: row;
+			align-items: flex-end;
 		}
 
 		ul {
 			display: flex;
 			flex-direction: column;
-			height: 140px;
+			height: 100px;
 			justify-content: space-between;
 			opacity: 0;
 
@@ -714,10 +742,11 @@ footer {
 
 			&.is-active {
 				opacity: 1;
-				margin-bottom: 65px;
+				margin-bottom: 40px;
 
 				@include desktop {
 					margin-bottom: unset;
+					transform: translate(30px);
 				}
 				
 			}
@@ -725,8 +754,7 @@ footer {
 
 		.kr-text {
 			width: 27%;
-			min-width: 205px;
-			max-width: 205px;
+			min-width: 162px;
 			display: flex;
 			align-items: flex-end;
 			flex-direction: column;
@@ -738,7 +766,7 @@ footer {
 			&.is-active {
 
 				@include desktop {
-					align-items: center;
+					// align-items: center;
 				}
 			}
 
@@ -748,8 +776,12 @@ footer {
 				transform-origin: right;
 
 				&.is-active {
-					transform: rotate(90deg);
+					transform: rotate(90deg) translate(15px);
 				}
+			}
+
+			.kr-text-div {
+				text-align: left;
 			}
 
 			.kev-name {
@@ -824,7 +856,6 @@ $navItems:
 				color: $hours-text-color;
 			}
 		}
-
 	}
 }
 

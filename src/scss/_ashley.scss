@@ -16,6 +16,38 @@ svg {
 		fill: none;
 		stroke: $white-accent-color;
 		stroke-width: 1;
+
+		.food & {
+			stroke: $food-main-links;
+		}
+
+		.bureau & {
+			stroke: $bureau-main-links;
+		}
+
+		.bar & {
+			stroke: $bar-main-links;
+		}
+
+		.table & {
+			stroke: $table-main-links;
+		}
+
+		.location & {
+			stroke: $location-main-links;
+		}
+
+		.hours & {
+			stroke: $hours-main-links;
+		}
+	}
+
+	&.is-active {
+		z-index: 8;
+
+		@include tablet {
+			z-index: -99;
+		}
 	}
 }
 

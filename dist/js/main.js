@@ -4,6 +4,7 @@ var nav = document.querySelector("nav");
 var menuOpen = document.querySelector(".hamburger-menu");
 var menuClose = document.querySelector(".close-svg");
 var moreKevin = document.querySelector(".more");
+var circles = document.querySelectorAll(".circle");
 
 var moreKevinUl = document.querySelector(".more ul");
 
@@ -17,12 +18,18 @@ menuOpen.addEventListener('click', function (e) {
 	menuOpen.classList.add('is-active');
 	var tlClose = new TimelineMax();
 	tlClose.from(".close-menu", 0.5, { drawSVG: "50% 50%", delay: 0.8 });
+	for (var i = 0; i < circles.length; i++) {
+		circles[i].classList.add('is-active');
+	}
 });
 
 menuClose.addEventListener('click', function (e) {
 	nav.classList.remove('is-active');
 	menuOpen.classList.remove('is-active');
 	moreKevinUl.classList.remove('is-active');
+	for (var i = 0; i < circles.length; i++) {
+		circles[i].classList.remove('is-active');
+	}
 });
 
 moreKevin.addEventListener('click', function (e) {

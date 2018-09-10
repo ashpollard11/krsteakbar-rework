@@ -84,6 +84,40 @@ svg {
 	stroke-width: 1;
 }
 
+.food .circle path {
+	stroke: #f9a68a;
+}
+
+.bureau .circle path {
+	stroke: #8bbfc1;
+}
+
+.bar .circle path {
+	stroke: #e2ae1e;
+}
+
+.table .circle path {
+	stroke: #f58319;
+}
+
+.location .circle path {
+	stroke: #4c5ec0;
+}
+
+.hours .circle path {
+	stroke: #ddb67a;
+}
+
+.circle.is-active {
+	z-index: 8;
+}
+
+@media only screen and (min-width: 640px) {
+	.circle.is-active {
+		z-index: -99;
+	}
+}
+
 .circle-l {
 	width: 48%;
 	height: 440px;
@@ -234,13 +268,14 @@ footer {
 /* 2. Content ================================= */
 .content {
 	width: 100%;
-	height: 100%;
+	min-height: 100vh;
 	position: relative;
 	font-family: Michroma;
 	display: flex;
 	flex-direction: column;
 	padding: 1.8em;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .top-section {
@@ -258,38 +293,33 @@ footer {
 	}
 }
 
-.phone-number, .reservations, .reservations-bigger-desktop-view {
+.phone-number, .reservations, .kr-footer {
 	font-family: "nimbus-sans";
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
-.food .phone-number, .food .reservations, .food .reservations-bigger-desktop-view {
+.food .phone-number, .food .reservations, .food .kr-footer {
 	color: #83a0b0;
 }
 
-.bureau .phone-number, .bureau .reservations, .bureau .reservations-bigger-desktop-view {
+.bureau .phone-number, .bureau .reservations, .bureau .kr-footer {
 	color: #fb9d52;
 }
 
-.bar .phone-number, .bar .reservations, .bar .reservations-bigger-desktop-view {
+.bar .phone-number, .bar .reservations, .bar .kr-footer {
 	color: #fad5e9;
 }
 
-.table .phone-number, .table .reservations, .table .reservations-bigger-desktop-view {
+.table .phone-number, .table .reservations, .table .kr-footer {
 	color: #a4c48f;
 }
 
-.location .phone-number, .location .reservations, .location .reservations-bigger-desktop-view {
+.location .phone-number, .location .reservations, .location .kr-footer {
 	color: #494949;
 }
 
-.hours .phone-number, .hours .reservations, .hours .reservations-bigger-desktop-view {
+.hours .phone-number, .hours .reservations, .hours .kr-footer {
 	color: #b4b4b4;
-}
-
-.phone-number, .reservations, .reservations-bigger-desktop-view {
-	font-family: "nimbus-sans";
-	font-size: 1.5em;
 }
 
 .phone-number {
@@ -388,6 +418,12 @@ nav.is-active {
 	z-index: 9;
 }
 
+@media only screen and (min-width: 640px) {
+	nav.is-active {
+		display: none;
+	}
+}
+
 nav .close-menu {
 	width: 66px;
 	height: 69px;
@@ -411,11 +447,12 @@ nav li.more ul {
 	border-left: 1px solid;
 	margin: 24px;
 	padding: 18px;
-	display: none;
+	opacity: 0;
+	transition: 0.3s ease-out;
 }
 
 nav li.more ul.is-active {
-	display: block;
+	opacity: 1;
 }
 
 nav li.more li {
@@ -436,45 +473,44 @@ nav li.more li {
 
 @media only screen and (min-width: 1440px) {
 	.reservations {
-		display: none;
-	}
-}
-
-.reservations-bigger-desktop-view {
-	display: none;
-}
-
-@media only screen and (min-width: 1440px) {
-	.reservations-bigger-desktop-view {
-		display: block;
-		color: #9e8261;
-		transform-origin: top;
-		transform: translateY(-50%) rotate(-90deg);
+		transform: rotate(-90deg);
+		transform-origin: 0;
 		position: absolute;
-		left: -100px;
-		bottom: -45%;
-		font-size: 2em;
+		top: 60%;
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group {
-		margin: 6% 15%;
-		padding: 0 1em;
+		margin-top: 50px;
+	}
+}
+
+@media only screen and (min-width: 1027px) {
+	.middle-group {
+		margin-top: unset;
 	}
 }
 
 .middle-group ul.main-content {
-	list-style: none;
 	font-weight: 500;
-	font-size: 1.25em;
+	font-size: 2.4em;
+	line-height: 1.7;
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content {
-		font-size: 2em;
-		max-width: 1200px;
-		position: absolute;
+		font-size: 3.5em;
+		min-width: 620px;
+		max-width: 620px;
+		line-height: 1.3;
+	}
+}
+
+@media only screen and (min-width: 1027px) {
+	.middle-group ul.main-content {
+		font-size: 4.1em;
+		max-width: 814px;
 	}
 }
 
@@ -495,13 +531,7 @@ nav li.more li {
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content .nav-dash {
 		display: inline;
-		font-size: 5vw;
 	}
-}
-
-.middle-group ul.main-content li h2 {
-	padding-bottom: 20px;
-	font-size: 6.3vw;
 }
 
 .middle-group ul.main-content li h2:hover {
@@ -578,7 +608,6 @@ nav li.more li {
 	.middle-group ul.main-content li {
 		display: inline-block;
 		position: relative;
-		padding-bottom: 84px;
 	}
 }
 
@@ -700,13 +729,9 @@ footer {
 	width: 100%;
 	max-width: 550px;
 	font-family: "nimbus-sans";
-	font-size: 1.5em;
 	text-transform: lowercase;
 	display: flex;
 	justify-content: center;
-	bottom: 0%;
-	position: fixed;
-	padding: 1.8em;
 }
 
 .food footer {
@@ -768,6 +793,30 @@ footer .social li {
 	align-items: center;
 }
 
+.food footer .social li path.icon-path {
+	stroke: #83a0b0;
+}
+
+.bureau footer .social li path.icon-path {
+	stroke: #fb9d52;
+}
+
+.bar footer .social li path.icon-path {
+	stroke: #fad5e9;
+}
+
+.table footer .social li path.icon-path {
+	stroke: #a4c48f;
+}
+
+.location footer .social li path.icon-path {
+	stroke: #494949;
+}
+
+.hours footer .social li path.icon-path {
+	stroke: #b4b4b4;
+}
+
 footer .social li:hover {
 	transition: 0.3s;
 }
@@ -781,9 +830,57 @@ footer .social li:hover path.social-circle {
 	animation: ani-bounce 0.8s forwards;
 }
 
+.food footer .social li:hover path.social-circle {
+	fill: #83a0b0;
+}
+
+.bureau footer .social li:hover path.social-circle {
+	fill: #fb9d52;
+}
+
+.bar footer .social li:hover path.social-circle {
+	fill: #fad5e9;
+}
+
+.table footer .social li:hover path.social-circle {
+	fill: #a4c48f;
+}
+
+.location footer .social li:hover path.social-circle {
+	fill: #494949;
+}
+
+.hours footer .social li:hover path.social-circle {
+	fill: #b4b4b4;
+}
+
 footer .social li:hover path.icon-path {
 	stroke: #eae6df;
 	transition-delay: 0.3s;
+}
+
+.food footer .social li:hover path.icon-path {
+	stroke: #07263a;
+}
+
+.bureau footer .social li:hover path.icon-path {
+	stroke: #a13612;
+}
+
+.bar footer .social li:hover path.icon-path {
+	stroke: #806875;
+}
+
+.table footer .social li:hover path.icon-path {
+	stroke: #4b5b42;
+}
+
+.location footer .social li:hover path.icon-path {
+	stroke: #ffffff;
+}
+
+.hours footer .social li:hover path.icon-path {
+	stroke: #3f3f3f;
 }
 
 footer .social .icon {
@@ -806,17 +903,18 @@ footer .kr-footer {
 
 @media only screen and (min-width: 1027px) {
 	footer .kr-footer {
-		width: 60%;
-		min-width: 647px;
-		max-width: 647px;
+		width: 51%;
+		min-width: 500px;
+		max-width: 510px;
 		flex-direction: row;
+		align-items: flex-end;
 	}
 }
 
 footer .kr-footer ul {
 	display: flex;
 	flex-direction: column;
-	height: 140px;
+	height: 100px;
 	justify-content: space-between;
 	opacity: 0;
 }
@@ -833,19 +931,19 @@ footer .kr-footer ul {
 
 footer .kr-footer ul.is-active {
 	opacity: 1;
-	margin-bottom: 65px;
+	margin-bottom: 40px;
 }
 
 @media only screen and (min-width: 1027px) {
 	footer .kr-footer ul.is-active {
 		margin-bottom: unset;
+		transform: translate(30px);
 	}
 }
 
 footer .kr-footer .kr-text {
 	width: 27%;
-	min-width: 205px;
-	max-width: 205px;
+	min-width: 162px;
 	display: flex;
 	align-items: flex-end;
 	flex-direction: column;
@@ -857,19 +955,17 @@ footer .kr-footer .kr-text {
 	}
 }
 
-@media only screen and (min-width: 1027px) {
-	footer .kr-footer .kr-text.is-active {
-		align-items: center;
-	}
-}
-
 footer .kr-footer .kr-text .kr-border {
 	transition: 0.2s;
 	transform-origin: right;
 }
 
 footer .kr-footer .kr-text .kr-border.is-active {
-	transform: rotate(90deg);
+	transform: rotate(90deg) translate(15px);
+}
+
+footer .kr-footer .kr-text .kr-text-div {
+	text-align: left;
 }
 
 footer .kr-footer .kr-text .kev-name {
