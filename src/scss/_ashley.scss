@@ -113,6 +113,30 @@ svg {
 	path.menu-circle {
 		fill: $home-accent-color;
 		z-index: -1;
+
+		.food & {
+			fill: $food-text-color;
+		}
+
+		.bureau & {
+			fill: $bureau-text-color;
+		}
+
+		.bar & {
+			fill: $bar-text-color;
+		}
+
+		.table & {
+			fill: $table-text-color;
+		}
+
+		.location & {
+			fill: $location-text-color;
+		}
+
+		.hours & {
+			fill: $hours-text-color;
+		}
 	}
 }
 

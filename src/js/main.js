@@ -1,5 +1,5 @@
 
-
+let content = document.querySelector(".content");
 let nav =  document.querySelector("nav");
 let menuOpen = document.querySelector(".hamburger-menu");
 let menuClose = document.querySelector(".close-svg");
@@ -7,6 +7,8 @@ let moreKevin = document.querySelector(".more");
 let circles = document.querySelectorAll(".circle");
 
 let moreKevinUl = document.querySelector(".more ul");
+
+let footer = document.querySelector("footer");
 
 let kevNameDesktop = document.querySelector(".kev-name");
 let krFooterUl = document.querySelector(".kr-footer ul");
@@ -16,6 +18,8 @@ let krText = document.querySelector(".kr-text");
 menuOpen.addEventListener('click', function(e) {
 	nav.classList.add('is-active');
 	menuOpen.classList.add('is-active');
+	footer.classList.add('is-active');
+	content.classList.add('is-active');
 	var tlClose = new TimelineMax();
 	tlClose.from(".close-menu", 0.5, {drawSVG: "50% 50%", delay:0.8});
 	for (var i = 0; i < circles.length; i++) {
@@ -27,6 +31,8 @@ menuClose.addEventListener('click', function(e) {
 	nav.classList.remove('is-active');
 	menuOpen.classList.remove('is-active');
 	moreKevinUl.classList.remove('is-active');
+	footer.classList.remove('is-active');
+	content.classList.add('is-active');
 	for (var i = 0; i < circles.length; i++) {
 	    circles[i].classList.remove('is-active');
 	}

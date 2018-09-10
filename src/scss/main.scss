@@ -85,7 +85,11 @@ footer {
 	padding: 1.8em;
 	justify-content: space-between;
 	align-items: center;
-	// overflow: hidden;
+	
+
+	&.is-active {
+		overflow: hidden;
+	}
 }
 
 .top-section {
@@ -182,6 +186,30 @@ footer {
 
 		&:nth-child(3) {
 			margin-left: 10px;
+		}
+
+		&.food {
+			background: $food-background-color;
+		}
+
+		&.bureau {
+			background: $bureau-background-color;
+		}
+
+		&.bar {
+			background: $bar-background-color;
+		}
+
+		&.table {
+			background: $table-background-color;
+		}
+
+		&.location {
+			background: $location-background-color;
+		}
+
+		&.hours {
+			background: $hours-background-color;
 		}
 	}
 
@@ -544,7 +572,6 @@ footer {
 	width: 100%;
 	max-width: 550px;
 	font-family: $url-font;
-	// font-size: 1.5em;
 	text-transform: lowercase;
 	display: flex;
 	justify-content: center;
@@ -578,6 +605,10 @@ footer {
 		max-width: unset;
 		justify-content: space-between;
 		align-items: flex-end;
+	}
+
+	&.is-active {
+		z-index: -100;
 	}
 
 	.social {
@@ -742,7 +773,7 @@ footer {
 
 			&.is-active {
 				opacity: 1;
-				margin-bottom: 40px;
+				margin-bottom: 55px;
 
 				@include desktop {
 					margin-bottom: unset;
@@ -779,7 +810,11 @@ footer {
 				transform-origin: right;
 
 				&.is-active {
-					transform: rotate(90deg) translate(15px);
+					transform: rotate(90deg);
+
+					@include desktop {
+						transform: rotate(90deg) translate(15px);
+					}
 				}
 			}
 
