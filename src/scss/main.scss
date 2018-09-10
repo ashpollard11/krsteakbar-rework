@@ -766,7 +766,10 @@ footer {
 			&.is-active {
 
 				@include desktop {
-					// align-items: center;
+
+					.kr-text-div {
+						text-align: left;
+					}
 				}
 			}
 
@@ -778,10 +781,6 @@ footer {
 				&.is-active {
 					transform: rotate(90deg) translate(15px);
 				}
-			}
-
-			.kr-text-div {
-				text-align: left;
 			}
 
 			.kev-name {

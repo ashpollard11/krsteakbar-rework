@@ -955,6 +955,12 @@ footer .kr-footer .kr-text {
 	}
 }
 
+@media only screen and (min-width: 1027px) {
+	footer .kr-footer .kr-text.is-active .kr-text-div {
+		text-align: left;
+	}
+}
+
 footer .kr-footer .kr-text .kr-border {
 	transition: 0.2s;
 	transform-origin: right;
@@ -962,10 +968,6 @@ footer .kr-footer .kr-text .kr-border {
 
 footer .kr-footer .kr-text .kr-border.is-active {
 	transform: rotate(90deg) translate(15px);
-}
-
-footer .kr-footer .kr-text .kr-text-div {
-	text-align: left;
 }
 
 footer .kr-footer .kr-text .kev-name {
