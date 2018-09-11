@@ -84,6 +84,44 @@ svg {
 	stroke-width: 1;
 }
 
+.food .circle path {
+	stroke: #f9a68a;
+}
+
+.bureau .circle path {
+	stroke: #8bbfc1;
+}
+
+.bar .circle path {
+	stroke: #e2ae1e;
+}
+
+.table .circle path {
+	stroke: #f58319;
+}
+
+.location .circle path {
+	stroke: #4c5ec0;
+}
+
+.hours .circle path {
+	stroke: #ddb67a;
+}
+
+.circle.is-active {
+	z-index: 8;
+}
+
+.circle.is-active path {
+	stroke: #9e8261;
+}
+
+@media only screen and (min-width: 640px) {
+	.circle.is-active {
+		z-index: -99;
+	}
+}
+
 .circle-l {
 	width: 48%;
 	height: 440px;
@@ -130,6 +168,30 @@ svg {
 .hamburger-menu path.menu-circle {
 	fill: #eba900;
 	z-index: -1;
+}
+
+.food .hamburger-menu path.menu-circle {
+	fill: #83a0b0;
+}
+
+.bureau .hamburger-menu path.menu-circle {
+	fill: #fb9d52;
+}
+
+.bar .hamburger-menu path.menu-circle {
+	fill: #fad5e9;
+}
+
+.table .hamburger-menu path.menu-circle {
+	fill: #a4c48f;
+}
+
+.location .hamburger-menu path.menu-circle {
+	fill: #494949;
+}
+
+.hours .hamburger-menu path.menu-circle {
+	fill: #b4b4b4;
 }
 
 nav svg {

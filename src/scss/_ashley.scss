@@ -16,6 +16,43 @@ svg {
 		fill: none;
 		stroke: $white-accent-color;
 		stroke-width: 1;
+
+		.food & {
+			stroke: $food-main-links;
+		}
+
+		.bureau & {
+			stroke: $bureau-main-links;
+		}
+
+		.bar & {
+			stroke: $bar-main-links;
+		}
+
+		.table & {
+			stroke: $table-main-links;
+		}
+
+		.location & {
+			stroke: $location-main-links;
+		}
+
+		.hours & {
+			stroke: $hours-main-links;
+		}
+	}
+
+	&.is-active {
+		z-index: 8;
+
+		path {
+			stroke: $home-copy-color;
+		}
+		
+
+		@include tablet {
+			z-index: -99;
+		}
 	}
 }
 
@@ -76,6 +113,30 @@ svg {
 	path.menu-circle {
 		fill: $home-accent-color;
 		z-index: -1;
+
+		.food & {
+			fill: $food-text-color;
+		}
+
+		.bureau & {
+			fill: $bureau-text-color;
+		}
+
+		.bar & {
+			fill: $bar-text-color;
+		}
+
+		.table & {
+			fill: $table-text-color;
+		}
+
+		.location & {
+			fill: $location-text-color;
+		}
+
+		.hours & {
+			fill: $hours-text-color;
+		}
 	}
 }
 
