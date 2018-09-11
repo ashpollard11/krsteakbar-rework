@@ -245,6 +245,38 @@ nav svg {
 	}
 }
 
+@keyframes ani-fade-in {
+	0% {
+		transform: translateY(20px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes ani-fade-in-res {
+	0% {
+		transform: rotate(-90deg) translateX(-20px);
+		opacity: 0;
+	}
+	100% {
+		transform: rotate(-90deg) translateX(0px);
+		opacity: 1;
+	}
+}
+@keyframes ani-fade-down {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
 /* 1. Main Layout ================================= */
 * {
 	box-sizing: border-box;
@@ -328,6 +360,8 @@ footer {
 .phone-number, .reservations, .kr-footer {
 	font-family: "nimbus-sans";
 	font-size: 1.2em;
+	animation: ani-fade-in 2s forwards;
+	animation-delay: 0.3s;
 }
 
 .food .phone-number, .food .reservations, .food .kr-footer {
@@ -533,7 +567,13 @@ nav li.more li {
 		transform-origin: 0;
 		position: absolute;
 		top: 60%;
+		animation: ani-fade-in-res 2s forwards;
+		animation-delay: 0.3s;
 	}
+}
+
+.middle-group {
+	animation: ani-fade-down 2.5s forwards;
 }
 
 @media only screen and (min-width: 640px) {
@@ -544,7 +584,7 @@ nav li.more li {
 
 @media only screen and (min-width: 1027px) {
 	.middle-group {
-		margin-top: unset;
+		margin-top: 30px;
 	}
 }
 
@@ -1059,6 +1099,30 @@ footer .kr-footer .kr-text .kev-name {
 
 footer .kr-footer .kr-text .kev-name:hover {
 	color: #9e8261;
+}
+
+.food footer .kr-footer .kr-text .kev-name:hover {
+	color: #f9a68a;
+}
+
+.bureau footer .kr-footer .kr-text .kev-name:hover {
+	color: #8bbfc1;
+}
+
+.bar footer .kr-footer .kr-text .kev-name:hover {
+	color: #e2ae1e;
+}
+
+.table footer .kr-footer .kr-text .kev-name:hover {
+	color: #f58319;
+}
+
+.location footer .kr-footer .kr-text .kev-name:hover {
+	color: #4c5ec0;
+}
+
+.hours footer .kr-footer .kr-text .kev-name:hover {
+	color: #ddb67a;
 }
 
 ul li {
