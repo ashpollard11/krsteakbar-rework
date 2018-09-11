@@ -1,3 +1,6 @@
+console.log("KR Steakhouse -- Designed by Carol Ehreth, Developed by Ashley Pollard and Angelica de Wit")
+
+
 
 let content = document.querySelector(".content");
 let nav =  document.querySelector("nav");
@@ -9,6 +12,8 @@ let circles = document.querySelectorAll(".circle");
 let moreKevinUl = document.querySelector(".more ul");
 
 let middleGroup = document.querySelector(".middle-group");
+let middleLis = document.querySelectorAll(".main-content li")
+let liClose = document.querySelectorAll(".main-content li .close-svg")
 let footer = document.querySelector("footer");
 
 let kevNameDesktop = document.querySelector(".kev-name");
@@ -59,6 +64,7 @@ for (var i = 0; i < iconPaths.length; i++) {
     var tlIcons = new TimelineMax();
 	tlIcons.from(iconPaths[i], 0.5, {drawSVG: "50% 50%", delay:1});
 }
+
 
 
 

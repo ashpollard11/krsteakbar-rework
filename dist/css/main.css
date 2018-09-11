@@ -654,7 +654,6 @@ nav li.more li {
 }
 
 .middle-group ul.main-content {
-	font-weight: 500;
 	font-size: 2.3em;
 	line-height: 1.7;
 	animation: ani-fade-down 2.5s forwards;
@@ -708,17 +707,16 @@ nav li.more li {
 .middle-group ul.main-content li .close-svg {
 	width: 66px;
 	height: 69px;
-}
-
-.middle-group ul.main-content li .close-svg.open-button {
-	display: block;
-}
-
-.middle-group ul.main-content li .close-menu {
-	align-self: center;
-	margin: 35px 44px;
+	display: none;
 	cursor: pointer;
-	z-index: 1;
+}
+
+@media only screen and (min-width: 640px) {
+	.middle-group ul.main-content li .close-svg.open-button {
+		display: block;
+		position: absolute;
+		left: 113%;
+	}
 }
 
 .middle-group ul.main-content li h2:hover {

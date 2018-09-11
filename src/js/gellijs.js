@@ -47,7 +47,6 @@ h2s.forEach(function(h2) {
                 h2.parentElement.classList.add(`preview`)
                 h2.parentElement.classList.add(`open`)
                 document.body.classList.add(`pad-footer`)
-                document.querySelector(".main-content li .close-svg").classList.add(`open-button`)
 
                 // description.classList.add(`open`)
                 console.log(`open`)
@@ -85,6 +84,7 @@ h2s.forEach(function(h2) {
                 h2.parentElement.parentElement.classList.add(`a-child-is-open`) // the UL
                 h2.parentElement.classList.add(`open`) // the LI
                 h2.removeEventListener('mouseout', large.h2MouseOut)
+                document.querySelector(".main-content li .close-svg").classList.add(`open-button`)
                 
                 
             } else {
@@ -93,9 +93,8 @@ h2s.forEach(function(h2) {
                 h2.parentElement.classList.remove(`preview`)
                 h2.addEventListener('mouseout', large.h2MouseOut)
                 document.body.classList.remove( this.getAttribute('data-body-class') )
-                
+                document.querySelector(".main-content li .close-svg").classList.remove(`open-button`)   
             }
-    
         },
         
         h2MouseOver: function(){
@@ -139,4 +138,16 @@ h2s.forEach(function(h2) {
     }   
     
 })
+
+let liClose = document.querySelectorAll(".main-content li .close-svg")
+
+
+liClose.forEach(function(liCloseBtn) {
+    liCloseBtn.addEventListener("click", function(e) {
+        console.log(liCloseBtn)
+        liCloseBtn.parentElement.classList.remove("preview")
+        liCloseBtn.parentElement.classList.remove("open")
+    })
 })
+
+

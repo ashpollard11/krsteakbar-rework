@@ -40,7 +40,6 @@ h2s.forEach(function (h2) {
         },
         onClick: function onClick(e) {
             removeBodyClasses();
-            // small.onlyShowOnePanel(e)
             document.body.classList.add(this.getAttribute('data-body-class'));
 
             if (!h2.parentElement.classList.contains('preview')) {
@@ -48,7 +47,6 @@ h2s.forEach(function (h2) {
                 h2.parentElement.classList.add('preview');
                 h2.parentElement.classList.add('open');
                 document.body.classList.add('pad-footer');
-                document.querySelector(".main-content li .close-svg").classList.add('open-button');
 
                 // description.classList.add(`open`)
                 console.log('open');
@@ -57,7 +55,7 @@ h2s.forEach(function (h2) {
                 h2.parentElement.classList.remove('open');
                 document.body.classList.remove('pad-footer');
                 document.querySelector(".main-content li .close-svg").classList.remove('open-button');
-
+                document.body.classList.remove(this.getAttribute('data-body-class'));
                 console.log('close');
             }
         }
@@ -82,12 +80,14 @@ h2s.forEach(function (h2) {
                 h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
                 h2.parentElement.classList.add('open'); // the LI
                 h2.removeEventListener('mouseout', large.h2MouseOut);
+                document.querySelector(".main-content li .close-svg").classList.add('open-button');
             } else {
                 h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
                 h2.parentElement.classList.remove('open');
                 h2.parentElement.classList.remove('preview');
                 h2.addEventListener('mouseout', large.h2MouseOut);
                 document.body.classList.remove(this.getAttribute('data-body-class'));
+                document.querySelector(".main-content li .close-svg").classList.remove('open-button');
             }
         },
 
@@ -108,12 +108,16 @@ h2s.forEach(function (h2) {
         if (data.matches) {
             console.log('mql changed to small');
             h2.parentElement.parentElement.classList.remove('a-child-is-open');
+            h2.parentElement.classList.remove('preview');
+            h2.parentElement.classList.remove('open');
+            removeBodyClasses();
             large.teardown();
             small.setup();
         } else {
             console.log('mql changed to large');
             h2.parentElement.classList.remove('preview');
             h2.parentElement.classList.remove('open');
+            removeBodyClasses();
             small.teardown();
             large.setup();
         }
@@ -124,5 +128,15 @@ h2s.forEach(function (h2) {
     } else {
         large.setup();
     }
+});
+
+var liClose = document.querySelectorAll(".main-content li .close-svg");
+
+liClose.forEach(function (liCloseBtn) {
+    liCloseBtn.addEventListener("click", function (e) {
+        console.log(liCloseBtn);
+        liCloseBtn.parentElement.classList.remove("preview");
+        liCloseBtn.parentElement.classList.remove("open");
+    });
 });
 //# sourceMappingURL=gellijs.js.map
