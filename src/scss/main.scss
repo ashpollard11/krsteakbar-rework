@@ -391,8 +391,9 @@ nav {
 				display: none;
 
 				@include tablet {
-					width: 400px;
+					width: 1000px;
 					position: absolute;
+					max-height: 1000px;
 				}
 			
 				.panel-img {
@@ -401,7 +402,10 @@ nav {
 					margin: 20px 0px;
 			
 					@include tablet {
-						width: 100px;
+						width: 300px;
+						position: absolute;
+						left: 50%;
+						top: 0;
 					}
 				}
 			
@@ -409,13 +413,15 @@ nav {
 					text-align: center;
 					margin: 50px 0px;
 					font-size: 24px;
+					width: 400px;
 				}
 			
 			}
 
 			p {
-				font-size: 24px;
+				font-size: 20px;
 				font-family: $url-font;
+				width: 400px;
 			}
 			
 			.preview-content {
@@ -428,17 +434,19 @@ nav {
 				}
 				.preview-content {
 					display: block;
+					max-height: 1000px;
 				}
 			}
 
 			.open-content {
-				display: none;
+				visibility: hidden;
 			}
 
 			&.open {
 				visibility: visible;
+
 				.open-content {
-					display: block;
+					visibility: visible;
 				}		
 			}
 			

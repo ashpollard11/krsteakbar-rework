@@ -618,8 +618,9 @@ nav li.more li {
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li .descriptionDiv {
-		width: 400px;
+		width: 1000px;
 		position: absolute;
+		max-height: 1000px;
 	}
 }
 
@@ -630,7 +631,10 @@ nav li.more li {
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li .descriptionDiv .panel-img {
-		width: 100px;
+		width: 300px;
+		position: absolute;
+		left: 50%;
+		top: 0;
 	}
 }
 
@@ -638,11 +642,13 @@ nav li.more li {
 	text-align: center;
 	margin: 50px 0px;
 	font-size: 24px;
+	width: 400px;
 }
 
 .middle-group ul.main-content li p {
-	font-size: 24px;
+	font-size: 20px;
 	font-family: "nimbus-sans";
+	width: 400px;
 }
 
 .middle-group ul.main-content li .preview-content {
@@ -655,10 +661,11 @@ nav li.more li {
 
 .middle-group ul.main-content li.preview .preview-content {
 	display: block;
+	max-height: 1000px;
 }
 
 .middle-group ul.main-content li .open-content {
-	display: none;
+	visibility: hidden;
 }
 
 .middle-group ul.main-content li.open {
@@ -666,7 +673,7 @@ nav li.more li {
 }
 
 .middle-group ul.main-content li.open .open-content {
-	display: block;
+	visibility: visible;
 }
 
 @media only screen and (min-width: 640px) {
