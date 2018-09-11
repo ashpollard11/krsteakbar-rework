@@ -49,6 +49,15 @@ kevNameDesktop.addEventListener('click', function(e) {
 })
 
 
+let iconPaths = document.querySelectorAll(".icon-path")
+
+
+for (var i = 0; i < iconPaths.length; i++) {
+    var tlIcons = new TimelineMax();
+	tlIcons.from(iconPaths[i], 0.5, {drawSVG: "50% 50%", delay:1});
+}
+
+
 
 //svgs
 
