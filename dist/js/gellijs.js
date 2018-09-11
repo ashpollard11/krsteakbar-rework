@@ -54,7 +54,6 @@ h2s.forEach(function (h2) {
                 h2.parentElement.classList.remove('preview');
                 h2.parentElement.classList.remove('open');
                 document.body.classList.remove('pad-footer');
-                document.querySelector(".main-content li .close-svg").classList.remove('open-button');
                 document.body.classList.remove(this.getAttribute('data-body-class'));
                 console.log('close');
             }
@@ -80,14 +79,12 @@ h2s.forEach(function (h2) {
                 h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
                 h2.parentElement.classList.add('open'); // the LI
                 h2.removeEventListener('mouseout', large.h2MouseOut);
-                document.querySelector(".main-content li .close-svg").classList.add('open-button');
             } else {
                 h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
                 h2.parentElement.classList.remove('open');
                 h2.parentElement.classList.remove('preview');
                 h2.addEventListener('mouseout', large.h2MouseOut);
                 document.body.classList.remove(this.getAttribute('data-body-class'));
-                document.querySelector(".main-content li .close-svg").classList.remove('open-button');
             }
         },
 
@@ -130,13 +127,15 @@ h2s.forEach(function (h2) {
     }
 });
 
-var liClose = document.querySelectorAll(".main-content li .close-svg");
+var liCloseBtns = document.querySelectorAll(".main-content li .close-svg");
+var mainContentUL = document.querySelector("ul.main-content");
 
-liClose.forEach(function (liCloseBtn) {
+liCloseBtns.forEach(function (liCloseBtn) {
     liCloseBtn.addEventListener("click", function (e) {
-        console.log(liCloseBtn);
-        liCloseBtn.parentElement.classList.remove("preview");
-        liCloseBtn.parentElement.classList.remove("open");
+        liCloseBtn.parentElement.classList.remove('open');
+        liCloseBtn.parentElement.classList.remove('preview');
+        mainContentUL.classList.remove('a-child-is-open');
+        removeBodyClasses();
     });
 });
 //# sourceMappingURL=gellijs.js.map

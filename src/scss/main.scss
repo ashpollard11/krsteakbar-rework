@@ -113,11 +113,6 @@ h2, .description-link {
 
 nav {
 	font-family: $heading-font;
-	li {
-		&.more {
-
-		}
-	}
 }
 
 footer {
@@ -437,13 +432,13 @@ nav {
 				display: none;
 				cursor: pointer;
 
-				&.open-button {
-
-					@include tablet {
+				@include tablet {
+					&.open-content{
 						display: block;
 						position: absolute;
 						left: 113%;
 					}
+		
 				}
 			}
 
