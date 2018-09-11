@@ -1,11 +1,15 @@
 "use strict";
 
+var content = document.querySelector(".content");
 var nav = document.querySelector("nav");
 var menuOpen = document.querySelector(".hamburger-menu");
 var menuClose = document.querySelector(".close-svg");
 var moreKevin = document.querySelector(".more");
+var circles = document.querySelectorAll(".circle");
 
 var moreKevinUl = document.querySelector(".more ul");
+
+var footer = document.querySelector("footer");
 
 var kevNameDesktop = document.querySelector(".kev-name");
 var krFooterUl = document.querySelector(".kr-footer ul");
@@ -15,14 +19,24 @@ var krText = document.querySelector(".kr-text");
 menuOpen.addEventListener('click', function (e) {
 	nav.classList.add('is-active');
 	menuOpen.classList.add('is-active');
+	footer.classList.add('is-active');
+	content.classList.add('is-active');
 	var tlClose = new TimelineMax();
 	tlClose.from(".close-menu", 0.5, { drawSVG: "50% 50%", delay: 0.8 });
+	for (var i = 0; i < circles.length; i++) {
+		circles[i].classList.add('is-active');
+	}
 });
 
 menuClose.addEventListener('click', function (e) {
 	nav.classList.remove('is-active');
 	menuOpen.classList.remove('is-active');
 	moreKevinUl.classList.remove('is-active');
+	footer.classList.remove('is-active');
+	content.classList.add('is-active');
+	for (var i = 0; i < circles.length; i++) {
+		circles[i].classList.remove('is-active');
+	}
 });
 
 moreKevin.addEventListener('click', function (e) {
@@ -56,13 +70,16 @@ kevNameDesktop.addEventListener('click', function (e) {
 
 
 var tlLarge = new TimelineMax({ repeat: -1, yoyo: false });
-tlLarge.from(".circle-l1", 1, { drawSVG: "60% 40%" });
+// tlLarge.fromTo(".circle-l1", 1, {drawSVG:"0 5%"}, {drawSVG:"95% 100%"})
+// tlLarge.from(".circle-l1", 1, {drawSVG:"50% 50%"})
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l2" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l3" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l4" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l5" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l1" });
-tlLarge.from(".circle-l1", 1, { drawSVG: "40% 60%" });
+// tlLarge.from(".circle-l1", 1, {drawSVG: "40% 60%"});
+// tlLarge.from(".circle-l1", 1, {drawSVG:"50% 50%"});
+
 
 var tlMd = new TimelineMax({ repeat: -1, yoyo: false });
 tlMd.to(".circle-m1", 2, { morphSVG: ".circle-m2" });
