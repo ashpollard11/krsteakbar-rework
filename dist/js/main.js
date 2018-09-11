@@ -9,6 +9,7 @@ var circles = document.querySelectorAll(".circle");
 
 var moreKevinUl = document.querySelector(".more ul");
 
+var middleGroup = document.querySelector(".middle-group");
 var footer = document.querySelector("footer");
 
 var kevNameDesktop = document.querySelector(".kev-name");
@@ -20,6 +21,7 @@ menuOpen.addEventListener('click', function (e) {
 	nav.classList.add('is-active');
 	menuOpen.classList.add('is-active');
 	footer.classList.add('is-active');
+	middleGroup.classList.add('is-active');
 	content.classList.add('is-active');
 	var tlClose = new TimelineMax();
 	tlClose.from(".close-menu", 0.5, { drawSVG: "50% 50%", delay: 0.8 });
@@ -33,6 +35,7 @@ menuClose.addEventListener('click', function (e) {
 	menuOpen.classList.remove('is-active');
 	moreKevinUl.classList.remove('is-active');
 	footer.classList.remove('is-active');
+	middleGroup.classList.remove('is-active');
 	content.classList.add('is-active');
 	for (var i = 0; i < circles.length; i++) {
 		circles[i].classList.remove('is-active');

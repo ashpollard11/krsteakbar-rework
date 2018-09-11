@@ -48,10 +48,13 @@ svg {
 		path {
 			stroke: $home-copy-color;
 		}
-		
 
 		@include tablet {
 			z-index: -99;
+
+			path {
+				stroke: $white-accent-color;
+			}
 		}
 	}
 }
@@ -187,6 +190,13 @@ nav {
     0% {transform: translateY(-50px); opacity: 0;}
     100% {transform: translateY(0px); opacity: 1;}
 }
+
+@keyframes ani-across {
+    0% {transform: translateX(-20px); opacity: 0;}
+    100% {transform: translateX(0px); opacity: 1;}
+}
+
+
 
 
 

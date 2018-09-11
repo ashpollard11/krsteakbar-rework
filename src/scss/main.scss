@@ -62,8 +62,62 @@ body {
 	}
 }
 
-.phone-number {
+.phone-number, h1 {
 	color: $home-accent-color;
+}
+
+h1 {
+	font-family: $url-font;
+	font-size: 2em;
+	opacity: 0;
+	animation: ani-across 0.8s forwards;
+	animation-delay: 1s;
+	display: none;
+
+	@include tablet {
+		display: block;
+	}
+
+	.food & {
+		color: $food-text-color;
+	}
+
+	.bureau & {
+		color: $bureau-text-color;
+	}
+
+	.bar & {
+		color: $bar-text-color;
+	}
+
+	.table & {
+		color: $table-text-color;
+	}
+
+	.location & {
+		color: $location-text-color;
+	}
+
+	.hours & {
+		color: $hours-text-color;
+	}
+}
+
+h2, .description-link {
+	font-family: $heading-font;
+}
+
+.phone-number, .reservations, .kr-footer {
+	font-family: $url-font;
+}
+
+nav {
+	font-family: $heading-font;
+	li {
+		&.more {
+
+		}
+	}
 }
 
 footer {
@@ -79,7 +133,7 @@ footer {
 	width: 100%;
 	min-height: 100vh;
 	position: relative;
-	font-family: Michroma;
+	font-family: $copy-font;
 	display: flex;
 	flex-direction: column;
 	padding: 1.8em;
@@ -106,7 +160,6 @@ footer {
 }
 
 .phone-number, .reservations, .kr-footer {
-	font-family: $url-font;
 	font-size: 1.2em;
 	animation: ani-fade-in 2s forwards;
 	animation-delay: 0.3s;
@@ -190,27 +243,27 @@ footer {
 			margin-left: 10px;
 		}
 
-		&.food {
+		.food & {
 			background: $food-background-color;
 		}
 
-		&.bureau {
+		.bureau & {
 			background: $bureau-background-color;
 		}
 
-		&.bar {
+		.bar & {
 			background: $bar-background-color;
 		}
 
-		&.table {
+		.table & {
 			background: $table-background-color;
 		}
 
-		&.location {
+		.location & {
 			background: $location-background-color;
 		}
 
-		&.hours {
+		.hours & {
 			background: $hours-background-color;
 		}
 	}
@@ -276,7 +329,7 @@ nav {
 			cursor: pointer;
 
 			ul {
-				font-size: 0.7em;
+				font-size: 0.6em;
 				border-left: 1px solid;
 				margin: 24px;
 				padding: 18px;
@@ -315,7 +368,10 @@ nav {
 }
 
 .middle-group {
-	animation: ani-fade-down 2.5s forwards;
+
+	&.is-active {
+		z-index: -9999;
+	}
 
 	@include tablet {
 		margin-top: 50px;
@@ -330,6 +386,7 @@ nav {
 		font-weight: 500;
 		font-size: 2.3em;
 		line-height: 1.7;
+		animation: ani-fade-down 2.5s forwards;
 
 		@include tablet {
 			font-size: 3.5em;
@@ -375,6 +432,23 @@ nav {
 
 		li {
 
+			.close-svg {
+				width: 66px;
+				height: 69px;
+				// display: none;
+
+				&.open-button {
+					display: block;
+				}
+			}
+
+			.close-menu {
+				align-self: center;
+				margin: 35px 44px;
+				cursor: pointer;
+				z-index: 1;
+			}
+
 			h2{
 
 				&:hover {
@@ -385,7 +459,6 @@ nav {
 			.descriptionDiv {
 				position: relative;
 				font-size: 16px;
-				font-family: "spectral";
 				overflow: hidden;
 				width: auto;
 				padding: 0px;
@@ -420,12 +493,10 @@ nav {
 					font-size: 24px;
 					width: 400px;
 				}
-			
 			}
 
 			p {
 				font-size: 20px;
-				font-family: $url-font;
 				width: 400px;
 			}
 			
@@ -434,6 +505,24 @@ nav {
 			}
 
 			&.preview {
+				transition: 0.3s;
+
+				&:last-child {
+					margin-bottom: 60px;
+
+					@include tablet {
+						margin-bottom: 0px;
+					}
+				}
+				
+
+				&:nth-of-type(-n+4) {
+
+					@include tablet {
+						margin-bottom: 60px;
+					}
+				}
+
 				.descriptionDiv {
 					display: block;
 				}
@@ -595,10 +684,18 @@ nav {
 footer {
 	width: 100%;
 	max-width: 550px;
-	font-family: $url-font;
 	text-transform: lowercase;
 	display: flex;
 	justify-content: center;
+	transition: 0.5s;
+
+	&.pad-footer {
+		margin-top: 60px;
+
+		@include tablet {
+			margin-top: 0px;
+		}
+	}
 
 	.food & {
 		color: $food-text-color;
@@ -645,11 +742,6 @@ footer {
 			width: 33%;
 			max-width: 220px;
 		}
-
-		// a {
-		// 	color: rgba(0,0,0,0);
-		// 	// font-size: 0px;
-		// }
 
 		svg {
 			position: absolute;
@@ -907,7 +999,6 @@ $navItems:
 		color: $color;
 		
 		.description-link {
-			font-family: $url-font;
 
 			.#{$navItem}-a {
 				color: $description-color;

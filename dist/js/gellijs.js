@@ -47,12 +47,17 @@ h2s.forEach(function (h2) {
                 closeOtherOpenLIs();
                 h2.parentElement.classList.add('preview');
                 h2.parentElement.classList.add('open');
+                document.body.classList.add('pad-footer');
+                document.querySelector(".main-content li .close-svg").classList.add('open-button');
 
                 // description.classList.add(`open`)
                 console.log('open');
             } else {
                 h2.parentElement.classList.remove('preview');
                 h2.parentElement.classList.remove('open');
+                document.body.classList.remove('pad-footer');
+                document.querySelector(".main-content li .close-svg").classList.remove('open-button');
+
                 console.log('close');
             }
         }
