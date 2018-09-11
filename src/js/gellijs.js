@@ -39,7 +39,6 @@ h2s.forEach(function(h2) {
         },
         onClick: function(e) { 
             removeBodyClasses();
-            // small.onlyShowOnePanel(e)
             document.body.classList.add( this.getAttribute('data-body-class') )
             
             if (!h2.parentElement.classList.contains(`preview`)){ 
@@ -52,6 +51,7 @@ h2s.forEach(function(h2) {
             }  else {
                 h2.parentElement.classList.remove(`preview`)
                 h2.parentElement.classList.remove(`open`)
+                document.body.classList.remove( this.getAttribute('data-body-class') )
                 console.log(`close`)
             }
         },
@@ -111,12 +111,16 @@ h2s.forEach(function(h2) {
         if (data.matches) {
             console.log(`mql changed to small`)
             h2.parentElement.parentElement.classList.remove(`a-child-is-open`)
+            h2.parentElement.classList.remove(`preview`)
+            h2.parentElement.classList.remove(`open`)
+            removeBodyClasses();
             large.teardown()
             small.setup()
         } else {
             console.log(`mql changed to large`)
             h2.parentElement.classList.remove(`preview`)
             h2.parentElement.classList.remove(`open`)
+            removeBodyClasses();
             small.teardown()
             large.setup()
         }
