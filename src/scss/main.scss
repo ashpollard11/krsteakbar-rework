@@ -354,7 +354,18 @@ nav {
 
 			@include tablet {
 				display: inline;
-			}
+
+				.food &, 
+				.bureau &,
+				.bar &,
+				.table &,
+				.location &,
+				.hours & {
+					color: #000;
+					opacity: .5;
+				}
+
+			}	
 		}
 
 		li {
@@ -368,7 +379,7 @@ nav {
 		
 			.descriptionDiv {
 				position: relative;
-				font-size: 20px;
+				font-size: 16px;
 				font-family: "spectral";
 				overflow: hidden;
 				width: auto;
@@ -446,7 +457,7 @@ nav {
 					color: $food-text-color;
 					
 					@include tablet {
-						color: #030e14;
+						color: #000;
 						opacity: .5;
 
 					}
@@ -892,7 +903,6 @@ $navItems:
 		}
 	}
 }
-
 
 
 

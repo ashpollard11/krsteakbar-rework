@@ -588,6 +588,15 @@ nav li.more li {
 	.middle-group ul.main-content .nav-dash {
 		display: inline;
 	}
+	.food .middle-group ul.main-content .nav-dash,
+	.bureau .middle-group ul.main-content .nav-dash,
+	.bar .middle-group ul.main-content .nav-dash,
+	.table .middle-group ul.main-content .nav-dash,
+	.location .middle-group ul.main-content .nav-dash,
+	.hours .middle-group ul.main-content .nav-dash {
+		color: #000;
+		opacity: .5;
+	}
 }
 
 .middle-group ul.main-content li h2:hover {
@@ -596,7 +605,7 @@ nav li.more li {
 
 .middle-group ul.main-content li .descriptionDiv {
 	position: relative;
-	font-size: 20px;
+	font-size: 16px;
 	font-family: "spectral";
 	overflow: hidden;
 	width: auto;
@@ -679,7 +688,7 @@ nav li.more li {
 
 @media only screen and (min-width: 640px) {
 	.food .middle-group ul.main-content li a {
-		color: #030e14;
+		color: #000;
 		opacity: .5;
 	}
 }
