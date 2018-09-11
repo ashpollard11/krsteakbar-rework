@@ -108,6 +108,8 @@ footer {
 .phone-number, .reservations, .kr-footer {
 	font-family: $url-font;
 	font-size: 1.2em;
+	animation: ani-fade-in 2s forwards;
+	animation-delay: 0.3s;
 
 	.food & {
 		color: $food-text-color;
@@ -307,17 +309,20 @@ nav {
 		transform-origin: 0;
 		position: absolute;
 		top: 60%;
+		animation: ani-fade-in-res 2s forwards;
+		animation-delay: 0.3s;
 	}
 }
 
 .middle-group {
+	animation: ani-fade-down 2.5s forwards;
 
 	@include tablet {
 		margin-top: 50px;
 	}
 
 	@include desktop {
-		margin-top: unset;
+		margin-top: 30px;
 		// margin-right: -195px;
 	}
 
@@ -843,6 +848,31 @@ footer {
 
 				&:hover {
 					color: $home-copy-color;
+
+					.food & {
+						color: $food-main-links;
+					}
+
+					.bureau & {
+						color: $bureau-main-links;
+					}
+
+					.bar & {
+						color: $bar-main-links;
+					}
+
+					.table & {
+						color: $table-main-links;
+					}
+
+					.location & {
+						color: $location-main-links;
+					}
+
+					.hours & {
+						color: $hours-main-links;
+					}
+
 				}
 			}
 		}
