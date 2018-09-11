@@ -70,13 +70,16 @@ kevNameDesktop.addEventListener('click', function (e) {
 
 
 var tlLarge = new TimelineMax({ repeat: -1, yoyo: false });
-tlLarge.from(".circle-l1", 1, { drawSVG: "60% 40%" });
+// tlLarge.fromTo(".circle-l1", 1, {drawSVG:"0 5%"}, {drawSVG:"95% 100%"})
+// tlLarge.from(".circle-l1", 1, {drawSVG:"50% 50%"})
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l2" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l3" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l4" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l5" });
 tlLarge.to(".circle-l1", 2.5, { morphSVG: ".circle-l1" });
-tlLarge.from(".circle-l1", 1, { drawSVG: "40% 60%" });
+// tlLarge.from(".circle-l1", 1, {drawSVG: "40% 60%"});
+// tlLarge.from(".circle-l1", 1, {drawSVG:"50% 50%"});
+
 
 var tlMd = new TimelineMax({ repeat: -1, yoyo: false });
 tlMd.to(".circle-m1", 2, { morphSVG: ".circle-m2" });
