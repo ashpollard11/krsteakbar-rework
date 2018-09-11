@@ -1,7 +1,7 @@
 const mql = window.matchMedia(`(max-width: 640px)`);
 
-const h2s = document.querySelectorAll(`li h2`)
-const allLIs = document.querySelectorAll(`li`)
+const h2s = document.querySelectorAll(`.main-content h2`)
+const allLIs = document.querySelectorAll(`.main-content li`)
 
 let removeBodyClasses = function() {
     document.body.classList.remove( `food` )
@@ -13,7 +13,7 @@ let removeBodyClasses = function() {
 }
 
 let closeOtherOpenLIs = function() {
-    document.querySelectorAll(`li.open`).forEach(function(otherOpen) {
+    document.querySelectorAll(`.main-content li.open`).forEach(function(otherOpen) {
         otherOpen.classList.remove('preview')
         otherOpen.classList.remove('open')
     })
@@ -110,10 +110,13 @@ h2s.forEach(function(h2) {
     mql.addListener(function(data) {
         if (data.matches) {
             console.log(`mql changed to small`)
+            h2.parentElement.parentElement.classList.remove(`a-child-is-open`)
             large.teardown()
             small.setup()
         } else {
             console.log(`mql changed to large`)
+            h2.parentElement.classList.remove(`preview`)
+            h2.parentElement.classList.remove(`open`)
             small.teardown()
             large.setup()
         }
