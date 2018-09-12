@@ -395,6 +395,10 @@ nav {
 		}
 		
 		&.a-child-is-open {
+			@include tablet {
+				// max-width: unset;
+			}
+
 			li {
 				visibility: hidden;
 			}
@@ -420,11 +424,11 @@ nav {
 					color: #000;
 					opacity: .5;
 				}
-
-			}	
+			}
 		}
 
 		li {
+			transition: 0.8s;
 
 			.close-svg {
 				width: 66px;
@@ -436,9 +440,14 @@ nav {
 					&.open-content{
 						display: block;
 						position: absolute;
-						left: 113%;
+						left: 155%;
+						top: -170%;
 					}
-		
+				}
+
+				@include desktop {
+					left: 113%;
+					top: 0;
 				}
 			}
 
@@ -453,52 +462,61 @@ nav {
 				position: relative;
 				font-size: 16px;
 				// overflow: hidden;
-				width: auto;
+				width: 100%;
 				padding: 0px;
 				transition-property: max-height, padding;
-				transition-duration: 0.3s, 0s;
+				transition-duration: 0.8s, 0s;
 				transition-delay: 0s, 0.3s;
-			
 				display: none;
 
 				@include tablet {
-					width: 1000px;
+					// width: 1000px;
 					position: absolute;
 					max-height: 1000px;
 				}
 			
 				.panel-img {
-					width: 100%;
-					// height: 355px;
-					margin: 20px 0px;
+					// width: 100%;
 			
 					@include tablet {
-						width: 300px;
+						width: 250px;
 						position: absolute;
-						left: 50%;
-						top: 0;
+						z-index: -999;
 					}
 				}
 			
 				.description-link {
-					text-align: center;
-					margin: 50px 0px;
-					font-size: 24px;
-					width: 400px;
+					margin: 20px 0px;
+					font-size: 19px;
+
+					@include tablet {
+						width: 400px;
+						font-size: 16px;
+					}
+					
+					@include desktop {
+						text-align: center;
+					}
 				}
 			}
 
 			p {
-				font-size: 20px;
-				width: 400px;
+				font-size: 19px;
+
+				@include tablet {
+					width: 300px;
+				}
 			}
 			
 			.preview-content {
 				display: none;
+
+				@include tablet {
+					width: 350px;
+				}
 			}
 
 			&.preview {
-				transition: 0.3s;
 
 				&:last-child {
 					margin-bottom: 60px;
@@ -507,26 +525,70 @@ nav {
 						margin-bottom: 0px;
 					}
 				}
-				
 
 				&:nth-of-type(-n+4) {
 
 					@include tablet {
-						margin-bottom: 60px;
+						margin-bottom: 100px;
 					}
+				}
+
+				h2 {
+					margin-bottom: 15px;
 				}
 
 				.descriptionDiv {
 					display: block;
+
+
+					@include tablet {
+						text-align: left;
+						// &:nth-of-type(-n+2) {
+						// 	text-align: right;
+						// }
+					}
+
+					&.hoursDescription {
+
+						.preview-content {
+							margin-bottom: 2px;
+						}
+					}
+
+					&.locationDescription {
+
+						.preview-content {
+							margin-bottom: 2px;
+						}
+					}
 				}
+
 				.preview-content {
 					display: block;
+					width: 100%;
 					max-height: 1000px;
+					margin-bottom: 20px;
+
+					@include tablet {
+						width: 300px;
+						// &:nth-of-type(-n+2) {
+						// 	width: 390px;
+						// }
+					}
 				}
 			}
 
 			.open-content {
 				visibility: hidden;
+				width: 100%;
+
+				@include tablet {
+					width: 320px;
+
+					// &:nth-of-type(-n+2) {
+					// 	width: 390px;
+					// }
+				}
 			}
 
 			&.open {
@@ -534,13 +596,210 @@ nav {
 
 				.open-content {
 					visibility: visible;
-				}		
+				}
+
+				&:nth-of-type(-n+4) {
+
+					@include tablet {
+						margin-bottom: 0px;
+					}
+				}
 			}
 			
 			@include tablet {
 				display: inline-block;
 				position: relative;
 
+			}
+
+			&.food {
+
+				@include tablet {
+
+					.close-svg {
+						left: 285%;
+						top: -139%;
+					}
+
+					.panel-img {
+						left: 218%;
+						top: -43%;
+					}
+				}
+
+				@include desktop {
+
+					.close-svg {
+						left: 385%;
+						top: -92%;
+					}
+
+					.panel-img {
+						left: 268%;
+						top: -43%;
+					}
+				}
+			}
+
+			&.bureau {
+
+				@include tablet {
+
+					.close-svg {
+						left: 99%;
+						top: -56%;
+					}
+
+					.descriptionDiv {
+						text-align: right;
+					}
+
+					.preview-content {
+						width: auto;
+					}
+
+					.open-content {
+						width: auto;
+					}
+
+					.panel-img {
+						width: 300px;
+						left: -54%;
+						top: 54%;
+					}
+
+					.description-link {
+						text-align: -webkit-right;
+					}
+				}
+
+				@include desktop {
+
+					.panel-img {
+						width: 360px;
+						left: -81%;
+						top: 24%;
+					}
+				}
+			}
+
+			&.bar {
+
+				@include tablet {
+
+					.close-svg {
+						left: 172%;
+						top: -215%;
+					}
+
+					.panel-img {
+						left: 130%;
+						top: -70%;
+					}
+				}
+
+				@include desktop {
+					.close-svg {
+						left: 232%;
+						top: -175%;
+					}
+
+					.panel-img {
+						left: 170%;
+						top: -70%;
+					}
+				}
+			}
+
+			&.table {
+
+				@include tablet {
+
+					.close-svg {
+						left: 52%;
+						top: -71%;
+					}
+
+					.panel-img {
+						left: -112%;
+						top: -52%;
+					}
+				}
+
+				@include desktop {
+
+					.close-svg {
+						left: 65%;
+						top: -71%;
+					}
+
+					.panel-img {
+						width: 350px;
+						left: -122%;
+						top: -52%;
+					}
+				}
+			}
+
+			&.hours {
+
+				@include tablet {
+
+					.close-svg {
+						left: 225%;
+						top: -247%;
+					}
+
+					.panel-img {
+						width: 350px;
+						left: 150%;
+						top: -170%;
+					}
+				}
+
+				@include desktop {
+
+					.close-svg {
+						left: 308%;
+						top: -277%;
+					}
+
+					.panel-img {
+						width: 600px;
+						left: 120%;
+						top: -220%;
+					}
+				}
+			}
+
+			&.location {
+
+				@include tablet {
+
+					.close-svg {
+						left: 58%;
+						top: -58%;
+					}
+
+					.preview-content {
+						text-align: center;
+					}
+
+					.panel-img {
+						width: 270px;
+						left: -107%;
+						top: -361%;
+					}
+				}
+
+				@include desktop {
+
+					.panel-img {
+						width: 310px;
+						left: -114%;
+						top: -431%;
+					}
+				}
 			}
 
 			a { // this is currently targeting the a in the h2
@@ -554,7 +813,6 @@ nav {
 					@include tablet {
 						color: #000;
 						opacity: .5;
-
 					}
 				}
 
@@ -566,7 +824,6 @@ nav {
 						opacity: .5;
 					}
 				}
-				
 
 				.bar & {
 					color: $bar-text-color;
@@ -609,9 +866,14 @@ nav {
 				&:nth-of-type(1) {
 					a {
 						color: $food-main-links;
-						text-decoration: underline;
-						text-decoration-color: white;
 						opacity: 1;
+					}
+
+					h2 {
+						a {
+							text-decoration: underline;
+							text-decoration-color: white;
+						}
 					}
 				}
 			}

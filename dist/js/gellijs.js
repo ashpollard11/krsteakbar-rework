@@ -79,12 +79,14 @@ h2s.forEach(function (h2) {
                 h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
                 h2.parentElement.classList.add('open'); // the LI
                 h2.removeEventListener('mouseout', large.h2MouseOut);
+                document.querySelector("h1").style.display = "none";
             } else {
                 h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
                 h2.parentElement.classList.remove('open');
                 h2.parentElement.classList.remove('preview');
                 h2.addEventListener('mouseout', large.h2MouseOut);
                 document.body.classList.remove(this.getAttribute('data-body-class'));
+                document.querySelector("h1").style.display = "block";
             }
         },
 
