@@ -2,7 +2,8 @@
 const mql = window.matchMedia(`(max-width: 640px)`);
 
 const h2s = document.querySelectorAll(`.main-content h2`)
-const allLIs = document.querySelectorAll(`.main-content li`)
+const allElementsHidden = document.querySelectorAll(`.main-content li, h1`)
+
 
 let removeBodyClasses = function() {
     document.body.classList.remove( `food` )
@@ -20,14 +21,9 @@ let closeOtherOpenLIs = function() {
     })
 }
 
-let hideOtherOpenLIs = function() {
-    allLIs.forEach(function(allLI) {
-        allLIs.style.visibility = `none`
-    })
-}
-
 
 h2s.forEach(function(h2) {
+
 
     let small = {
         setup: function() {
@@ -60,27 +56,26 @@ h2s.forEach(function(h2) {
         },
     }
     
-        
-
+    const closeSVGBtn = h2.parentElement.querySelector(`.close-svg`)
 
     let large = {
         setup: function() {
             console.log(`large setup`)
-            h2.addEventListener('mouseover', large.h2MouseOver)
-            h2.addEventListener('mouseout', large.h2MouseOut)
-            h2.addEventListener('click', large.h2MouseClick)
-            // click event for close button to the large.close function
+            h2.addEventListener('mouseover', large.mouseOver)
+            h2.addEventListener('mouseout', large.mouseOut)
+            h2.addEventListener('click', large.mouseClick)
+            closeSVGBtn.addEventListener('click', large.mouseClick)
             
         },
         teardown: function() {
             console.log(`large teardown`)
-            h2.removeEventListener('mouseover', large.h2MouseOver)
-            h2.removeEventListener('mouseout', large.h2MouseOut)
-            h2.removeEventListener('click', large.h2MouseClick)
-            
+            h2.removeEventListener('mouseover', large.mouseOver)
+            h2.removeEventListener('mouseout', large.mouseOut)
+            h2.removeEventListener('click', large.mouseClick)
+            closeSVGBtn.removeEventListener('click', large.mouseClick)
         },
 
-        h2MouseClick: function() { 
+        mouseClick: function() { 
             if (!h2.parentElement.classList.contains(`open`)) {
                 large.open.call(this)
             } else {
@@ -93,13 +88,10 @@ h2s.forEach(function(h2) {
             closeOtherOpenLIs()
             h2.parentElement.parentElement.classList.add(`a-child-is-open`) // the UL
             h2.parentElement.classList.add(`open`) // the LI
-            h2.removeEventListener('mouseout', large.h2MouseOut)
-            document.querySelector("h1").style.display = "none"
-
-            let closeButton = h2.parentElement.querySelectorAll('.close-svg .close-menu')
+            h2.removeEventListener('mouseout', large.mouseOut)
             
-            TweenMax.from(closeButton, 0.7, {drawSVG: "50% 50%", delay:0.2});
-            console.log('run close button animation')
+            let closeSVGBtnPieces = closeSVGBtn.querySelectorAll("path, line")
+            TweenMax.from(closeSVGBtnPieces, 0.7, {drawSVG: "50% 50%", delay:0.2});
         },
 
         close: function() {
@@ -107,22 +99,19 @@ h2s.forEach(function(h2) {
             h2.parentElement.parentElement.classList.remove(`a-child-is-open`) // the UL
             h2.parentElement.classList.remove(`open`)
             h2.parentElement.classList.remove(`preview`)
-            h2.addEventListener('mouseout', large.h2MouseOut)
+            h2.addEventListener('mouseout', large.mouseOut)
             removeBodyClasses()
-            document.querySelector("h1").style.display = "block"
         },
         
-        h2MouseOver: function(){
+        mouseOver: function(){
             console.log("hover")
             removeBodyClasses();
             document.body.classList.add( this.getAttribute('data-body-class') )
             this.parentElement.classList.add(`preview`)
-            // removePreviewFromOthers();
         },
         
-        h2MouseOut: function(){
+        mouseOut: function(){
             removeBodyClasses();
-
             this.parentElement.classList.remove(`preview`)
         },
     }
@@ -136,6 +125,7 @@ h2s.forEach(function(h2) {
             removeBodyClasses();
             large.teardown()
             small.setup()
+
         } else {
             console.log(`mql changed to large`)
             h2.parentElement.classList.remove(`preview`)

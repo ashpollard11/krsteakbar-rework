@@ -3,7 +3,7 @@
 var mql = window.matchMedia('(max-width: 640px)');
 
 var h2s = document.querySelectorAll('.main-content h2');
-var allLIs = document.querySelectorAll('.main-content li');
+var allElementsHidden = document.querySelectorAll('.main-content li, h1');
 
 var removeBodyClasses = function removeBodyClasses() {
     document.body.classList.remove('food');
@@ -18,12 +18,6 @@ var closeOtherOpenLIs = function closeOtherOpenLIs() {
     document.querySelectorAll('.main-content li.open').forEach(function (otherOpen) {
         otherOpen.classList.remove('preview');
         otherOpen.classList.remove('open');
-    });
-};
-
-var hideOtherOpenLIs = function hideOtherOpenLIs() {
-    allLIs.forEach(function (allLI) {
-        allLIs.style.visibility = 'none';
     });
 };
 
@@ -60,22 +54,25 @@ h2s.forEach(function (h2) {
         }
     };
 
+    var closeSVGBtn = h2.parentElement.querySelector('.close-svg');
+
     var large = {
         setup: function setup() {
             console.log('large setup');
-            h2.addEventListener('mouseover', large.h2MouseOver);
-            h2.addEventListener('mouseout', large.h2MouseOut);
-            h2.addEventListener('click', large.h2MouseClick);
-            // click event for close button to the large.close function
+            h2.addEventListener('mouseover', large.mouseOver);
+            h2.addEventListener('mouseout', large.mouseOut);
+            h2.addEventListener('click', large.mouseClick);
+            closeSVGBtn.addEventListener('click', large.mouseClick);
         },
         teardown: function teardown() {
             console.log('large teardown');
-            h2.removeEventListener('mouseover', large.h2MouseOver);
-            h2.removeEventListener('mouseout', large.h2MouseOut);
-            h2.removeEventListener('click', large.h2MouseClick);
+            h2.removeEventListener('mouseover', large.mouseOver);
+            h2.removeEventListener('mouseout', large.mouseOut);
+            h2.removeEventListener('click', large.mouseClick);
+            closeSVGBtn.removeEventListener('click', large.mouseClick);
         },
 
-        h2MouseClick: function h2MouseClick() {
+        mouseClick: function mouseClick() {
             if (!h2.parentElement.classList.contains('open')) {
                 large.open.call(this);
             } else {
@@ -88,13 +85,10 @@ h2s.forEach(function (h2) {
             closeOtherOpenLIs();
             h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
             h2.parentElement.classList.add('open'); // the LI
-            h2.removeEventListener('mouseout', large.h2MouseOut);
-            document.querySelector("h1").style.display = "none";
+            h2.removeEventListener('mouseout', large.mouseOut);
 
-            var closeButton = h2.parentElement.querySelectorAll('.close-svg .close-menu');
-
-            TweenMax.from(closeButton, 0.7, { drawSVG: "50% 50%", delay: 0.2 });
-            console.log('run close button animation');
+            var closeSVGBtnPieces = closeSVGBtn.querySelectorAll("path, line");
+            TweenMax.from(closeSVGBtnPieces, 0.7, { drawSVG: "50% 50%", delay: 0.2 });
         },
 
         close: function close() {
@@ -102,22 +96,19 @@ h2s.forEach(function (h2) {
             h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
             h2.parentElement.classList.remove('open');
             h2.parentElement.classList.remove('preview');
-            h2.addEventListener('mouseout', large.h2MouseOut);
+            h2.addEventListener('mouseout', large.mouseOut);
             removeBodyClasses();
-            document.querySelector("h1").style.display = "block";
         },
 
-        h2MouseOver: function h2MouseOver() {
+        mouseOver: function mouseOver() {
             console.log("hover");
             removeBodyClasses();
             document.body.classList.add(this.getAttribute('data-body-class'));
             this.parentElement.classList.add('preview');
-            // removePreviewFromOthers();
         },
 
-        h2MouseOut: function h2MouseOut() {
+        mouseOut: function mouseOut() {
             removeBodyClasses();
-
             this.parentElement.classList.remove('preview');
         }
     };

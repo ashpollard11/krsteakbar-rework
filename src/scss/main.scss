@@ -68,7 +68,7 @@ body {
 
 h1 {
 	font-family: $url-font;
-	font-size: 2em;
+	font-size: 0.5em;
 	opacity: 0;
 	animation: ani-across 0.8s forwards;
 	animation-delay: 1s;
@@ -76,6 +76,7 @@ h1 {
 
 	@include tablet {
 		display: block;
+		visibility: visible;
 	}
 
 	.food & {
@@ -399,7 +400,7 @@ nav {
 				// max-width: unset;
 			}
 
-			li {
+			h1, li {
 				visibility: hidden;
 			}
 			.nav-dash {

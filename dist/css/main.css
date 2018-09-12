@@ -338,7 +338,7 @@ body.hours {
 
 h1 {
 	font-family: "nimbus-sans";
-	font-size: 2em;
+	font-size: 0.5em;
 	opacity: 0;
 	animation: ani-across 0.8s forwards;
 	animation-delay: 1s;
@@ -348,6 +348,7 @@ h1 {
 @media only screen and (min-width: 640px) {
 	h1 {
 		display: block;
+		visibility: visible;
 	}
 }
 
@@ -675,7 +676,7 @@ nav li.more li {
 	}
 }
 
-.middle-group ul.main-content.a-child-is-open li {
+.middle-group ul.main-content.a-child-is-open h1, .middle-group ul.main-content.a-child-is-open li {
 	visibility: hidden;
 }
 
