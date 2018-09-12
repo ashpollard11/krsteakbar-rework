@@ -705,7 +705,7 @@ nav li.more li {
 }
 
 .middle-group ul.main-content li {
-	transition: 0.8s;
+	transition: 0.2s;
 }
 
 .middle-group ul.main-content li .close-svg {
@@ -721,6 +721,24 @@ nav li.more li {
 		position: absolute;
 		left: 155%;
 		top: -170%;
+	}
+	.food .middle-group ul.main-content li .close-svg .close-menu {
+		stroke: #f9a68a;
+	}
+	.bureau .middle-group ul.main-content li .close-svg .close-menu {
+		stroke: #8bbfc1;
+	}
+	.bar .middle-group ul.main-content li .close-svg .close-menu {
+		stroke: #e2ae1e;
+	}
+	.table .middle-group ul.main-content li .close-svg .close-menu {
+		stroke: #f58319;
+	}
+	.location .middle-group ul.main-content li .close-svg .close-menu {
+		stroke: #4c5ec0;
+	}
+	.hours .middle-group ul.main-content li .close-svg .close-menu {
+		stroke: #ddb67a;
 	}
 }
 

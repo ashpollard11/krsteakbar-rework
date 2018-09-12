@@ -66,6 +66,7 @@ h2s.forEach(function (h2) {
             h2.addEventListener('mouseover', large.h2MouseOver);
             h2.addEventListener('mouseout', large.h2MouseOut);
             h2.addEventListener('click', large.h2MouseClick);
+            // click event for close button to the large.close function
         },
         teardown: function teardown() {
             console.log('large teardown');
@@ -73,21 +74,37 @@ h2s.forEach(function (h2) {
             h2.removeEventListener('mouseout', large.h2MouseOut);
             h2.removeEventListener('click', large.h2MouseClick);
         },
+
         h2MouseClick: function h2MouseClick() {
             if (!h2.parentElement.classList.contains('open')) {
-                closeOtherOpenLIs();
-                h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
-                h2.parentElement.classList.add('open'); // the LI
-                h2.removeEventListener('mouseout', large.h2MouseOut);
-                document.querySelector("h1").style.display = "none";
+                large.open.call(this);
             } else {
-                h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
-                h2.parentElement.classList.remove('open');
-                h2.parentElement.classList.remove('preview');
-                h2.addEventListener('mouseout', large.h2MouseOut);
-                document.body.classList.remove(this.getAttribute('data-body-class'));
-                document.querySelector("h1").style.display = "block";
+                large.close.call(this);
             }
+        },
+
+        open: function open() {
+            console.log('clicked to open');
+            closeOtherOpenLIs();
+            h2.parentElement.parentElement.classList.add('a-child-is-open'); // the UL
+            h2.parentElement.classList.add('open'); // the LI
+            h2.removeEventListener('mouseout', large.h2MouseOut);
+            document.querySelector("h1").style.display = "none";
+
+            var closeButton = h2.parentElement.querySelectorAll('.close-svg .close-menu');
+
+            TweenMax.from(closeButton, 0.7, { drawSVG: "50% 50%", delay: 0.2 });
+            console.log('run close button animation');
+        },
+
+        close: function close() {
+            console.log('clicked to close');
+            h2.parentElement.parentElement.classList.remove('a-child-is-open'); // the UL
+            h2.parentElement.classList.remove('open');
+            h2.parentElement.classList.remove('preview');
+            h2.addEventListener('mouseout', large.h2MouseOut);
+            removeBodyClasses();
+            document.querySelector("h1").style.display = "block";
         },
 
         h2MouseOver: function h2MouseOver() {
@@ -95,10 +112,12 @@ h2s.forEach(function (h2) {
             removeBodyClasses();
             document.body.classList.add(this.getAttribute('data-body-class'));
             this.parentElement.classList.add('preview');
+            // removePreviewFromOthers();
         },
+
         h2MouseOut: function h2MouseOut() {
             removeBodyClasses();
-            document.body.classList.remove(this.getAttribute('data-body-class'));
+
             this.parentElement.classList.remove('preview');
         }
     };
@@ -127,17 +146,5 @@ h2s.forEach(function (h2) {
     } else {
         large.setup();
     }
-});
-
-var liCloseBtns = document.querySelectorAll(".main-content li .close-svg");
-var mainContentUL = document.querySelector("ul.main-content");
-
-liCloseBtns.forEach(function (liCloseBtn) {
-    liCloseBtn.addEventListener("click", function (e) {
-        liCloseBtn.parentElement.classList.remove('open');
-        liCloseBtn.parentElement.classList.remove('preview');
-        mainContentUL.classList.remove('a-child-is-open');
-        removeBodyClasses();
-    });
 });
 //# sourceMappingURL=gellijs.js.map
