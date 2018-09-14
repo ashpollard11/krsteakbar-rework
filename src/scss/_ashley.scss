@@ -47,6 +47,30 @@ svg {
 
 		path {
 			stroke: $home-copy-color;
+
+			.food & {
+				stroke: $food-main-links;
+			}
+
+			.bureau & {
+				stroke: $bureau-main-links;
+			}
+
+			.bar & {
+				stroke: $bar-main-links;
+			}
+
+			.table & {
+				stroke: $table-main-links;
+			}
+
+			.location & {
+				stroke: $location-main-links;
+			}
+
+			.hours & {
+				stroke: $hours-main-links;
+			}
 		}
 
 		@include tablet {

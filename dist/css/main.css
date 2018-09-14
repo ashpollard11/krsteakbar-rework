@@ -116,6 +116,30 @@ svg {
 	stroke: #9e8261;
 }
 
+.food .circle.is-active path {
+	stroke: #f9a68a;
+}
+
+.bureau .circle.is-active path {
+	stroke: #8bbfc1;
+}
+
+.bar .circle.is-active path {
+	stroke: #e2ae1e;
+}
+
+.table .circle.is-active path {
+	stroke: #f58319;
+}
+
+.location .circle.is-active path {
+	stroke: #4c5ec0;
+}
+
+.hours .circle.is-active path {
+	stroke: #ddb67a;
+}
+
 @media only screen and (min-width: 640px) {
 	.circle.is-active {
 		z-index: -99;
@@ -589,9 +613,95 @@ nav .close-menu {
 	z-index: 1;
 }
 
+.food nav .close-menu {
+	stroke: #07263a;
+}
+
+.bureau nav .close-menu {
+	stroke: #a13612;
+}
+
+.bar nav .close-menu {
+	stroke: #806875;
+}
+
+.table nav .close-menu {
+	stroke: #4b5b42;
+}
+
+.location nav .close-menu {
+	stroke: #ffffff;
+}
+
+.hours nav .close-menu {
+	stroke: #3f3f3f;
+}
+
 nav li {
 	margin-bottom: 1.6em;
 	z-index: 2;
+	transition: 0.5s;
+}
+
+nav li:hover {
+	color: #9e8261;
+}
+
+.food nav li:hover {
+	color: #07263a;
+}
+
+.bureau nav li:hover {
+	color: #a13612;
+}
+
+.bar nav li:hover {
+	color: #806875;
+}
+
+.table nav li:hover {
+	color: #4b5b42;
+}
+
+.location nav li:hover {
+	color: #ffffff;
+}
+
+.hours nav li:hover {
+	color: #3f3f3f;
+}
+
+nav li a {
+	color: #fff;
+	transition: 0.5s;
+}
+
+nav li a:hover {
+	color: #9e8261;
+}
+
+.food nav li a:hover {
+	color: #07263a;
+}
+
+.bureau nav li a:hover {
+	color: #a13612;
+}
+
+.bar nav li a:hover {
+	color: #806875;
+}
+
+.table nav li a:hover {
+	color: #4b5b42;
+}
+
+.location nav li a:hover {
+	color: #ffffff;
+}
+
+.hours nav li a:hover {
+	color: #3f3f3f;
 }
 
 nav li.more {
@@ -615,10 +725,43 @@ nav li.more li {
 	margin-bottom: 1em;
 }
 
+nav li.more li a {
+	color: #fff;
+}
+
+nav li.more li a:hover {
+	color: #9e8261;
+}
+
+.food nav li.more li a:hover {
+	color: #07263a;
+}
+
+.bureau nav li.more li a:hover {
+	color: #a13612;
+}
+
+.bar nav li.more li a:hover {
+	color: #806875;
+}
+
+.table nav li.more li a:hover {
+	color: #4b5b42;
+}
+
+.location nav li.more li a:hover {
+	color: #ffffff;
+}
+
+.hours nav li.more li a:hover {
+	color: #3f3f3f;
+}
+
 .reservations {
 	color: #9e8261;
 	display: none;
 	text-decoration: none;
+	transition: 0.5s;
 }
 
 @media only screen and (min-width: 640px) {
@@ -636,6 +779,34 @@ nav li.more li {
 		animation: ani-fade-in-res 2s forwards;
 		animation-delay: 0.3s;
 	}
+}
+
+.reservations:hover {
+	color: #eba900;
+}
+
+.food .reservations:hover {
+	color: #f9a68a;
+}
+
+.bureau .reservations:hover {
+	color: #8bbfc1;
+}
+
+.bar .reservations:hover {
+	color: #e2ae1e;
+}
+
+.table .reservations:hover {
+	color: #f58319;
+}
+
+.location .reservations:hover {
+	color: #4c5ec0;
+}
+
+.hours .reservations:hover {
+	color: #ddb67a;
 }
 
 .middle-group.is-active {
@@ -756,7 +927,7 @@ nav li.more li {
 
 .middle-group ul.main-content li .descriptionDiv {
 	position: relative;
-	font-size: 16px;
+	font-size: 19px;
 	width: 100%;
 	padding: 0px;
 	transition-property: max-height, padding;
@@ -769,12 +940,12 @@ nav li.more li {
 	.middle-group ul.main-content li .descriptionDiv {
 		position: absolute;
 		max-height: 1000px;
+		font-size: 16px;
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li .descriptionDiv .panel-img {
-		width: 250px;
 		position: absolute;
 		z-index: -999;
 	}
@@ -782,7 +953,7 @@ nav li.more li {
 
 .middle-group ul.main-content li .descriptionDiv .description-link {
 	margin: 20px 0px;
-	font-size: 19px;
+	font-size: 17px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -790,16 +961,6 @@ nav li.more li {
 		width: 400px;
 		font-size: 16px;
 	}
-}
-
-@media only screen and (min-width: 1027px) {
-	.middle-group ul.main-content li .descriptionDiv .description-link {
-		text-align: center;
-	}
-}
-
-.middle-group ul.main-content li p {
-	font-size: 19px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -903,30 +1064,31 @@ nav li.more li {
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li.food .close-svg {
-		left: 285%;
-		top: -139%;
+		left: 266%;
+		top: -125%;
 	}
 	.middle-group ul.main-content li.food .panel-img {
-		left: 218%;
-		top: -43%;
+		left: 194%;
+		top: -49%;
 	}
 }
 
 @media only screen and (min-width: 1027px) {
 	.middle-group ul.main-content li.food .close-svg {
-		left: 385%;
-		top: -92%;
+		left: 366%;
+		top: -142%;
 	}
 	.middle-group ul.main-content li.food .panel-img {
-		left: 268%;
-		top: -43%;
+		width: 360px;
+		left: 215%;
+		top: -96%;
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li.bureau .close-svg {
-		left: 99%;
-		top: -56%;
+		left: 86%;
+		top: -80%;
 	}
 	.middle-group ul.main-content li.bureau .descriptionDiv {
 		text-align: right;
@@ -939,8 +1101,8 @@ nav li.more li {
 	}
 	.middle-group ul.main-content li.bureau .panel-img {
 		width: 300px;
-		left: -54%;
-		top: 54%;
+		left: -48%;
+		top: 60%;
 	}
 	.middle-group ul.main-content li.bureau .description-link {
 		text-align: -webkit-right;
@@ -948,42 +1110,55 @@ nav li.more li {
 }
 
 @media only screen and (min-width: 1027px) {
+	.middle-group ul.main-content li.bureau .close-svg {
+		left: 102%;
+		top: -63%;
+	}
 	.middle-group ul.main-content li.bureau .panel-img {
-		width: 360px;
-		left: -81%;
-		top: 24%;
+		width: 400px;
+		left: -64%;
+		top: 52%;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	.middle-group ul.main-content li.bureau .panel-img {
+		width: 430px;
+		left: -64%;
+		top: 52%;
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li.bar .close-svg {
-		left: 172%;
-		top: -215%;
+		left: 162%;
+		top: -190%;
 	}
 	.middle-group ul.main-content li.bar .panel-img {
-		left: 130%;
+		left: 124%;
 		top: -70%;
 	}
 }
 
 @media only screen and (min-width: 1027px) {
 	.middle-group ul.main-content li.bar .close-svg {
-		left: 232%;
+		left: 218%;
 		top: -175%;
 	}
 	.middle-group ul.main-content li.bar .panel-img {
-		left: 170%;
-		top: -70%;
+		width: 360px;
+		left: 129%;
+		top: -100%;
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li.table .close-svg {
-		left: 52%;
-		top: -71%;
+		left: 37%;
+		top: -95%;
 	}
 	.middle-group ul.main-content li.table .panel-img {
-		left: -112%;
+		left: -102%;
 		top: -52%;
 	}
 }
@@ -994,33 +1169,33 @@ nav li.more li {
 		top: -71%;
 	}
 	.middle-group ul.main-content li.table .panel-img {
-		width: 350px;
-		left: -122%;
-		top: -52%;
+		width: 450px;
+		left: -128%;
+		top: -84%;
 	}
 }
 
 @media only screen and (min-width: 640px) {
 	.middle-group ul.main-content li.hours .close-svg {
-		left: 225%;
-		top: -247%;
+		left: 195%;
+		top: -258%;
 	}
 	.middle-group ul.main-content li.hours .panel-img {
 		width: 350px;
-		left: 150%;
-		top: -170%;
+		left: 120%;
+		top: -254%;
 	}
 }
 
 @media only screen and (min-width: 1027px) {
 	.middle-group ul.main-content li.hours .close-svg {
-		left: 308%;
-		top: -277%;
+		left: 286%;
+		top: -264%;
 	}
 	.middle-group ul.main-content li.hours .panel-img {
-		width: 600px;
-		left: 120%;
-		top: -220%;
+		width: 570px;
+		left: 126%;
+		top: -300%;
 	}
 }
 
@@ -1034,16 +1209,16 @@ nav li.more li {
 	}
 	.middle-group ul.main-content li.location .panel-img {
 		width: 270px;
-		left: -107%;
-		top: -361%;
+		left: -86%;
+		top: -395%;
 	}
 }
 
 @media only screen and (min-width: 1027px) {
 	.middle-group ul.main-content li.location .panel-img {
-		width: 310px;
-		left: -114%;
-		top: -431%;
+		width: 360px;
+		left: -112%;
+		top: -610%;
 	}
 }
 
@@ -1392,6 +1567,10 @@ footer .kr-footer ul.is-active {
 		margin-bottom: unset;
 		transform: translate(30px);
 	}
+}
+
+footer .kr-footer ul a {
+	color: #eba900;
 }
 
 footer .kr-footer .kr-text {
