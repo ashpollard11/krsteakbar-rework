@@ -35,30 +35,37 @@ body {
 
 	&.home-body {
 		color: $home-copy-color;
+		cursor: url('/dist/img/bodycursor.png'), auto;	
 	}
 
 	&.food {
 		background: $food-background-color;
+		cursor: url('/dist/img/foodcursor.png'), auto;
 	}
 
 	&.bureau {
 		background: $bureau-background-color;
+		cursor: url('/dist/img/bureaucursor.png'), auto;
 	}
 
 	&.bar {
 		background: $bar-background-color;
+		cursor: url('/dist/img/barcursor.png'), auto;
 	}
 
 	&.table {
 		background: $table-background-color;
+		cursor: url('/dist/img/tablecursor.png'), auto;
 	}
 
 	&.location {
 		background: $location-background-color;
+		cursor: url('/dist/img/locationcursor.png'), auto;
 	}
 
 	&.hours {
 		background: $hours-background-color;
+		cursor: url('/dist/img/hourscursor.png'), auto;
 	}
 }
 
@@ -408,7 +415,7 @@ nav {
 		}
 
 		&.more {
-			cursor: pointer;
+			// cursor: pointer;
 
 			ul {
 				font-size: 0.6em;
@@ -483,6 +490,7 @@ nav {
 
 	&:hover {
 		color: $home-accent-color;
+		
 
 		.food & {
 			color: $food-main-links;

@@ -330,30 +330,37 @@ body {
 
 body.home-body {
 	color: #9e8261;
+	cursor: url("/dist/img/bodycursor.png"), auto;
 }
 
 body.food {
 	background: #07263a;
+	cursor: url("/dist/img/foodcursor.png"), auto;
 }
 
 body.bureau {
 	background: #a13612;
+	cursor: url("/dist/img/bureaucursor.png"), auto;
 }
 
 body.bar {
 	background: #806875;
+	cursor: url("/dist/img/barcursor.png"), auto;
 }
 
 body.table {
 	background: #4b5b42;
+	cursor: url("/dist/img/tablecursor.png"), auto;
 }
 
 body.location {
 	background: #ffffff;
+	cursor: url("/dist/img/locationcursor.png"), auto;
 }
 
 body.hours {
 	background: #3f3f3f;
+	cursor: url("/dist/img/hourscursor.png"), auto;
 }
 
 .phone-number, h1 {
@@ -702,10 +709,6 @@ nav li a:hover {
 
 .hours nav li a:hover {
 	color: #3f3f3f;
-}
-
-nav li.more {
-	cursor: pointer;
 }
 
 nav li.more ul {
