@@ -35,37 +35,37 @@ body {
 
 	&.home-body {
 		color: $home-copy-color;
-		cursor: url('/dist/img/bodycursor.png'), auto;	
+		cursor: url('../img/bodycursor.png'), auto;	
 	}
 
 	&.food {
 		background: $food-background-color;
-		cursor: url('/dist/img/foodcursor.png'), auto;
+		cursor: url('../img/foodcursor.png'), auto;
 	}
 
 	&.bureau {
 		background: $bureau-background-color;
-		cursor: url('/dist/img/bureaucursor.png'), auto;
+		cursor: url('../img/bureaucursor.png'), auto;
 	}
 
 	&.bar {
 		background: $bar-background-color;
-		cursor: url('/dist/img/barcursor.png'), auto;
+		cursor: url('../img/barcursor.png'), auto;
 	}
 
 	&.table {
 		background: $table-background-color;
-		cursor: url('/dist/img/tablecursor.png'), auto;
+		cursor: url('../img/tablecursor.png'), auto;
 	}
 
 	&.location {
 		background: $location-background-color;
-		cursor: url('/dist/img/locationcursor.png'), auto;
+		cursor: url('../img/locationcursor.png'), auto;
 	}
 
 	&.hours {
 		background: $hours-background-color;
-		cursor: url('/dist/img/hourscursor.png'), auto;
+		cursor: url('../img/hourscursor.png'), auto;
 	}
 }
 
