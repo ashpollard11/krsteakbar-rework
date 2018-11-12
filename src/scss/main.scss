@@ -665,7 +665,7 @@ nav {
 				}
 			
 				.description-link {
-					margin: 20px 0px;
+					margin: 10px 0px;
 					font-size: 17px;
 
 					@include tablet {
@@ -738,11 +738,13 @@ nav {
 					display: block;
 					width: 100%;
 					max-height: 1000px;
-					margin-bottom: 20px;
+					margin-bottom: 10px;
 
 					@include tablet {
 						width: 300px;
 					}
+
+
 				}
 			}
 
@@ -873,7 +875,7 @@ nav {
 
 					.panel-img {
 						left: 124%;
-						top: -70%;
+						top: -80%;
 					}
 				}
 
@@ -1334,6 +1336,59 @@ footer {
 
 			a {
 				color: $home-accent-color;
+				transition: 0.5s;
+
+				.food & {
+					color: $food-text-color;
+				}
+			
+				.bureau & {
+					color: $bureau-text-color;
+				}
+			
+				.bar & {
+					color: $bar-text-color;
+				}
+			
+				.table & {
+					color: $table-text-color;
+				}
+			
+				.location & {
+					color: $location-text-color;
+				}
+			
+				.hours & {
+					color: $hours-text-color;
+				}
+
+				&:hover {
+					color: $home-copy-color;
+
+					.food & {
+						color: $food-main-links;
+					}
+
+					.bureau & {
+						color: $bureau-main-links;
+					}
+
+					.bar & {
+						color: $bar-main-links;
+					}
+
+					.table & {
+						color: $table-main-links;
+					}
+
+					.location & {
+						color: $location-main-links;
+					}
+
+					.hours & {
+						color: $hours-main-links;
+					}
+				}
 			}
 		}
 
@@ -1402,7 +1457,6 @@ footer {
 					.hours & {
 						color: $hours-main-links;
 					}
-
 				}
 			}
 		}

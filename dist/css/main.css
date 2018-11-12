@@ -955,7 +955,7 @@ nav li.more li a:hover {
 }
 
 .middle-group ul.main-content li .descriptionDiv .description-link {
-	margin: 20px 0px;
+	margin: 10px 0px;
 	font-size: 17px;
 }
 
@@ -1024,7 +1024,7 @@ nav li.more li a:hover {
 	display: block;
 	width: 100%;
 	max-height: 1000px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 640px) {
@@ -1139,7 +1139,7 @@ nav li.more li a:hover {
 	}
 	.middle-group ul.main-content li.bar .panel-img {
 		left: 124%;
-		top: -70%;
+		top: -80%;
 	}
 }
 
@@ -1574,6 +1574,59 @@ footer .kr-footer ul.is-active {
 
 footer .kr-footer ul a {
 	color: #eba900;
+	transition: 0.5s;
+}
+
+.food footer .kr-footer ul a {
+	color: #83a0b0;
+}
+
+.bureau footer .kr-footer ul a {
+	color: #fb9d52;
+}
+
+.bar footer .kr-footer ul a {
+	color: #fad5e9;
+}
+
+.table footer .kr-footer ul a {
+	color: #a4c48f;
+}
+
+.location footer .kr-footer ul a {
+	color: #494949;
+}
+
+.hours footer .kr-footer ul a {
+	color: #b4b4b4;
+}
+
+footer .kr-footer ul a:hover {
+	color: #9e8261;
+}
+
+.food footer .kr-footer ul a:hover {
+	color: #f9a68a;
+}
+
+.bureau footer .kr-footer ul a:hover {
+	color: #8bbfc1;
+}
+
+.bar footer .kr-footer ul a:hover {
+	color: #e2ae1e;
+}
+
+.table footer .kr-footer ul a:hover {
+	color: #f58319;
+}
+
+.location footer .kr-footer ul a:hover {
+	color: #4c5ec0;
+}
+
+.hours footer .kr-footer ul a:hover {
+	color: #ddb67a;
 }
 
 footer .kr-footer .kr-text {
